@@ -71,7 +71,7 @@ enum Attr: string implements AttrInterface
     /**
      * Specifies one or more classnames for an element (refers to a class in a style sheet).
      */
-    case Class = 'class';
+    case Clazz = 'class';
 
     /**
      * Specifies the visible width of a text area.
