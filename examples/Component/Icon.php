@@ -5,7 +5,7 @@ namespace PTML\Example\Component;
 
 use PTML\{Aria, Attr, Element, Tag};
 
-final class BootstrapIcon extends Element
+final class Icon extends Element
 {
     public function __construct(string $name)
     {

@@ -5,9 +5,17 @@ namespace PTML\Example;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use PTML\Example\Component\BootstrapButton;
+use PTML\ElementOutput;
+use PTML\Example\Component\{Btn, Container, Icon, Lnk};
 
-$button = new BootstrapButton('primary', 'Sample button');
-$button->icon('user');
+$container = new Container(
+    Btn::primary('Sample button')
+        ->icon(new Icon('user')),
 
-echo $button;
+    Lnk::primary('http://localhost:8080', 'Sample link')
+        ->icon(new Icon('user'))
+);
+
+$output = new ElementOutput($container);
+$output->toFile('container.html');
+$output->toStdOut();
