@@ -46,6 +46,13 @@ interface ElementInterface extends \RecursiveIterator, \Countable, \Stringable
     public function without(AttrInterface|string $name): static;
 
     /**
+     * Returns children.
+     *
+     * @return ElementInterface[]
+     */
+    public function children(): array;
+
+    /**
      * Checks if child exists.
      */
     public function exists(ElementInterface $child): bool;
