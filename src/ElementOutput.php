@@ -17,4 +17,9 @@ final class ElementOutput
     {
         return file_put_contents($file_path, $this->element->html()) !== false;
     }
+
+    public function toStdOut(): void
+    {
+        print $this->element;
+    }
 }
