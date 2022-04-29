@@ -24,7 +24,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "PTML\\Test\\": "tests/"
+      "PTML\\Test\\": "tests/",
+      "PTML\\Example\\": "examples/"
     }
   },
   "require-dev": {
