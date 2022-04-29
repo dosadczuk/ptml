@@ -99,7 +99,7 @@ enum Attr: string implements AttrInterface
     /**
      * Often used with CSS to style elements with common properties.
      */
-    case Class = 'class';
+    case Clazz = 'class';
 
     /**
      * Defines the number of columns in a textarea.

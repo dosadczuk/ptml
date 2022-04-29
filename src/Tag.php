@@ -13,19 +13,19 @@ enum Tag: string
      * HTML document, so it is also referred to as the root element. All other
      * elements must be descendants of this element.
      */
-    case Html = '<html>';
+    case Html = 'html';
 
     /**
      * The <base> HTML element specifies the base URL to use for all relative
      * URLs in a document. There can be only one <base> element in a document.
      */
-    case Base = '<base>';
+    case Base = 'base';
 
     /**
      * The <head> HTML element contains machine-readable information (metadata)
      * about the document, like its title, scripts, and style sheets.
      */
-    case Head = '<head>';
+    case Head = 'head';
 
     /**
      * The <link> HTML element specifies relationships between the current
@@ -34,40 +34,40 @@ enum Tag: string
      * style icons and icons for the home screen and apps on mobile devices)
      * among other things.
      */
-    case Link = '<link>';
+    case Link = 'link';
 
     /**
      * The <meta> HTML element represents Metadata that cannot be represented
      * by other HTML meta-related elements, like base, link, script, style or
      * title.
      */
-    case Meta = '<meta>';
+    case Meta = 'meta';
 
     /**
      * The <style> HTML element contains style information for a document, or
      * part of a document. It contains CSS, which is applied to the contents of
      * the document containing the <style> element.
      */
-    case Style = '<style>';
+    case Style = 'style';
 
     /**
      * The <title> HTML element defines the document's title that is shown in a
      * Browser's title bar or a page's tab. It only contains text; tags within
      * the element are ignored.
      */
-    case Title = '<title>';
+    case Title = 'title';
 
     /**
      * The <body> HTML element represents the content of an HTML document.
      * There can be only one <body> element in a document.
      */
-    case Body = '<body>';
+    case Body = 'body';
 
     /**
      * The <address> HTML element indicates that the enclosed HTML provides
      * contact information for a person or people, or for an organization.
      */
-    case Address = '<address>';
+    case Address = 'address';
 
     /**
      * The <article> HTML element represents a self-contained composition in a
@@ -77,14 +77,14 @@ enum Tag: string
      * a product card, a user-submitted comment, an interactive widget or
      * gadget, or any other independent item of content.
      */
-    case Article = '<article>';
+    case Article = 'article';
 
     /**
      * The <aside> HTML element represents a portion of a document whose
      * content is only indirectly related to the document's main content.
      * Asides are frequently presented as sidebars or call-out boxes.
      */
-    case Aside = '<aside>';
+    case Aside = 'aside';
 
     /**
      * The <footer> HTML element represents a footer for its nearest ancestor
@@ -92,7 +92,7 @@ enum Tag: string
      * contains information about the author of the section, copyright data or
      * links to related documents.
      */
-    case Footer = '<footer>';
+    case Footer = 'footer';
 
     /**
      * The <header> HTML element represents introductory content, typically a
@@ -100,13 +100,43 @@ enum Tag: string
      * elements but also a logo, a search form, an author name, and other
      * elements.
      */
-    case Header = '<header>';
+    case Header = 'header';
 
     /**
      * The <h1> to <h6> HTML elements represent six levels of section headings.
      * <h1> is the highest section level and <h6> is the lowest.
      */
-    case H1 = '<h1>';
+    case H1 = 'h1';
+
+    /**
+     * The <h1> to <h6> HTML elements represent six levels of section headings.
+     * <h1> is the highest section level and <h6> is the lowest.
+     */
+    case H2 = 'h2';
+
+    /**
+     * The <h1> to <h6> HTML elements represent six levels of section headings.
+     * <h1> is the highest section level and <h6> is the lowest.
+     */
+    case H3 = 'h3';
+
+    /**
+     * The <h1> to <h6> HTML elements represent six levels of section headings.
+     * <h1> is the highest section level and <h6> is the lowest.
+     */
+    case H4 = 'h4';
+
+    /**
+     * The <h1> to <h6> HTML elements represent six levels of section headings.
+     * <h1> is the highest section level and <h6> is the lowest.
+     */
+    case H5 = 'h5';
+
+    /**
+     * The <h1> to <h6> HTML elements represent six levels of section headings.
+     * <h1> is the highest section level and <h6> is the lowest.
+     */
+    case H6 = 'h6';
 
     /**
      * The <main> HTML element represents the dominant content of the body of a
@@ -114,7 +144,7 @@ enum Tag: string
      * related to or expands upon the central topic of a document, or the
      * central functionality of an application.
      */
-    case Main = '<main>';
+    case Main = 'main';
 
     /**
      * The <nav> HTML element represents a section of a page whose purpose is
@@ -122,7 +152,7 @@ enum Tag: string
      * other documents. Common examples of navigation sections are menus,
      * tables of contents, and indexes.
      */
-    case Nav = '<nav>';
+    case Nav = 'nav';
 
     /**
      * The <section> HTML element represents a generic standalone section of a
@@ -130,7 +160,7 @@ enum Tag: string
      * represent it. Sections should always have a heading, with very few
      * exceptions.
      */
-    case Section = '<section>';
+    case Section = 'section';
 
     /**
      * The <blockquote> HTML element indicates that the enclosed text is an
@@ -139,13 +169,13 @@ enum Tag: string
      * may be given using the cite attribute, while a text representation of
      * the source can be given using the cite element.
      */
-    case Blockquote = '<blockquote>';
+    case Blockquote = 'blockquote';
 
     /**
      * The <dd> HTML element provides the description, definition, or value for
      * the preceding term (dt) in a description list (dl).
      */
-    case Dd = '<dd>';
+    case Dd = 'dd';
 
     /**
      * The <div> HTML element is the generic container for flow content. It has
@@ -153,7 +183,7 @@ enum Tag: string
      * (e.g. styling is directly applied to it, or some kind of layout model
      * like Flexbox is applied to its parent element).
      */
-    case Div = '<div>';
+    case Div = 'div';
 
     /**
      * The <dl> HTML element represents a description list. The element
@@ -162,7 +192,7 @@ enum Tag: string
      * to implement a glossary or to display metadata (a list of key-value
      * pairs).
      */
-    case Dl = '<dl>';
+    case Dl = 'dl';
 
     /**
      * The <dt> HTML element specifies a term in a description or definition
@@ -171,13 +201,13 @@ enum Tag: string
      * indicate several terms that are all defined by the immediate next dd
      * element.
      */
-    case Dt = '<dt>';
+    case Dt = 'dt';
 
     /**
      * The <figcaption> HTML element represents a caption or legend describing
      * the rest of the contents of its parent figure element.
      */
-    case Figcaption = '<figcaption>';
+    case Figcaption = 'figcaption';
 
     /**
      * The <figure> HTML element represents self-contained content, potentially
@@ -185,14 +215,14 @@ enum Tag: string
      * element. The figure, its caption, and its contents are referenced as a
      * single unit.
      */
-    case Figure = '<figure>';
+    case Figure = 'figure';
 
     /**
      * The <hr> HTML element represents a thematic break between
      * paragraph-level elements: for example, a change of scene in a story, or
      * a shift of topic within a section.
      */
-    case Hr = '<hr>';
+    case Hr = 'hr';
 
     /**
      * The <li> HTML element is used to represent an item in a list. It must be
@@ -202,20 +232,20 @@ enum Tag: string
      * usually displayed with an ascending counter on the left, such as a
      * number or letter.
      */
-    case Li = '<li>';
+    case Li = 'li';
 
     /**
      * The <menu> HTML element is a semantic alternative to ul. It represents
      * an unordered list of items (represented by li elements), each of which
      * represents a link or other command that the user can activate.
      */
-    case Menu = '<menu>';
+    case Menu = 'menu';
 
     /**
      * The <ol> HTML element represents an ordered list of items — typically
      * rendered as a numbered list.
      */
-    case Ol = '<ol>';
+    case Ol = 'ol';
 
     /**
      * The <p> HTML element represents a paragraph. Paragraphs are usually
@@ -224,7 +254,7 @@ enum Tag: string
      * can be any structural grouping of related content, such as images or
      * form fields.
      */
-    case P = '<p>';
+    case P = 'p';
 
     /**
      * The <pre> HTML element represents preformatted text which is to be
@@ -232,20 +262,20 @@ enum Tag: string
      * rendered using a non-proportional, or monospaced, font. Whitespace
      * inside this element is displayed as written.
      */
-    case Pre = '<pre>';
+    case Pre = 'pre';
 
     /**
      * The <ul> HTML element represents an unordered list of items, typically
      * rendered as a bulleted list.
      */
-    case Ul = '<ul>';
+    case Ul = 'ul';
 
     /**
      * The <a> HTML element (or anchor element), with its href attribute,
      * creates a hyperlink to web pages, files, email addresses, locations in
      * the same page, or anything else a URL can address.
      */
-    case A = '<a>';
+    case A = 'a';
 
     /**
      * The <abbr> HTML element represents an abbreviation or acronym; the
@@ -253,7 +283,7 @@ enum Tag: string
      * abbreviation. If present, title must contain this full description and
      * nothing else.
      */
-    case Abbr = '<abbr>';
+    case Abbr = 'abbr';
 
     /**
      * The <b> HTML element is used to draw the reader's attention to the
@@ -264,7 +294,7 @@ enum Tag: string
      * boldface text, or the strong element to indicate that text is of special
      * importance.
      */
-    case B = '<b>';
+    case B = 'b';
 
     /**
      * The <bdi> HTML element tells the browser's bidirectional algorithm to
@@ -272,20 +302,20 @@ enum Tag: string
      * particularly useful when a website dynamically inserts some text and
      * doesn't know the directionality of the text being inserted.
      */
-    case Bdi = '<bdi>';
+    case Bdi = 'bdi';
 
     /**
      * The <bdo> HTML element overrides the current directionality of text, so
      * that the text within is rendered in a different direction.
      */
-    case Bdo = '<bdo>';
+    case Bdo = 'bdo';
 
     /**
      * The <br> HTML element produces a line break in text (carriage-return).
      * It is useful for writing a poem or an address, where the division of
      * lines is significant.
      */
-    case Br = '<br>';
+    case Br = 'br';
 
     /**
      * The <cite> HTML element is used to describe a reference to a cited
@@ -293,7 +323,7 @@ enum Tag: string
      * may be in an abbreviated form according to context-appropriate
      * conventions related to citation metadata.
      */
-    case Cite = '<cite>';
+    case Cite = 'cite';
 
     /**
      * The <code> HTML element displays its contents styled in a fashion
@@ -301,14 +331,14 @@ enum Tag: string
      * By default, the content text is displayed using the user agent default
      * monospace font.
      */
-    case Code = '<code>';
+    case Code = 'code';
 
     /**
      * The <data> HTML element links a given piece of content with a
      * machine-readable translation. If the content is time- or date-related,
      * the time element must be used.
      */
-    case Data = '<data>';
+    case Data = 'data';
 
     /**
      * The <dfn> HTML element is used to indicate the term being defined within
@@ -316,14 +346,14 @@ enum Tag: string
      * pairing, or the section element which is the nearest ancestor of the
      * <dfn> is considered to be the definition of the term.
      */
-    case Dfn = '<dfn>';
+    case Dfn = 'dfn';
 
     /**
      * The <em> HTML element marks text that has stress emphasis. The <em>
      * element can be nested, with each level of nesting indicating a greater
      * degree of emphasis.
      */
-    case Em = '<em>';
+    case Em = 'em';
 
     /**
      * The <i> HTML element represents a range of text that is set off from the
@@ -332,7 +362,7 @@ enum Tag: string
      * presented using italicized type, which is the original source of the <i>
      * naming of this element.
      */
-    case I = '<i>';
+    case I = 'i';
 
     /**
      * The <kbd> HTML element represents a span of inline text denoting textual
@@ -341,14 +371,14 @@ enum Tag: string
      * <kbd> element using its default monospace font, although this is not
      * mandated by the HTML standard.
      */
-    case Kbd = '<kbd>';
+    case Kbd = 'kbd';
 
     /**
      * The <mark> HTML element represents text which is marked or highlighted
      * for reference or notation purposes, due to the marked passage's
      * relevance or importance in the enclosing context.
      */
-    case Mark = '<mark>';
+    case Mark = 'mark';
 
     /**
      * The <q> HTML element indicates that the enclosed text is a short inline
@@ -357,7 +387,7 @@ enum Tag: string
      * don't require paragraph breaks; for long quotations use the blockquote
      * element.
      */
-    case Q = '<q>';
+    case Q = 'q';
 
     /**
      * The <rp> HTML element is used to provide fall-back parentheses for
@@ -366,7 +396,7 @@ enum Tag: string
      * parentheses that wrap the rt element that contains the annotation's
      * text.
      */
-    case Rp = '<rp>';
+    case Rp = 'rp';
 
     /**
      * The <rt> HTML element specifies the ruby text component of a ruby
@@ -374,7 +404,7 @@ enum Tag: string
      * transliteration information for East Asian typography. The <rt> element
      * must always be contained within a ruby element.
      */
-    case Rt = '<rt>';
+    case Rt = 'rt';
 
     /**
      * The <ruby> HTML element represents small annotations that are rendered
@@ -382,7 +412,7 @@ enum Tag: string
      * pronunciation of East Asian characters. It can also be used for
      * annotating other kinds of text, but this usage is less common.
      */
-    case Ruby = '<ruby>';
+    case Ruby = 'ruby';
 
     /**
      * The <s> HTML element renders text with a strikethrough, or a line
@@ -391,7 +421,7 @@ enum Tag: string
      * indicating document edits; for that, use the del and ins elements, as
      * appropriate.
      */
-    case S = '<s>';
+    case S = 's';
 
     /**
      * The <samp> HTML element is used to enclose inline text which represents
@@ -399,7 +429,7 @@ enum Tag: string
      * typically rendered using the browser's default monospaced font (such as
      * Courier or Lucida Console).
      */
-    case Samp = '<samp>';
+    case Samp = 'samp';
 
     /**
      * The <small> HTML element represents side-comments and small print, like
@@ -407,7 +437,7 @@ enum Tag: string
      * default, it renders text within it one font-size smaller, such as from
      * small to x-small.
      */
-    case Small = '<small>';
+    case Small = 'small';
 
     /**
      * The <span> HTML element is a generic inline container for phrasing
@@ -418,28 +448,28 @@ enum Tag: string
      * like a div element, but div is a block-level element whereas a
      * <span> is an inline element.
      */
-    case Span = '<span>';
+    case Span = 'span';
 
     /**
      * The <strong> HTML element indicates that its contents have strong
      * importance, seriousness, or urgency. Browsers typically render the
      * contents in bold type.
      */
-    case Strong = '<strong>';
+    case Strong = 'strong';
 
     /**
      * The <sub> HTML element specifies inline text which should be displayed
      * as subscript for solely typographical reasons. Subscripts are typically
      * rendered with a lowered baseline using smaller text.
      */
-    case Sub = '<sub>';
+    case Sub = 'sub';
 
     /**
      * The <sup> HTML element specifies inline text which is to be displayed as
      * superscript for solely typographical reasons. Superscripts are usually
      * rendered with a raised baseline using smaller text.
      */
-    case Sup = '<sup>';
+    case Sup = 'sup';
 
     /**
      * The <time> HTML element represents a specific period in time. It may
@@ -447,7 +477,7 @@ enum Tag: string
      * format, allowing for better search engine results or custom features
      * such as reminders.
      */
-    case Time = '<time>';
+    case Time = 'time';
 
     /**
      * The <u> HTML element represents a span of inline text which should be
@@ -455,7 +485,7 @@ enum Tag: string
      * This is rendered by default as a simple solid underline, but may be
      * altered using CSS.
      */
-    case U = '<u>';
+    case U = 'u';
 
     /**
      * The <var> HTML element represents the name of a variable in a
@@ -463,21 +493,21 @@ enum Tag: string
      * presented using an italicized version of the current typeface, although
      * that behavior is browser-dependent.
      */
-    case Var = '<var>';
+    case Var = 'var';
 
     /**
      * The <wbr> HTML element represents a word break opportunity—a position
      * within text where the browser may optionally break a line, though its
      * line-breaking rules would not otherwise create a break at that location.
      */
-    case Wbr = '<wbr>';
+    case Wbr = 'wbr';
 
     /**
      * The <area> HTML element defines an area inside an image map that has
      * predefined clickable areas. An image map allows geometric areas on an
      * image to be associated with Hyperlink.
      */
-    case Area = '<area>';
+    case Area = 'area';
 
     /**
      * The <audio> HTML element is used to embed sound content in documents. It
@@ -486,18 +516,18 @@ enum Tag: string
      * suitable one. It can also be the destination for streamed media, using a
      * MediaStream.
      */
-    case Audio = '<audio>';
+    case Audio = 'audio';
 
     /**
      * The <img> HTML element embeds an image into the document.
      */
-    case Img = '<img>';
+    case Img = 'img';
 
     /**
      * The <map> HTML element is used with area elements to define an image map
      * (a clickable link area).
      */
-    case Map = '<map>';
+    case Map = 'map';
 
     /**
      * The <track> HTML element is used as a child of the media elements, audio
@@ -505,49 +535,49 @@ enum Tag: string
      * for example to automatically handle subtitles. The tracks are formatted
      * in WebVTT format (.vtt files) — Web Video Text Tracks.
      */
-    case Track = '<track>';
+    case Track = 'track';
 
     /**
      * The <video> HTML element embeds a media player which supports video
-     * playback into the document. You can use <video> for audio content as
+     * playback into the document. You can use video> for audio content as
      * well, but the audio element may provide a more appropriate user
      * experience.
      */
-    case Video = '<video>';
+    case Video = 'video';
 
     /**
      * The <embed> HTML element embeds external content at the specified point
      * in the document. This content is provided by an external application or
      * other source of interactive content such as a browser plug-in.
      */
-    case Embed = '<embed>';
+    case Embed = 'embed';
 
     /**
      * The <iframe> HTML element represents a nested browsing context,
      * embedding another HTML page into the current one.
      */
-    case Iframe = '<iframe>';
+    case Iframe = 'iframe';
 
     /**
      * The <object> HTML element represents an external resource, which can be
      * treated as an image, a nested browsing context, or a resource to be
      * handled by a plugin.
      */
-    case Object = '<object>';
+    case Object = 'object';
 
     /**
      * The <picture> HTML element contains zero or more source elements and one
      * img element to offer alternative versions of an image for different
      * display/device scenarios.
      */
-    case Picture = '<picture>';
+    case Picture = 'picture';
 
     /**
      * The <portal> HTML element enables the embedding of another HTML page
      * into the current one for the purposes of allowing smoother navigation
      * into new pages.
      */
-    case Portal = '<portal>';
+    case Portal = 'portal';
 
     /**
      * The <source> HTML element specifies multiple media resources for the
@@ -558,20 +588,20 @@ enum Tag: string
      * given their differing support for image file formats and media file
      * formats.
      */
-    case Source = '<source>';
+    case Source = 'source';
 
     /**
      * Use the HTML <canvas> element with either the canvas scripting API or
      * the WebGL API to draw graphics and animations.
      */
-    case Canvas = '<canvas>';
+    case Canvas = 'canvas';
 
     /**
      * The <noscript> HTML element defines a section of HTML to be inserted if
      * a script type on the page is unsupported or if scripting is currently
      * turned off in the browser.
      */
-    case Noscript = '<noscript>';
+    case Noscript = 'noscript';
 
     /**
      * The <script> HTML element is used to embed executable code or data; this
@@ -579,7 +609,7 @@ enum Tag: string
      * element can also be used with other languages, such as WebGL's GLSL
      * shader programming language and JSON.
      */
-    case Script = '<script>';
+    case Script = 'script';
 
     /**
      * The <del> HTML element represents a range of text that has been deleted
@@ -588,76 +618,76 @@ enum Tag: string
      * for the opposite purpose: to indicate text that has been added to the
      * document.
      */
-    case Del = '<del>';
+    case Del = 'del';
 
     /**
      * The <ins> HTML element represents a range of text that has been added to
      * a document. You can use the del element to similarly represent a range
      * of text that has been deleted from the document.
      */
-    case Ins = '<ins>';
+    case Ins = 'ins';
 
     /**
      * The <caption> HTML element specifies the caption (or title) of a table.
      */
-    case Caption = '<caption>';
+    case Caption = 'caption';
 
     /**
      * The <col> HTML element defines a column within a table and is used for
      * defining common semantics on all common cells. It is generally found
      * within a colgroup element.
      */
-    case Col = '<col>';
+    case Col = 'col';
 
     /**
      * The <colgroup> HTML element defines a group of columns within a table.
      */
-    case Colgroup = '<colgroup>';
+    case Colgroup = 'colgroup';
 
     /**
      * The <table> HTML element represents tabular data — that is, information
      * presented in a two-dimensional table comprised of rows and columns of
      * cells containing data.
      */
-    case Table = '<table>';
+    case Table = 'table';
 
     /**
      * The <tbody> HTML element encapsulates a set of table rows (tr elements),
      * indicating that they comprise the body of the table (table).
      */
-    case Tbody = '<tbody>';
+    case Tbody = 'tbody';
 
     /**
      * The <td> HTML element defines a cell of a table that contains data. It
      * participates in the table model.
      */
-    case Td = '<td>';
+    case Td = 'td';
 
     /**
      * The <tfoot> HTML element defines a set of rows summarizing the columns
      * of the table.
      */
-    case Tfoot = '<tfoot>';
+    case Tfoot = 'tfoot';
 
     /**
      * The <th> HTML element defines a cell as header of a group of table
      * cells. The exact nature of this group is defined by the scope and
      * headers attributes.
      */
-    case Th = '<th>';
+    case Th = 'th';
 
     /**
      * The <thead> HTML element defines a set of rows defining the head of the
      * columns of the table.
      */
-    case Thead = '<thead>';
+    case Thead = 'thead';
 
     /**
      * The <tr> HTML element defines a row of cells in a table. The row's cells
      * can then be established using a mix of td (data cell) and th (header
      * cell) elements.
      */
-    case Tr = '<tr>';
+    case Tr = 'tr';
 
     /**
      * The <button> HTML element is an interactive element activated by a user
@@ -665,26 +695,26 @@ enum Tag: string
      * technology. Once activated, it then performs a programmable action, such
      * as submitting a form or opening a dialog.
      */
-    case Button = '<button>';
+    case Button = 'button';
 
     /**
      * The <datalist> HTML element contains a set of option elements that
      * represent the permissible or recommended options available to choose
      * from within other controls.
      */
-    case Datalist = '<datalist>';
+    case Datalist = 'datalist';
 
     /**
      * The <fieldset> HTML element is used to group several controls as well as
      * labels (label) within a web form.
      */
-    case Fieldset = '<fieldset>';
+    case Fieldset = 'fieldset';
 
     /**
      * The <form> HTML element represents a document section containing
      * interactive controls for submitting information.
      */
-    case Form = '<form>';
+    case Form = 'form';
 
     /**
      * The <input> HTML element is used to create interactive controls for
@@ -694,31 +724,31 @@ enum Tag: string
      * and complex in all of HTML due to the sheer number of combinations of
      * input types and attributes.
      */
-    case Input = '<input>';
+    case Input = 'input';
 
     /**
      * The <label> HTML element represents a caption for an item in a user
      * interface.
      */
-    case Label = '<label>';
+    case Label = 'label';
 
     /**
      * The <legend> HTML element represents a caption for the content of its
      * parent fieldset.
      */
-    case Legend = '<legend>';
+    case Legend = 'legend';
 
     /**
      * The <meter> HTML element represents either a scalar value within a known
      * range or a fractional value.
      */
-    case Meter = '<meter>';
+    case Meter = 'meter';
 
     /**
      * The <optgroup> HTML element creates a grouping of options within a
      * select element.
      */
-    case Optgroup = '<optgroup>';
+    case Optgroup = 'optgroup';
 
     /**
      * The <option> HTML element is used to define an item contained in a
@@ -726,53 +756,53 @@ enum Tag: string
      * represent menu items in popups and other lists of items in an HTML
      * document.
      */
-    case Option = '<option>';
+    case Option = 'option';
 
     /**
      * The <output> HTML element is a container element into which a site or
      * app can inject the results of a calculation or the outcome of a user
      * action.
      */
-    case Output = '<output>';
+    case Output = 'output';
 
     /**
      * The <progress> HTML element displays an indicator showing the completion
      * progress of a task, typically displayed as a progress bar.
      */
-    case Progress = '<progress>';
+    case Progress = 'progress';
 
     /**
      * The <select> HTML element represents a control that provides a menu of
      * options.
      */
-    case Select = '<select>';
+    case Select = 'select';
 
     /**
      * The <textarea> HTML element represents a multi-line plain-text editing
      * control, useful when you want to allow users to enter a sizeable amount
      * of free-form text, for example a comment on a review or feedback form.
      */
-    case Textarea = '<textarea>';
+    case Textarea = 'textarea';
 
     /**
      * The <details> HTML element creates a disclosure widget in which
      * information is visible only when the widget is toggled into an "open"
      * state. A summary or label must be provided using the summary element.
      */
-    case Details = '<details>';
+    case Details = 'details';
 
     /**
      * The <dialog> HTML element represents a dialog box or other interactive
      * component, such as a dismissible alert, inspector, or subwindow.
      */
-    case Dialog = '<dialog>';
+    case Dialog = 'dialog';
 
     /**
      * The <summary> HTML element specifies a summary, caption, or legend for a
      * details element's disclosure box. Clicking the <summary> element toggles
      * the state of the parent <details> element open and closed.
      */
-    case Summary = '<summary>';
+    case Summary = 'summary';
 
     /**
      * The <slot> HTML element—part of the Web Components technology suite—is a
@@ -780,14 +810,14 @@ enum Tag: string
      * markup, which lets you create separate DOM trees and present them
      * together.
      */
-    case Slot = '<slot>';
+    case Slot = 'slot';
 
     /**
      * The <template> HTML element is a mechanism for holding HTML that is not
      * to be rendered immediately when a page is loaded but may be instantiated
      * subsequently during runtime using JavaScript.
      */
-    case Template = '<template>';
+    case Template = 'template';
 
     public function isSelfClosing(): bool
     {
