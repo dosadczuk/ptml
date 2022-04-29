@@ -24,7 +24,8 @@ enum Attr: string implements AttrInterface
     case Accesskey = 'accesskey';
 
     /**
-     * The URI of a program that processes the information submitted via the form.
+     * The URI of a program that processes the information submitted via the
+     * form.
      */
     case Action = 'action';
 
@@ -54,7 +55,8 @@ enum Attr: string implements AttrInterface
     case Autocapitalize = 'autocapitalize';
 
     /**
-     * Indicates whether controls in this form can by default have their values automatically completed by the browser.
+     * Indicates whether controls in this form can by default have their values
+     * automatically completed by the browser.
      */
     case Autocomplete = 'autocomplete';
 
@@ -74,7 +76,8 @@ enum Attr: string implements AttrInterface
     case Buffered = 'buffered';
 
     /**
-     * From the Media Capture specification, specifies a new file can be captured.
+     * From the Media Capture specification, specifies a new file can be
+     * captured.
      */
     case Capture = 'capture';
 
@@ -119,7 +122,8 @@ enum Attr: string implements AttrInterface
     case Contenteditable = 'contenteditable';
 
     /**
-     * Defines the ID of a <menu> element which will serve as the element's context menu.
+     * Defines the ID of a <menu> element which will serve as the element's
+     * context menu.
      */
     case Contextmenu = 'contextmenu';
 
@@ -139,7 +143,8 @@ enum Attr: string implements AttrInterface
     case Crossorigin = 'crossorigin';
 
     /**
-     * Specifies the Content Security Policy that an embedded document must agree to enforce upon itself.
+     * Specifies the Content Security Policy that an embedded document must
+     * agree to enforce upon itself.
      */
     case Csp = 'csp';
 
@@ -159,17 +164,20 @@ enum Attr: string implements AttrInterface
     case Decoding = 'decoding';
 
     /**
-     * Indicates that the track should be enabled unless the user's preferences indicate something different.
+     * Indicates that the track should be enabled unless the user's preferences
+     * indicate something different.
      */
     case Default = 'default';
 
     /**
-     * Indicates that the script should be executed after the page has been parsed.
+     * Indicates that the script should be executed after the page has been
+     * parsed.
      */
     case Defer = 'defer';
 
     /**
-     * Defines the text direction. Allowed values are ltr (Left-To-Right) or rtl (Right-To-Left)
+     * Defines the text direction. Allowed values are ltr (Left-To-Right) or
+     * rtl (Right-To-Left)
      */
     case Dir = 'dir';
 
@@ -199,7 +207,10 @@ enum Attr: string implements AttrInterface
     case Enctype = 'enctype';
 
     /**
-     * The enterkeyhint specifies what action label (or icon) to present for the enter key on virtual keyboards. The attribute can be used with form controls (such as the value of textarea elements), or in elements in an editing host (e.g., using contenteditable attribute).
+     * The enterkeyhint specifies what action label (or icon) to present for
+     * the enter key on virtual keyboards. The attribute can be used with form
+     * controls (such as the value of textarea elements), or in elements in an
+     * editing host (e.g., using contenteditable attribute).
      */
     case Enterkeyhint = 'enterkeyhint';
 
@@ -214,27 +225,41 @@ enum Attr: string implements AttrInterface
     case Form = 'form';
 
     /**
-     * Indicates the action of the element, overriding the action defined in the <form>.
+     * Indicates the action of the element, overriding the action defined in
+     * the <form>.
      */
     case Formaction = 'formaction';
 
     /**
-     * If the button/input is a submit button (type="submit"), this attribute sets the encoding type to use during form submission. If this attribute is specified, it overrides the enctype attribute of the button's form owner.
+     * If the button/input is a submit button (type="submit"), this attribute
+     * sets the encoding type to use during form submission. If this attribute
+     * is specified, it overrides the enctype attribute of the button's form
+     * owner.
      */
     case Formenctype = 'formenctype';
 
     /**
-     * If the button/input is a submit button (type="submit"), this attribute sets the submission method to use during form submission (GET, POST, etc.). If this attribute is specified, it overrides the method attribute of the button's form owner.
+     * If the button/input is a submit button (type="submit"), this attribute
+     * sets the submission method to use during form submission (GET, POST,
+     * etc.). If this attribute is specified, it overrides the method attribute
+     * of the button's form owner.
      */
     case Formmethod = 'formmethod';
 
     /**
-     * If the button/input is a submit button (type="submit"), this boolean attribute specifies that the form is not to be validated when it is submitted. If this attribute is specified, it overrides the novalidate attribute of the button's form owner.
+     * If the button/input is a submit button (type="submit"), this boolean
+     * attribute specifies that the form is not to be validated when it is
+     * submitted. If this attribute is specified, it overrides the novalidate
+     * attribute of the button's form owner.
      */
     case Formnovalidate = 'formnovalidate';
 
     /**
-     * If the button/input is a submit button (type="submit"), this attribute specifies the browsing context (for example, tab, window, or inline frame) in which to display the response that is received after submitting the form. If this attribute is specified, it overrides the target attribute of the button's form owner.
+     * If the button/input is a submit button (type="submit"), this attribute
+     * specifies the browsing context (for example, tab, window, or inline
+     * frame) in which to display the response that is received after
+     * submitting the form. If this attribute is specified, it overrides the
+     * target attribute of the button's form owner.
      */
     case Formtarget = 'formtarget';
 
@@ -244,7 +269,8 @@ enum Attr: string implements AttrInterface
     case Headers = 'headers';
 
     /**
-     * Prevents rendering of given element, while keeping child elements, e.g. script elements, active.
+     * Prevents rendering of given element, while keeping child elements, e.g.
+     * script elements, active.
      */
     case Hidden = 'hidden';
 
@@ -269,7 +295,8 @@ enum Attr: string implements AttrInterface
     case HttpEquiv = 'http-equiv';
 
     /**
-     * Often used with CSS to style a specific element. The value of this attribute must be unique.
+     * Often used with CSS to style a specific element. The value of this
+     * attribute must be unique.
      */
     case Id = 'id';
 
@@ -279,12 +306,16 @@ enum Attr: string implements AttrInterface
     case Importance = 'importance';
 
     /**
-     * Specifies a Subresource Integrity value that allows browsers to verify what they fetch.
+     * Specifies a Subresource Integrity value that allows browsers to verify
+     * what they fetch.
      */
     case Integrity = 'integrity';
 
     /**
-     * Provides a hint as to the type of data that might be entered by the user while editing the element or its contents. The attribute can be used with form controls (such as the value of textarea elements), or in elements in an editing host (e.g., using contenteditable attribute).
+     * Provides a hint as to the type of data that might be entered by the user
+     * while editing the element or its contents. The attribute can be used
+     * with form controls (such as the value of textarea elements), or in
+     * elements in an editing host (e.g., using contenteditable attribute).
      */
     case Inputmode = 'inputmode';
 
@@ -319,7 +350,8 @@ enum Attr: string implements AttrInterface
     case List = 'list';
 
     /**
-     * Indicates whether the media should start playing from the start when it's finished.
+     * Indicates whether the media should start playing from the start when
+     * it's finished.
      */
     case Loop = 'loop';
 
@@ -349,7 +381,8 @@ enum Attr: string implements AttrInterface
     case Media = 'media';
 
     /**
-     * Defines which HTTP method to use when submitting the form. Can be GET (default) or POST.
+     * Defines which HTTP method to use when submitting the form. Can be GET
+     * (default) or POST.
      */
     case Method = 'method';
 
@@ -359,7 +392,8 @@ enum Attr: string implements AttrInterface
     case Min = 'min';
 
     /**
-     * Indicates whether multiple values can be entered in an input of the type email or file.
+     * Indicates whether multiple values can be entered in an input of the type
+     * email or file.
      */
     case Multiple = 'multiple';
 
@@ -369,17 +403,21 @@ enum Attr: string implements AttrInterface
     case Muted = 'muted';
 
     /**
-     * Name of the element. For example used by the server to identify the fields in form submits.
+     * Name of the element. For example used by the server to identify the
+     * fields in form submits.
      */
     case Name = 'name';
 
     /**
-     * This attribute indicates that the form shouldn't be validated when submitted.
+     * This attribute indicates that the form shouldn't be validated when
+     * submitted.
      */
     case Novalidate = 'novalidate';
 
     /**
-     * Indicates whether the contents are currently visible (in the case of a <details> element) or whether the dialog is active and can be interacted with (in the case of a <dialog> element).
+     * Indicates whether the contents are currently visible (in the case of a
+     * <details> element) or whether the dialog is active and can be interacted
+     * with (in the case of a <dialog> element).
      */
     case Open = 'open';
 
@@ -389,12 +427,14 @@ enum Attr: string implements AttrInterface
     case Optimum = 'optimum';
 
     /**
-     * Defines a regular expression which the element's value will be validated against.
+     * Defines a regular expression which the element's value will be validated
+     * against.
      */
     case Pattern = 'pattern';
 
     /**
-     * The ping attribute specifies a space-separated list of URLs to be notified if a user follows the hyperlink.
+     * The ping attribute specifies a space-separated list of URLs to be
+     * notified if a user follows the hyperlink.
      */
     case Ping = 'ping';
 
@@ -409,7 +449,8 @@ enum Attr: string implements AttrInterface
     case Poster = 'poster';
 
     /**
-     * Indicates whether the whole resource, parts of it or nothing should be preloaded.
+     * Indicates whether the whole resource, parts of it or nothing should be
+     * preloaded.
      */
     case Preload = 'preload';
 
@@ -434,12 +475,14 @@ enum Attr: string implements AttrInterface
     case Required = 'required';
 
     /**
-     * Indicates whether the list should be displayed in a descending order instead of a ascending.
+     * Indicates whether the list should be displayed in a descending order
+     * instead of a ascending.
      */
     case Reversed = 'reversed';
 
     /**
-     * Defines an explicit role for an element for use by assistive technologies.
+     * Defines an explicit role for an element for use by assistive
+     * technologies.
      */
     case Role = 'role';
 
@@ -454,12 +497,14 @@ enum Attr: string implements AttrInterface
     case Rowspan = 'rowspan';
 
     /**
-     * Stops a document loaded in an iframe from using certain features (such as submitting forms or opening new windows).
+     * Stops a document loaded in an iframe from using certain features (such
+     * as submitting forms or opening new windows).
      */
     case Sandbox = 'sandbox';
 
     /**
-     * Defines the cells that the header test (defined in the th element) relates to.
+     * Defines the cells that the header test (defined in the th element)
+     * relates to.
      */
     case Scope = 'scope';
 
@@ -474,7 +519,8 @@ enum Attr: string implements AttrInterface
     case Shape = 'shape';
 
     /**
-     * Defines the width of the element (in pixels). If the element's type attribute is text or password then it's the number of characters.
+     * Defines the width of the element (in pixels). If the element's type
+     * attribute is text or password then it's the number of characters.
      */
     case Size = 'size';
 
@@ -509,7 +555,8 @@ enum Attr: string implements AttrInterface
     case Srcdoc = 'srcdoc';
 
     /**
-     * Specifies the language of the track text data (required if kind="subtitles").
+     * Specifies the language of the track text data (required if
+     * kind="subtitles").
      */
     case Srclang = 'srclang';
 
@@ -534,12 +581,15 @@ enum Attr: string implements AttrInterface
     case Style = 'style';
 
     /**
-     * Overrides the browser's default tab order and follows the one specified instead.
+     * Overrides the browser's default tab order and follows the one specified
+     * instead.
      */
     case Tabindex = 'tabindex';
 
     /**
-     * Specifies where to open the linked document (in the case of an <a> element) or where to display the response received (in the case of a <form> element)
+     * Specifies where to open the linked document (in the case of an <a>
+     * element) or where to display the response received (in the case of a
+     * <form> element)
      */
     case Target = 'target';
 
@@ -549,7 +599,9 @@ enum Attr: string implements AttrInterface
     case Title = 'title';
 
     /**
-     * Specify whether an element's attribute values and the values of its Text node children are to be translated when the page is localized, or whether to leave them unchanged.
+     * Specify whether an element's attribute values and the values of its Text
+     * node children are to be translated when the page is localized, or
+     * whether to leave them unchanged.
      */
     case Translate = 'translate';
 
@@ -564,12 +616,15 @@ enum Attr: string implements AttrInterface
     case Usemap = 'usemap';
 
     /**
-     * Defines a default value which will be displayed in the element on page load.
+     * Defines a default value which will be displayed in the element on page
+     * load.
      */
     case Value = 'value';
 
     /**
-     * For the elements listed here, this establishes the element's width. Note: For all other instances, such as <div>, this is a legacy attribute, in which case the CSS width property should be used instead.
+     * For the elements listed here, this establishes the element's width.
+     * Note: For all other instances, such as <div>, this is a legacy
+     * attribute, in which case the CSS width property should be used instead.
      */
     case Width = 'width';
 
