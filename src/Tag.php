@@ -9,739 +9,535 @@ namespace PTML;
 enum Tag: string
 {
     /**
-     * Defines a hyperlink.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+     * The <html> HTML element represents the root (top-level element) of an HTML document, so it is also referred to as the root element. All other elements must be descendants of this element.
      */
-    case A = 'a';
+    case Html = '<html>';
 
     /**
-     * Defines an abbreviation or an acronym.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr
+     * The <base> HTML element specifies the base URL to use for all relative URLs in a document. There can be only one <base> element in a document.
      */
-    case Abbr = 'abbr';
+    case Base = '<base>';
 
     /**
-     * Defines contact information for the author/owner of a document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address
+     * The <head> HTML element contains machine-readable information (metadata) about the document, like its title, scripts, and style sheets.
      */
-    case Address = 'address';
+    case Head = '<head>';
 
     /**
-     * Defines an area inside an image map.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area
+     * The <link> HTML element specifies relationships between the current document and an external resource.
+     * This element is most commonly used to link to CSS, but is also used to establish site icons (both "favicon" style icons and icons for the home screen and apps on mobile devices) among other things.
      */
-    case Area = 'area';
+    case Link = '<link>';
 
     /**
-     * Defines an article.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
+     * The <meta> HTML element represents Metadata that cannot be represented by other HTML meta-related elements, like base, link, script, style or title.
      */
-    case Article = 'article';
+    case Meta = '<meta>';
 
     /**
-     * Defines content aside from the page content.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside
+     * The <style> HTML element contains style information for a document, or part of a document. It contains CSS, which is applied to the contents of the document containing the <style> element.
      */
-    case Aside = 'aside';
+    case Style = '<style>';
 
     /**
-     * Defines embedded sound content.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+     * The <title> HTML element defines the document's title that is shown in a Browser's title bar or a page's tab. It only contains text; tags within the element are ignored.
      */
-    case Audio = 'audio';
+    case Title = '<title>';
 
     /**
-     * Defines bold text.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b
+     * The <body> HTML element represents the content of an HTML document. There can be only one <body> element in a document.
      */
-    case B = 'b';
+    case Body = '<body>';
 
     /**
-     * Specifies the base URL/target for all relative URLs in a document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+     * The <address> HTML element indicates that the enclosed HTML provides contact information for a person or people, or for an organization.
      */
-    case Base = 'base';
+    case Address = '<address>';
 
     /**
-     * Isolates a part of text that might be formatted in a different direction from other text outside it.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi
+     * The <article> HTML element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication). Examples include: a forum post, a magazine or newspaper article, or a blog entry, a product card, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.
      */
-    case Bdi = 'bdi';
+    case Article = '<article>';
 
     /**
-     * Overrides the current text direction.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdo
+     * The <aside> HTML element represents a portion of a document whose content is only indirectly related to the document's main content. Asides are frequently presented as sidebars or call-out boxes.
      */
-    case Bdo = 'bdo';
+    case Aside = '<aside>';
 
     /**
-     * Defines a section that is quoted from another source.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote
+     * The <footer> HTML element represents a footer for its nearest ancestor sectioning content or sectioning root element. A <footer> typically contains information about the author of the section, copyright data or links to related documents.
      */
-    case Blockquote = 'blockquote';
+    case Footer = '<footer>';
 
     /**
-     * Defines the document's body.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body
+     * The <header> HTML element represents introductory content, typically a group of introductory or navigational aids. It may contain some heading elements but also a logo, a search form, an author name, and other elements.
      */
-    case Body = 'body';
+    case Header = '<header>';
 
     /**
-     * Defines a single line break.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br
+     * The <h1> to <h6> HTML elements represent six levels of section headings. <h1> is the highest section level and <h6> is the lowest.
      */
-    case Br = 'br';
+    case H1 = '<h1>';
 
     /**
-     * Defines a clickable button.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+     * The <main> HTML element represents the dominant content of the body of a document. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application.
      */
-    case Button = 'button';
+    case Main = '<main>';
 
     /**
-     * Used to draw graphics, on the fly, via scripting (usually JavaScript).
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas
+     * The <nav> HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents. Common examples of navigation sections are menus, tables of contents, and indexes.
      */
-    case Canvas = 'canvas';
+    case Nav = '<nav>';
 
     /**
-     * Defines a table caption.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption
+     * The <section> HTML element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.
      */
-    case Caption = 'caption';
+    case Section = '<section>';
 
     /**
-     * Defines the title of a work.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite
+     * The <blockquote> HTML element indicates that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation (see Notes for how to change it). A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the cite element.
      */
-    case Cite = 'cite';
+    case Blockquote = '<blockquote>';
 
     /**
-     * Defines a piece of computer code.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code
+     * The <dd> HTML element provides the description, definition, or value for the preceding term (dt) in a description list (dl).
      */
-    case Code = 'code';
+    case Dd = '<dd>';
 
     /**
-     * Specifies column properties for each column within a <colgroup> element.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col
+     * The <div> HTML element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g. styling is directly applied to it, or some kind of layout model like Flexbox is applied to its parent element).
      */
-    case Col = 'col';
+    case Div = '<div>';
 
     /**
-     * Specifies a group of one or more columns in a table for formatting.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup
+     * The <dl> HTML element represents a description list. The element encloses a list of groups of terms (specified using the dt element) and descriptions (provided by dd elements). Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).
      */
-    case Colgroup = 'colgroup';
+    case Dl = '<dl>';
 
     /**
-     * Adds a machine-readable translation of a given content.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data
+     * The <dt> HTML element specifies a term in a description or definition list, and as such must be used inside a dl element. It is usually followed by a dd element; however, multiple <dt> elements in a row indicate several terms that are all defined by the immediate next dd element.
      */
-    case Data = 'data';
+    case Dt = '<dt>';
 
     /**
-     * Specifies a list of pre-defined options for input controls.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist
+     * The <figcaption> HTML element represents a caption or legend describing the rest of the contents of its parent figure element.
      */
-    case Datalist = 'datalist';
+    case Figcaption = '<figcaption>';
 
     /**
-     * Defines a description/value of a term in a description list.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd
+     * The <figure> HTML element represents self-contained content, potentially with an optional caption, which is specified using the figcaption element. The figure, its caption, and its contents are referenced as a single unit.
      */
-    case Dd = 'dd';
+    case Figure = '<figure>';
 
     /**
-     * Defines text that has been deleted from a document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del
+     * The <hr> HTML element represents a thematic break between paragraph-level elements: for example, a change of scene in a story, or a shift of topic within a section.
      */
-    case Del = 'del';
+    case Hr = '<hr>';
 
     /**
-     * Defines additional details that the user can view or hide.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+     * The <li> HTML element is used to represent an item in a list. It must be contained in a parent element: an ordered list (ol), an unordered list (ul), or a menu (menu). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.
      */
-    case Details = 'details';
+    case Li = '<li>';
 
     /**
-     * Specifies a term that is going to be defined within the content.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn
+     * The <menu> HTML element is a semantic alternative to ul. It represents an unordered list of items (represented by li elements), each of which represents a link or other command that the user can activate.
      */
-    case Dfn = 'dfn';
+    case Menu = '<menu>';
 
     /**
-     * Defines a dialog box or window.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+     * The <ol> HTML element represents an ordered list of items — typically rendered as a numbered list.
      */
-    case Dialog = 'dialog';
+    case Ol = '<ol>';
 
     /**
-     * Defines a section in a document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
+     * The <p> HTML element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.
      */
-    case Div = 'div';
+    case P = '<p>';
 
     /**
-     * Defines a description list.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl
+     * The <pre> HTML element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or monospaced, font. Whitespace inside this element is displayed as written.
      */
-    case Dl = 'dl';
+    case Pre = '<pre>';
 
     /**
-     * Defines a term/name in a description list.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt
+     * The <ul> HTML element represents an unordered list of items, typically rendered as a bulleted list.
      */
-    case Dt = 'dt';
+    case Ul = '<ul>';
 
     /**
-     * Defines emphasized text.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em
+     * The <a> HTML element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address.
      */
-    case Em = 'em';
+    case A = '<a>';
 
     /**
-     * Defines a container for an external application.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed
+     * The <abbr> HTML element represents an abbreviation or acronym; the optional title attribute can provide an expansion or description for the abbreviation. If present, title must contain this full description and nothing else.
      */
-    case Embed = 'embed';
+    case Abbr = '<abbr>';
 
     /**
-     * Groups related elements in a form.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+     * The <b> HTML element is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the Boldface element, and most browsers still draw the text in boldface. However, you should not use <b> for styling text; instead, you should use the CSS font-weight property to create boldface text, or the strong element to indicate that text is of special importance.
      */
-    case Fieldset = 'fieldset';
+    case B = '<b>';
 
     /**
-     * Defines a caption for a <figure> element.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption
+     * The <bdi> HTML element tells the browser's bidirectional algorithm to treat the text it contains in isolation from its surrounding text. It's particularly useful when a website dynamically inserts some text and doesn't know the directionality of the text being inserted.
      */
-    case Figcaption = 'figcaption';
+    case Bdi = '<bdi>';
 
     /**
-     * Specifies self-contained content.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
+     * The <bdo> HTML element overrides the current directionality of text, so that the text within is rendered in a different direction.
      */
-    case Figure = 'figure';
+    case Bdo = '<bdo>';
 
     /**
-     * Defines a footer for a document or section.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer
+     * The <br> HTML element produces a line break in text (carriage-return). It is useful for writing a poem or an address, where the division of lines is significant.
      */
-    case Footer = 'footer';
+    case Br = '<br>';
 
     /**
-     * Defines an HTML form for user input.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+     * The <cite> HTML element is used to describe a reference to a cited creative work, and must include the title of that work. The reference may be in an abbreviated form according to context-appropriate conventions related to citation metadata.
      */
-    case Form = 'form';
+    case Cite = '<cite>';
 
     /**
-     *  Defines HTML headings.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1 to h6
+     * The <code> HTML element displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code. By default, the content text is displayed using the user agent default monospace font.
      */
-    case H1ToH6 = 'h1 to h6';
+    case Code = '<code>';
 
     /**
-     * Contains metadata/information for the document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head
+     * The <data> HTML element links a given piece of content with a machine-readable translation. If the content is time- or date-related, the time element must be used.
      */
-    case Head = 'head';
+    case Data = '<data>';
 
     /**
-     * Defines a header for a document or section.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
+     * The <dfn> HTML element is used to indicate the term being defined within the context of a definition phrase or sentence. The p element, the dt/dd pairing, or the section element which is the nearest ancestor of the <dfn> is considered to be the definition of the term.
      */
-    case Header = 'header';
+    case Dfn = '<dfn>';
 
     /**
-     *  Defines a thematic change in the content.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
+     * The <em> HTML element marks text that has stress emphasis. The <em> element can be nested, with each level of nesting indicating a greater degree of emphasis.
      */
-    case Hr = 'hr';
+    case Em = '<em>';
 
     /**
-     * Defines the root of an HTML document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html
+     * The <i> HTML element represents a range of text that is set off from the normal text for some reason, such as idiomatic text, technical terms, taxonomical designations, among others. Historically, these have been presented using italicized type, which is the original source of the <i> naming of this element.
      */
-    case Html = 'html';
+    case I = '<i>';
 
     /**
-     * Defines a part of text in an alternate voice or mood.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i
+     * The <kbd> HTML element represents a span of inline text denoting textual user input from a keyboard, voice input, or any other text entry device. By convention, the user agent defaults to rendering the contents of a <kbd> element using its default monospace font, although this is not mandated by the HTML standard.
      */
-    case I = 'i';
+    case Kbd = '<kbd>';
 
     /**
-     * Defines an inline frame.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+     * The <mark> HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage's relevance or importance in the enclosing context.
      */
-    case Iframe = 'iframe';
+    case Mark = '<mark>';
 
     /**
-     * Defines an image.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
+     * The <q> HTML element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. This element is intended for short quotations that don't require paragraph breaks; for long quotations use the blockquote element.
      */
-    case Img = 'img';
+    case Q = '<q>';
 
     /**
-     * Defines an input control.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+     * The <rp> HTML element is used to provide fall-back parentheses for browsers that do not support display of ruby annotations using the ruby element. One <rp> element should enclose each of the opening and closing parentheses that wrap the rt element that contains the annotation's text.
      */
-    case Input = 'input';
+    case Rp = '<rp>';
 
     /**
-     * Defines a text that has been inserted into a document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins
+     * The <rt> HTML element specifies the ruby text component of a ruby annotation, which is used to provide pronunciation, translation, or transliteration information for East Asian typography. The <rt> element must always be contained within a ruby element.
      */
-    case Ins = 'ins';
+    case Rt = '<rt>';
 
     /**
-     * Defines keyboard input.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd
+     * The <ruby> HTML element represents small annotations that are rendered above, below, or next to base text, usually used for showing the pronunciation of East Asian characters. It can also be used for annotating other kinds of text, but this usage is less common.
      */
-    case Kbd = 'kbd';
+    case Ruby = '<ruby>';
 
     /**
-     * Defines a label for an <input> element.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
+     * The <s> HTML element renders text with a strikethrough, or a line through it. Use the <s> element to represent things that are no longer relevant or no longer accurate. However, <s> is not appropriate when indicating document edits; for that, use the del and ins elements, as appropriate.
      */
-    case Label = 'label';
+    case S = '<s>';
 
     /**
-     * Defines a caption for a <fieldset> element.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend
+     * The <samp> HTML element is used to enclose inline text which represents sample (or quoted) output from a computer program. Its contents are typically rendered using the browser's default monospaced font (such as Courier or Lucida Console).
      */
-    case Legend = 'legend';
+    case Samp = '<samp>';
 
     /**
-     * Defines a list item.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
+     * The <small> HTML element represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size smaller, such as from small to x-small.
      */
-    case Li = 'li';
+    case Small = '<small>';
 
     /**
-     * Defines the relationship between a document and an external resource (most used to link to style sheets).
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link
+     * The <span> HTML element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate. <span> is very much like a div element, but div is a block-level element whereas a <span> is an inline element.
      */
-    case Link = 'link';
+    case Span = '<span>';
 
     /**
-     * Specifies the main content of a document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main
+     * The <strong> HTML element indicates that its contents have strong importance, seriousness, or urgency. Browsers typically render the contents in bold type.
      */
-    case Main = 'main';
+    case Strong = '<strong>';
 
     /**
-     * Defines an image map.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map
+     * The <sub> HTML element specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.
      */
-    case Map = 'map';
+    case Sub = '<sub>';
 
     /**
-     * Defines marked/highlighted text.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark
+     * The <sup> HTML element specifies inline text which is to be displayed as superscript for solely typographical reasons. Superscripts are usually rendered with a raised baseline using smaller text.
      */
-    case Mark = 'mark';
+    case Sup = '<sup>';
 
     /**
-     * Defines metadata about an HTML document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+     * The <time> HTML element represents a specific period in time. It may include the datetime attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.
      */
-    case Meta = 'meta';
+    case Time = '<time>';
 
     /**
-     * Defines a scalar measurement within a known range (a gauge).
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter
+     * The <u> HTML element represents a span of inline text which should be rendered in a way that indicates that it has a non-textual annotation. This is rendered by default as a simple solid underline, but may be altered using CSS.
      */
-    case Meter = 'meter';
+    case U = '<u>';
 
     /**
-     * Defines navigation links.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
+     * The <var> HTML element represents the name of a variable in a mathematical expression or a programming context. It's typically presented using an italicized version of the current typeface, although that behavior is browser-dependent.
      */
-    case Nav = 'nav';
+    case Var = '<var>';
 
     /**
-     * Defines an alternate content for users that do not support client-side scripts.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript
+     * The <wbr> HTML element represents a word break opportunity—a position within text where the browser may optionally break a line, though its line-breaking rules would not otherwise create a break at that location.
      */
-    case Noscript = 'noscript';
+    case Wbr = '<wbr>';
 
     /**
-     * Defines a container for an external application.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object
+     * The <area> HTML element defines an area inside an image map that has predefined clickable areas. An image map allows geometric areas on an image to be associated with Hyperlink.
      */
-    case Object = 'object';
+    case Area = '<area>';
 
     /**
-     * Defines an ordered list.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol
+     * The <audio> HTML element is used to embed sound content in documents. It may contain one or more audio sources, represented using the src attribute or the source element: the browser will choose the most suitable one. It can also be the destination for streamed media, using a MediaStream.
      */
-    case Ol = 'ol';
+    case Audio = '<audio>';
 
     /**
-     * Defines a group of related options in a drop-down list.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup
+     * The <img> HTML element embeds an image into the document.
      */
-    case Optgroup = 'optgroup';
+    case Img = '<img>';
 
     /**
-     * Defines an option in a drop-down list.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option
+     * The <map> HTML element is used with area elements to define an image map (a clickable link area).
      */
-    case Option = 'option';
+    case Map = '<map>';
 
     /**
-     * Defines the result of a calculation.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output
+     * The <track> HTML element is used as a child of the media elements, audio and video. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks.
      */
-    case Output = 'output';
+    case Track = '<track>';
 
     /**
-     * Defines a paragraph.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p
+     * The <video> HTML element embeds a media player which supports video playback into the document. You can use <video> for audio content as well, but the audio element may provide a more appropriate user experience.
      */
-    case P = 'p';
+    case Video = '<video>';
 
     /**
-     * Defines a parameter for an object.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param
+     * The <embed> HTML element embeds external content at the specified point in the document. This content is provided by an external application or other source of interactive content such as a browser plug-in.
      */
-    case Param = 'param';
+    case Embed = '<embed>';
 
     /**
-     * Defines a container for multiple image resources.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture
+     * The <iframe> HTML element represents a nested browsing context, embedding another HTML page into the current one.
      */
-    case Picture = 'picture';
+    case Iframe = '<iframe>';
 
     /**
-     * Defines preformatted text.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre
+     * The <object> HTML element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.
      */
-    case Pre = 'pre';
+    case Object = '<object>';
 
     /**
-     * Represents the progress of a task.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress
+     * The <picture> HTML element contains zero or more source elements and one img element to offer alternative versions of an image for different display/device scenarios.
      */
-    case Progress = 'progress';
+    case Picture = '<picture>';
 
     /**
-     * Defines a short quotation.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q
+     * The <portal> HTML element enables the embedding of another HTML page into the current one for the purposes of allowing smoother navigation into new pages.
      */
-    case Q = 'q';
+    case Portal = '<portal>';
 
     /**
-     * Defines what to show in browsers that do not support ruby annotations.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rp
+     * The <source> HTML element specifies multiple media resources for the picture, the audio element, or the video element. It is an empty element, meaning that it has no content and does not have a closing tag. It is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
      */
-    case Rp = 'rp';
+    case Source = '<source>';
 
     /**
-     * Defines an explanation/pronunciation of characters (for East Asian typography).
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt
+     * Use the HTML <canvas> element with either the canvas scripting API or the WebGL API to draw graphics and animations.
      */
-    case Rt = 'rt';
+    case Canvas = '<canvas>';
 
     /**
-     * Defines a ruby annotation (for East Asian typography).
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby
+     * The <noscript> HTML element defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser.
      */
-    case Ruby = 'ruby';
+    case Noscript = '<noscript>';
 
     /**
-     * Defines text that is no longer correct.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s
+     * The <script> HTML element is used to embed executable code or data; this is typically used to embed or refer to JavaScript code. The <script> element can also be used with other languages, such as WebGL's GLSL shader programming language and JSON.
      */
-    case S = 's';
+    case Script = '<script>';
 
     /**
-     * Defines sample output from a computer program.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp
+     * The <del> HTML element represents a range of text that has been deleted from a document. This can be used when rendering "track changes" or source code diff information, for example. The ins element can be used for the opposite purpose: to indicate text that has been added to the document.
      */
-    case Samp = 'samp';
+    case Del = '<del>';
 
     /**
-     * Defines a client-side script.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
+     * The <ins> HTML element represents a range of text that has been added to a document. You can use the del element to similarly represent a range of text that has been deleted from the document.
      */
-    case Script = 'script';
+    case Ins = '<ins>';
 
     /**
-     * Defines a section in a document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section
+     * The <caption> HTML element specifies the caption (or title) of a table.
      */
-    case Section = 'section';
+    case Caption = '<caption>';
 
     /**
-     * Defines a drop-down list.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
+     * The <col> HTML element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a colgroup element.
      */
-    case Select = 'select';
+    case Col = '<col>';
 
     /**
-     * Defines smaller text.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small
+     * The <colgroup> HTML element defines a group of columns within a table.
      */
-    case Small = 'small';
+    case Colgroup = '<colgroup>';
 
     /**
-     * Defines multiple media resources for media elements (<video> and <audio>).
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source
+     * The <table> HTML element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
      */
-    case Source = 'source';
+    case Table = '<table>';
 
     /**
-     * Defines a section in a document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span
+     * The <tbody> HTML element encapsulates a set of table rows (tr elements), indicating that they comprise the body of the table (table).
      */
-    case Span = 'span';
+    case Tbody = '<tbody>';
 
     /**
-     * Defines important text.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong
+     * The <td> HTML element defines a cell of a table that contains data. It participates in the table model.
      */
-    case Strong = 'strong';
+    case Td = '<td>';
 
     /**
-     * Defines style information for a document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style
+     * The <tfoot> HTML element defines a set of rows summarizing the columns of the table.
      */
-    case Style = 'style';
+    case Tfoot = '<tfoot>';
 
     /**
-     * Defines sub-scripted text.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub
+     * The <th> HTML element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.
      */
-    case Sub = 'sub';
+    case Th = '<th>';
 
     /**
-     * Defines a visible heading for a <details> element.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary
+     * The <thead> HTML element defines a set of rows defining the head of the columns of the table.
      */
-    case Summary = 'summary';
+    case Thead = '<thead>';
 
     /**
-     * Defines superscripted text.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup
+     * The <tr> HTML element defines a row of cells in a table. The row's cells can then be established using a mix of td (data cell) and th (header cell) elements.
      */
-    case Sup = 'sup';
+    case Tr = '<tr>';
 
     /**
-     * Defines a container for SVG graphics.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/svg
+     * The <button> HTML element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology. Once activated, it then performs a programmable action, such as submitting a form or opening a dialog.
      */
-    case Svg = 'svg';
+    case Button = '<button>';
 
     /**
-     * Defines a table.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+     * The <datalist> HTML element contains a set of option elements that represent the permissible or recommended options available to choose from within other controls.
      */
-    case Table = 'table';
+    case Datalist = '<datalist>';
 
     /**
-     * Groups the body content in a table.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody
+     * The <fieldset> HTML element is used to group several controls as well as labels (label) within a web form.
      */
-    case Tbody = 'tbody';
+    case Fieldset = '<fieldset>';
 
     /**
-     * Defines a cell in a table.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td
+     * The <form> HTML element represents a document section containing interactive controls for submitting information.
      */
-    case Td = 'td';
+    case Form = '<form>';
 
     /**
-     * Defines a container for content that should be hidden when the page loads.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
+     * The <input> HTML element is used to create interactive controls for web-based forms in order to accept data from the user; a wide variety of types of input data and control widgets are available, depending on the device and user agent. The <input> element is one of the most powerful and complex in all of HTML due to the sheer number of combinations of input types and attributes.
      */
-    case Template = 'template';
+    case Input = '<input>';
 
     /**
-     * Defines a multiline input control (text area).
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea
+     * The <label> HTML element represents a caption for an item in a user interface.
      */
-    case Textarea = 'textarea';
+    case Label = '<label>';
 
     /**
-     * Groups the footer content in a table.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot
+     * The <legend> HTML element represents a caption for the content of its parent fieldset.
      */
-    case Tfoot = 'tfoot';
+    case Legend = '<legend>';
 
     /**
-     * Defines a header cell in a table.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th
+     * The <meter> HTML element represents either a scalar value within a known range or a fractional value.
      */
-    case Th = 'th';
+    case Meter = '<meter>';
 
     /**
-     * Groups the header content in a table.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead
+     * The <optgroup> HTML element creates a grouping of options within a select element.
      */
-    case Thead = 'thead';
+    case Optgroup = '<optgroup>';
 
     /**
-     * Defines a specific time (or datetime).
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time
+     * The <option> HTML element is used to define an item contained in a select, an optgroup, or a datalist element. As such, <option> can represent menu items in popups and other lists of items in an HTML document.
      */
-    case Time = 'time';
+    case Option = '<option>';
 
     /**
-     * Defines a title for the document.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title
+     * The <output> HTML element is a container element into which a site or app can inject the results of a calculation or the outcome of a user action.
      */
-    case Title = 'title';
+    case Output = '<output>';
 
     /**
-     * Defines a row in a table.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr
+     * The <progress> HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
      */
-    case Tr = 'tr';
+    case Progress = '<progress>';
 
     /**
-     * Defines text tracks for media elements (<video> and <audio>).
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track
+     * The <select> HTML element represents a control that provides a menu of options.
      */
-    case Track = 'track';
+    case Select = '<select>';
 
     /**
-     * Defines some text that is not articulated and styled differently from normal  text.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u
+     * The <textarea> HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
      */
-    case U = 'u';
+    case Textarea = '<textarea>';
 
     /**
-     * Defines an unordered list.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+     * The <details> HTML element creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label must be provided using the summary element.
      */
-    case Ul = 'ul';
+    case Details = '<details>';
 
     /**
-     * Defines a variable.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var
+     * The <dialog> HTML element represents a dialog box or other interactive component, such as a dismissible alert, inspector, or subwindow.
      */
-    case Var = 'var';
+    case Dialog = '<dialog>';
 
     /**
-     * Defines embedded video content.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+     * The <summary> HTML element specifies a summary, caption, or legend for a details element's disclosure box. Clicking the <summary> element toggles the state of the parent <details> element open and closed.
      */
-    case Video = 'video';
+    case Summary = '<summary>';
 
     /**
-     * Defines a possible line-break.
-     *
-     * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr
+     * The <slot> HTML element—part of the Web Components technology suite—is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.
      */
-    case Wbr = 'wbr';
+    case Slot = '<slot>';
+
+    /**
+     * The <template> HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
+     */
+    case Template = '<template>';
 
     public function isSelfClosing(): bool
     {
@@ -756,7 +552,6 @@ enum Tag: string
             self::Input,
             self::Link,
             self::Meta,
-            self::Param,
             self::Source,
             self::Track,
             self::Wbr => true,
