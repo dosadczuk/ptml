@@ -13,4 +13,11 @@ final class BootstrapButton extends Element
 
         $this->with(Attr::Clazz, "btn btn-$accent");
     }
+
+    public function icon(string $name): self
+    {
+        $this->append(new BootstrapIcon($name));
+
+        return $this;
+    }
 }
