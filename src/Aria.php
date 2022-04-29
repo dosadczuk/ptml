@@ -8,11 +8,6 @@ namespace PTML;
  */
 enum Aria: string implements AttrInterface
 {
-    public function getType(): AttrType
-    {
-        // TODO: Implement getType() method.
-    }
-
     public function getName(): string
     {
         return strtolower("aria-{$this->value}");

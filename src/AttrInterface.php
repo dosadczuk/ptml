@@ -9,11 +9,6 @@ namespace PTML;
 interface AttrInterface
 {
     /**
-     * Returns type of attribute.
-     */
-    public function getType(): AttrType;
-
-    /**
      * Returns name of attribute.
      */
     public function getName(): string;

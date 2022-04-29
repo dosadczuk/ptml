@@ -75,7 +75,7 @@ class Element implements ElementInterface
         return $this->attributes[$name] ?? null;
     }
 
-    public function with(AttrInterface|string $name, mixed $value): static
+    public function with(AttrInterface|string $name, string $value = ''): static
     {
         if ($name instanceof AttrInterface) {
             $name = $name->getName();

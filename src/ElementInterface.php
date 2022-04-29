@@ -38,7 +38,7 @@ interface ElementInterface extends \RecursiveIterator, \Countable, \Stringable
     /**
      * Appends attribute with given value.
      */
-    public function with(AttrInterface|string $name, mixed $value): static;
+    public function with(AttrInterface|string $name, string $value = ''): static;
 
     /**
      * Removes attribute.
