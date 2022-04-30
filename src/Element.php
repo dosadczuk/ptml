@@ -22,28 +22,26 @@ class Element implements ElementInterface
 
     /**
      * HTML attributes.
-     *
-     * @var array<string, string>
      */
-    private array $attributes = [];
+    private Attrs $_attrs;
 
     /**
      * Element's children.
-     *
-     * @var ElementInterface[]
      */
-    private array $_children = [];
+    private Children $_children;
 
     /**
      * Iteration current position.
      */
     private int $_position = 0;
 
-    public function __construct(Tag $tag, \Stringable|string $text = '')
+    public function __construct(Tag $tag, \Stringable|string $text = '') // TODO: Maybe replace $text with child
     {
         $this->_uid = uniqid('element', more_entropy: true);
         $this->_tag = $tag;
         $this->_text = (string)$text;
+        $this->_attrs = new Attrs();
+        $this->_children = new Children();
     }
 
     public function uid(): string
@@ -63,36 +61,24 @@ class Element implements ElementInterface
 
     public function attrs(): array
     {
-        return $this->attributes;
+        return $this->_attrs->values();
     }
 
-    public function attr(AttrInterface|string $name): mixed
+    public function attr(AttrInterface|string $name): ?string
     {
-        if ($name instanceof AttrInterface) {
-            $name = $name->name();
-        }
-
-        return $this->attributes[$name] ?? null;
+        return $this->_attrs->get($name);
     }
 
     public function with(AttrInterface|string $name, string $value = ''): static
     {
-        if ($name instanceof AttrInterface) {
-            $name = $name->name();
-        }
-
-        $this->attributes[$name] = $value;
+        $this->_attrs->set($name, $value);
 
         return $this;
     }
 
     public function without(AttrInterface|string $name): static
     {
-        if ($name instanceof AttrInterface) {
-            $name = $name->name();
-        }
-
-        unset($this->attributes[$name]);
+        $this->_attrs->del($name);
 
         return $this;
     }
@@ -102,67 +88,45 @@ class Element implements ElementInterface
      */
     public function children(): array
     {
-        return $this->_children;
+        return $this->_children->values();
     }
 
     public function append(ElementInterface ...$children): static
     {
         // TODO: Maybe throw exception if tag is self-closing
-        $this->_children = array_merge($this->_children, $children);
+        $this->_children->add(...$children);
 
         return $this;
     }
 
     public function remove(ElementInterface ...$children): static
     {
-        $this->_children = array_udiff($this->_children, $children,
-            function (ElementInterface $a, ElementInterface $b): int {
-                return strcmp($a->uid(), $b->uid());
-            }
-        );
+        $this->_children->del(...$children);
 
         return $this;
     }
 
     public function contains(ElementInterface $child): bool
     {
-        foreach ($this->_children as $_child) {
-            if ($_child->uid() === $child->uid()) {
-                return true;
-            }
-        }
-
-        return false;
+        return $this->_children->has($child);
     }
 
     public function html(): string
     {
-        $attributes = [];
-        foreach ($this->attributes as $name => $value) {
-            $attributes[] = sprintf('%s="%s"', $name, $value);
-        }
-        $attributes = implode(' ', $attributes);
-
         if ($this->_tag->isSelfClosing()) {
-            if (empty($attributes)) {
+            if ($this->_attrs->empty()) {
                 return sprintf('<%s />', $this->tag());
             }
 
-            return sprintf('<%s %s />', $this->tag(), $attributes);
+            return sprintf('<%s %s />', $this->tag(), $this->_attrs);
         }
 
-        $children = [];
-        foreach ($this->_children as $child) {
-            $children[] = $child->html();
-        }
-        $children = implode(' ', $children);
-
-        if (empty($attributes)) {
+        if ($this->_attrs->empty()) {
             return sprintf(
                 '<%s>%s%s</%s>',
                 $this->tag(),
                 $this->text(),
-                $children,
+                $this->_children,
                 $this->tag()
             );
         }
@@ -170,51 +134,11 @@ class Element implements ElementInterface
         return sprintf(
             '<%s %s>%s%s</%s>',
             $this->tag(),
-            $attributes,
+            $this->_attrs,
             $this->text(),
-            $children,
+            $this->_children,
             $this->tag()
         );
-    }
-
-    public function getChildren(): ?\RecursiveIterator
-    {
-        return new \RecursiveArrayIterator($this->_children);
-    }
-
-    public function hasChildren(): bool
-    {
-        return $this->count() > 0;
-    }
-
-    public function current(): ?ElementInterface
-    {
-        return $this->_children[$this->_position] ?? null;
-    }
-
-    public function next(): void
-    {
-        $this->_position++;
-    }
-
-    public function key(): int
-    {
-        return $this->_position;
-    }
-
-    public function valid(): bool
-    {
-        return isset($this->_children[$this->_position]);
-    }
-
-    public function rewind(): void
-    {
-        $this->_position = 0;
-    }
-
-    public function count(): int
-    {
-        return count($this->_children);
     }
 
     public function __toString(): string
