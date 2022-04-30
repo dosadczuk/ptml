@@ -270,6 +270,6 @@ enum Aria: string implements AttrInterface
 
     public function getName(): string
     {
-        return strtolower("aria-{$this->value}");
+        return "aria-{$this->value}";
     }
 }

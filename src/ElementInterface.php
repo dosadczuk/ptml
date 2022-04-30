@@ -53,11 +53,6 @@ interface ElementInterface extends \RecursiveIterator, \Countable, \Stringable
     public function children(): array;
 
     /**
-     * Checks if child exists.
-     */
-    public function exists(ElementInterface $child): bool;
-
-    /**
      * Appends children to element.
      */
     public function append(ElementInterface ...$children): static;
@@ -66,6 +61,11 @@ interface ElementInterface extends \RecursiveIterator, \Countable, \Stringable
      * Removes children from element.
      */
     public function remove(ElementInterface ...$children): static;
+
+    /**
+     * Checks if child exists.
+     */
+    public function contains(ElementInterface $child): bool;
 
     /**
      * Returns element as raw HTML.

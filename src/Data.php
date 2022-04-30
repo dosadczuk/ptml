@@ -13,6 +13,14 @@ final class Data implements AttrInterface
     ) {
     }
 
+    /**
+     * Alternative to constructor.
+     */
+    public static function new(string $name): self
+    {
+        return new self($name);
+    }
+
     public function getName(): string
     {
         return strtolower("data-{$this->name}");

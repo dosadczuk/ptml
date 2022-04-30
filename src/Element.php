@@ -105,19 +105,9 @@ class Element implements ElementInterface
         return $this->_children;
     }
 
-    public function exists(ElementInterface $child): bool
-    {
-        foreach ($this->_children as $_child) {
-            if ($_child->uid() === $child->uid()) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     public function append(ElementInterface ...$children): static
     {
+        // TODO: Maybe throw exception if tag is self-closing
         $this->_children = array_merge($this->_children, $children);
 
         return $this;
@@ -134,6 +124,17 @@ class Element implements ElementInterface
         return $this;
     }
 
+    public function contains(ElementInterface $child): bool
+    {
+        foreach ($this->_children as $_child) {
+            if ($_child->uid() === $child->uid()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public function html(): string
     {
         $attributes = [];
@@ -143,6 +144,10 @@ class Element implements ElementInterface
         $attributes = implode(' ', $attributes);
 
         if ($this->_tag->isSelfClosing()) {
+            if (empty($attributes)) {
+                return sprintf('<%s />', $this->tag());
+            }
+
             return sprintf('<%s %s />', $this->tag(), $attributes);
         }
 
@@ -151,6 +156,16 @@ class Element implements ElementInterface
             $children[] = $child->html();
         }
         $children = implode(' ', $children);
+
+        if (empty($attributes)) {
+            return sprintf(
+                '<%s>%s%s</%s>',
+                $this->tag(),
+                $this->text(),
+                $children,
+                $this->tag()
+            );
+        }
 
         return sprintf(
             '<%s %s>%s%s</%s>',

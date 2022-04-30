@@ -635,6 +635,6 @@ enum Attr: string implements AttrInterface
 
     public function getName(): string
     {
-        return strtolower($this->value);
+        return $this->value;
     }
 }
