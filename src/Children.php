@@ -4,13 +4,13 @@ declare(strict_types=1);
 namespace PTML;
 
 /**
- * @extends \ArrayObject<string, Element>
+ * @extends \ArrayIterator<string, Element>
  */
-final class Children extends \ArrayObject
+final class Children extends \ArrayIterator
 {
     public function __construct()
     {
-        parent::__construct([], 0, \ArrayIterator::class);
+        parent::__construct([]);
     }
 
     public function empty(): bool

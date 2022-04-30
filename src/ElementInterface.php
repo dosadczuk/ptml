@@ -5,10 +5,8 @@ namespace PTML;
 
 /**
  * Abstraction of HTML element.
- *
- * TODO: Revert RecursiveIterator and Countable
  */
-interface ElementInterface extends \Stringable
+interface ElementInterface extends \RecursiveIterator, \Countable, \Stringable
 {
     /**
      * Returns unique identifier.

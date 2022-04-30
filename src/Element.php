@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace PTML;
 
+use RecursiveIterator;
+
 class Element implements ElementInterface
 {
     /**
@@ -29,11 +31,6 @@ class Element implements ElementInterface
      * Element's children.
      */
     private Children $_children;
-
-    /**
-     * Iteration current position.
-     */
-    private int $_position = 0;
 
     public function __construct(Tag $tag, \Stringable|string $text = '') // TODO: Maybe replace $text with child
     {
@@ -144,6 +141,46 @@ class Element implements ElementInterface
             $this->_children,
             $this->tag()
         );
+    }
+
+    public function getChildren(): ?RecursiveIterator
+    {
+        return new \RecursiveArrayIterator($this->children());
+    }
+
+    public function hasChildren(): bool
+    {
+        return !$this->_children->empty();
+    }
+
+    public function current(): ?ElementInterface
+    {
+        return $this->_children->current();
+    }
+
+    public function next(): void
+    {
+        $this->_children->next();
+    }
+
+    public function key(): string
+    {
+        return $this->_children->key();
+    }
+
+    public function valid(): bool
+    {
+        return $this->_children->valid();
+    }
+
+    public function rewind(): void
+    {
+        $this->_children->rewind();
+    }
+
+    public function count(): int
+    {
+        return $this->_children->count();
     }
 
     public function __toString(): string
