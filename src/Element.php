@@ -69,7 +69,7 @@ class Element implements ElementInterface
     public function attr(AttrInterface|string $name): mixed
     {
         if ($name instanceof AttrInterface) {
-            $name = $name->getName();
+            $name = $name->name();
         }
 
         return $this->attributes[$name] ?? null;
@@ -78,7 +78,7 @@ class Element implements ElementInterface
     public function with(AttrInterface|string $name, string $value = ''): static
     {
         if ($name instanceof AttrInterface) {
-            $name = $name->getName();
+            $name = $name->name();
         }
 
         $this->attributes[$name] = $value;
@@ -89,7 +89,7 @@ class Element implements ElementInterface
     public function without(AttrInterface|string $name): static
     {
         if ($name instanceof AttrInterface) {
-            $name = $name->getName();
+            $name = $name->name();
         }
 
         unset($this->attributes[$name]);

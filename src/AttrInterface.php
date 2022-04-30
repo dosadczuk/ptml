@@ -11,5 +11,5 @@ interface AttrInterface
     /**
      * Returns name of attribute.
      */
-    public function getName(): string;
+    public function name(): string;
 }

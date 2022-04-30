@@ -21,7 +21,7 @@ final class Data implements AttrInterface
         return new self($name);
     }
 
-    public function getName(): string
+    public function name(): string
     {
         return strtolower("data-{$this->name}");
     }

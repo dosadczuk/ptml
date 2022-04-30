@@ -268,7 +268,7 @@ enum Aria: string implements AttrInterface
      */
     case Valuetext = 'valuetext';
 
-    public function getName(): string
+    public function name(): string
     {
         return "aria-{$this->value}";
     }

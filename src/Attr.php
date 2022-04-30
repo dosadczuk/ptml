@@ -633,7 +633,7 @@ enum Attr: string implements AttrInterface
      */
     case Wrap = 'wrap';
 
-    public function getName(): string
+    public function name(): string
     {
         return $this->value;
     }
