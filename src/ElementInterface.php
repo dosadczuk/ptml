@@ -43,6 +43,11 @@ interface ElementInterface extends \Stringable
     public function with(AttrInterface|string $name, string $value = ''): static;
 
     /**
+     * Check if attribute exists.
+     */
+    public function exists(AttrInterface|string $name): bool;
+
+    /**
      * Removes attribute.
      */
     public function without(AttrInterface|string $name): static;

@@ -38,6 +38,8 @@ it('should add standard attribute', function () {
     expect($a->attrs())->toHaveCount(1);
     expect($a->attr(Attr::Href))->toEqual('localhost');
     expect($a->attr('href'))->toEqual('localhost');
+    expect($a->exists(Attr::Href))->toBeTruthy();
+    expect($a->exists('href'))->toBeTruthy();
 });
 
 it('should add aria attribute', function () {
@@ -47,6 +49,8 @@ it('should add aria attribute', function () {
     expect($a->attrs())->toHaveCount(1);
     expect($a->attr(Aria::Hidden))->toEqual('true');
     expect($a->attr('aria-hidden'))->toEqual('true');
+    expect($a->exists(Aria::Hidden))->toBeTruthy();
+    expect($a->exists('aria-hidden'))->toBeTruthy();
 });
 
 it('should add data attribute', function () {
@@ -56,6 +60,8 @@ it('should add data attribute', function () {
     expect($a->attrs())->toHaveCount(1);
     expect($a->attr(Data::new('test')))->toEqual('sample value');
     expect($a->attr('data-test'))->toEqual('sample value');
+    expect($a->exists(Data::new('test')))->toBeTruthy();
+    expect($a->exists('data-test'))->toBeTruthy();
 });
 
 it('should remove standard attribute', function () {

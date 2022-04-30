@@ -76,6 +76,11 @@ class Element implements ElementInterface
         return $this;
     }
 
+    public function exists(AttrInterface|string $name): bool
+    {
+        return $this->_attrs->has($name);
+    }
+
     public function without(AttrInterface|string $name): static
     {
         $this->_attrs->del($name);
