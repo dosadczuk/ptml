@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace PTML;
 
-use RecursiveIterator;
-
 class Element implements ElementInterface
 {
     /**
@@ -134,7 +132,7 @@ class Element implements ElementInterface
         );
     }
 
-    public function getChildren(): ?RecursiveIterator
+    public function getChildren(): ?\RecursiveIterator
     {
         return new \RecursiveArrayIterator($this->children());
     }
