@@ -32,7 +32,7 @@ class Element implements ElementInterface
      */
     private Children $_children;
 
-    public function __construct(Tag $tag, \Stringable|string $text = '') // TODO: Maybe replace $text with child
+    public function __construct(Tag $tag, \Stringable|string $text = '')
     {
         $this->_uid = uniqid('element', more_entropy: true);
         $this->_tag = $tag;
@@ -95,7 +95,6 @@ class Element implements ElementInterface
 
     public function append(ElementInterface ...$children): static
     {
-        // TODO: Maybe throw exception if tag is self-closing
         $this->_children->add(...$children);
 
         return $this;
@@ -116,26 +115,18 @@ class Element implements ElementInterface
     public function html(): string
     {
         if ($this->_tag->isSelfClosing()) {
-            if ($this->_attrs->empty()) {
-                return sprintf('<%s />', $this->tag());
-            }
-
-            return sprintf('<%s %s />', $this->tag(), $this->_attrs);
-        }
-
-        if ($this->_attrs->empty()) {
             return sprintf(
-                '<%s>%s%s</%s>',
+                '<%s%s%s />',
                 $this->tag(),
-                $this->text(),
-                $this->_children,
-                $this->tag()
+                $this->_attrs->empty() ? '' : ' ',
+                $this->_attrs
             );
         }
 
         return sprintf(
-            '<%s %s>%s%s</%s>',
+            '<%s%s%s>%s%s</%s>',
             $this->tag(),
+            $this->_attrs->empty() ? '' : ' ',
             $this->_attrs,
             $this->text(),
             $this->_children,
