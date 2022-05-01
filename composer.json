@@ -27,8 +27,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "PTML\\Test\\": "tests/",
-      "PTML\\Example\\": "examples/"
+      "PTML\\Test\\": "tests/"
     }
   },
   "config": {
