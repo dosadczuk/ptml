@@ -10,7 +10,7 @@ trait WithChecked
     /**
      * Indicates whether the element should be checked on page load.
      */
-    public function checked(string $value, bool $append = false): static
+    public function withChecked(string $value, bool $append = false): static
     {
         $this->with(Attr::Checked, $value, $append);
 

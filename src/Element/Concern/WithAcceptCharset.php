@@ -10,7 +10,7 @@ trait WithAcceptCharset
     /**
      * List of supported charsets.
      */
-    public function acceptCharset(string $value, bool $append = false): static
+    public function withAcceptCharset(string $value, bool $append = false): static
     {
         $this->with(Attr::AcceptCharset, $value, $append);
 

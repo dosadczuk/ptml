@@ -13,7 +13,7 @@ trait WithFormmethod
      * etc.). If this attribute is specified, it overrides the method attribute
      * of the button's form owner.
      */
-    public function formmethod(string $value, bool $append = false): static
+    public function withFormmethod(string $value, bool $append = false): static
     {
         $this->with(Attr::Formmethod, $value, $append);
 

@@ -13,7 +13,7 @@ trait WithInputmode
      * with form controls (such as the value of textarea elements), or in
      * elements in an editing host (e.g., using contenteditable attribute).
      */
-    public function inputmode(string $value, bool $append = false): static
+    public function withInputmode(string $value, bool $append = false): static
     {
         $this->with(Attr::Inputmode, $value, $append);
 

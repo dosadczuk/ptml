@@ -10,7 +10,7 @@ trait WithOptimum
     /**
      * Indicates the optimal numeric value.
      */
-    public function optimum(string $value, bool $append = false): static
+    public function withOptimum(string $value, bool $append = false): static
     {
         $this->with(Attr::Optimum, $value, $append);
 

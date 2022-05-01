@@ -10,7 +10,7 @@ trait WithData
     /**
      * Specifies the URL of the resource.
      */
-    public function data(string $value, bool $append = false): static
+    public function withData(string $value, bool $append = false): static
     {
         $this->with(Attr::Data, $value, $append);
 

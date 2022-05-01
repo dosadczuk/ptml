@@ -11,7 +11,7 @@ trait WithPreload
      * Indicates whether the whole resource, parts of it or nothing should be
      * preloaded.
      */
-    public function preload(string $value, bool $append = false): static
+    public function withPreload(string $value, bool $append = false): static
     {
         $this->with(Attr::Preload, $value, $append);
 

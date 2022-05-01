@@ -10,7 +10,7 @@ trait WithHref
     /**
      * The URL of a linked resource.
      */
-    public function href(string $value, bool $append = false): static
+    public function withHref(string $value, bool $append = false): static
     {
         $this->with(Attr::Href, $value, $append);
 

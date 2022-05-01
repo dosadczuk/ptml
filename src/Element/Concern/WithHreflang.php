@@ -10,7 +10,7 @@ trait WithHreflang
     /**
      * Specifies the language of the linked resource.
      */
-    public function hreflang(string $value, bool $append = false): static
+    public function withHreflang(string $value, bool $append = false): static
     {
         $this->with(Attr::Hreflang, $value, $append);
 

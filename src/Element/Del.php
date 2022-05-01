@@ -4,26 +4,28 @@ declare(strict_types=1);
 namespace PTML\Element;
 
 use PTML\Element;
-use PTML\Element\Concern\{WithAccesskey,
-    WithAutocapitalize,
-    WithCite,
-    WithClass,
-    WithContenteditable,
-    WithContextmenu,
-    WithDatetime,
-    WithDir,
-    WithDraggable,
-    WithHidden,
-    WithId,
-    WithItemprop,
-    WithLang,
-    WithRole,
-    WithSlot,
-    WithSpellcheck,
-    WithStyle,
-    WithTabindex,
-    WithTitle,
-    WithTranslate};
+use PTML\Element\Concern\{
+    WithAccesskey,
+	WithAutocapitalize,
+	WithCite,
+	WithClass,
+	WithContenteditable,
+	WithContextmenu,
+	WithDatetime,
+	WithDir,
+	WithDraggable,
+	WithHidden,
+	WithId,
+	WithItemprop,
+	WithLang,
+	WithRole,
+	WithSlot,
+	WithSpellcheck,
+	WithStyle,
+	WithTabindex,
+	WithTitle,
+	WithTranslate
+};
 use PTML\Tag;
 
 /**
@@ -36,25 +38,25 @@ use PTML\Tag;
 class Del extends Element
 {
     use WithAccesskey,
-        WithAutocapitalize,
-        WithCite,
-        WithClass,
-        WithContenteditable,
-        WithContextmenu,
-        WithDatetime,
-        WithDir,
-        WithDraggable,
-        WithHidden,
-        WithId,
-        WithItemprop,
-        WithLang,
-        WithRole,
-        WithSlot,
-        WithSpellcheck,
-        WithStyle,
-        WithTabindex,
-        WithTitle,
-        WithTranslate;
+		WithAutocapitalize,
+		WithCite,
+		WithClass,
+		WithContenteditable,
+		WithContextmenu,
+		WithDatetime,
+		WithDir,
+		WithDraggable,
+		WithHidden,
+		WithId,
+		WithItemprop,
+		WithLang,
+		WithRole,
+		WithSlot,
+		WithSpellcheck,
+		WithStyle,
+		WithTabindex,
+		WithTitle,
+		WithTranslate;
 
     public function __construct(\Stringable|string $text = '')
     {

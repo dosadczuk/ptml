@@ -10,7 +10,7 @@ trait WithPoster
     /**
      * A URL indicating a poster frame to show until the user plays or seeks.
      */
-    public function poster(string $value, bool $append = false): static
+    public function withPoster(string $value, bool $append = false): static
     {
         $this->with(Attr::Poster, $value, $append);
 

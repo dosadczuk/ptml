@@ -10,7 +10,7 @@ trait WithCols
     /**
      * Defines the number of columns in a textarea.
      */
-    public function cols(string $value, bool $append = false): static
+    public function withCols(string $value, bool $append = false): static
     {
         $this->with(Attr::Cols, $value, $append);
 

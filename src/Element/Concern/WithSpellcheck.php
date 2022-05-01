@@ -10,7 +10,7 @@ trait WithSpellcheck
     /**
      * Indicates whether spell checking is allowed for the element.
      */
-    public function spellcheck(string $value, bool $append = false): static
+    public function withSpellcheck(string $value, bool $append = false): static
     {
         $this->with(Attr::Spellcheck, $value, $append);
 

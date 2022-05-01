@@ -14,7 +14,7 @@ trait WithFormtarget
      * submitting the form. If this attribute is specified, it overrides the
      * target attribute of the button's form owner.
      */
-    public function formtarget(string $value, bool $append = false): static
+    public function withFormtarget(string $value, bool $append = false): static
     {
         $this->with(Attr::Formtarget, $value, $append);
 

@@ -10,7 +10,7 @@ trait WithDecoding
     /**
      * Indicates the preferred method to decode the image.
      */
-    public function decoding(string $value, bool $append = false): static
+    public function withDecoding(string $value, bool $append = false): static
     {
         $this->with(Attr::Decoding, $value, $append);
 

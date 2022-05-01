@@ -11,7 +11,7 @@ trait WithContextmenu
      * Defines the ID of a <menu> element which will serve as the element's
      * context menu.
      */
-    public function contextmenu(string $value, bool $append = false): static
+    public function withContextmenu(string $value, bool $append = false): static
     {
         $this->with(Attr::Contextmenu, $value, $append);
 

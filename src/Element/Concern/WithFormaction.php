@@ -11,7 +11,7 @@ trait WithFormaction
      * Indicates the action of the element, overriding the action defined in
      * the <form>.
      */
-    public function formaction(string $value, bool $append = false): static
+    public function withFormaction(string $value, bool $append = false): static
     {
         $this->with(Attr::Formaction, $value, $append);
 

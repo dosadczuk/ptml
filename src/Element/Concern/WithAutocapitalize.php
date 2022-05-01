@@ -10,7 +10,7 @@ trait WithAutocapitalize
     /**
      * Sets whether input is automatically capitalized when entered by user
      */
-    public function autocapitalize(string $value, bool $append = false): static
+    public function withAutocapitalize(string $value, bool $append = false): static
     {
         $this->with(Attr::Autocapitalize, $value, $append);
 

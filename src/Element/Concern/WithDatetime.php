@@ -10,7 +10,7 @@ trait WithDatetime
     /**
      * Indicates the date and time associated with the element.
      */
-    public function datetime(string $value, bool $append = false): static
+    public function withDatetime(string $value, bool $append = false): static
     {
         $this->with(Attr::Datetime, $value, $append);
 

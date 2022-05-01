@@ -11,7 +11,7 @@ trait WithReversed
      * Indicates whether the list should be displayed in a descending order
      * instead of a ascending.
      */
-    public function reversed(string $value, bool $append = false): static
+    public function withReversed(string $value, bool $append = false): static
     {
         $this->with(Attr::Reversed, $value, $append);
 

@@ -11,7 +11,7 @@ trait WithCsp
      * Specifies the Content Security Policy that an embedded document must
      * agree to enforce upon itself.
      */
-    public function csp(string $value, bool $append = false): static
+    public function withCsp(string $value, bool $append = false): static
     {
         $this->with(Attr::Csp, $value, $append);
 

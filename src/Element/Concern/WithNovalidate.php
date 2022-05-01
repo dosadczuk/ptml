@@ -11,7 +11,7 @@ trait WithNovalidate
      * This attribute indicates that the form shouldn't be validated when
      * submitted.
      */
-    public function novalidate(string $value, bool $append = false): static
+    public function withNovalidate(string $value, bool $append = false): static
     {
         $this->with(Attr::Novalidate, $value, $append);
 

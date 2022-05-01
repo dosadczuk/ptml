@@ -4,25 +4,27 @@ declare(strict_types=1);
 namespace PTML\Element;
 
 use PTML\Element;
-use PTML\Element\Concern\{WithAccesskey,
-    WithAutocapitalize,
-    WithClass,
-    WithContenteditable,
-    WithContextmenu,
-    WithDir,
-    WithDraggable,
-    WithHidden,
-    WithId,
-    WithItemprop,
-    WithLang,
-    WithOpen,
-    WithRole,
-    WithSlot,
-    WithSpellcheck,
-    WithStyle,
-    WithTabindex,
-    WithTitle,
-    WithTranslate};
+use PTML\Element\Concern\{
+    WithAccesskey,
+	WithAutocapitalize,
+	WithClass,
+	WithContenteditable,
+	WithContextmenu,
+	WithDir,
+	WithDraggable,
+	WithHidden,
+	WithId,
+	WithItemprop,
+	WithLang,
+	WithOpen,
+	WithRole,
+	WithSlot,
+	WithSpellcheck,
+	WithStyle,
+	WithTabindex,
+	WithTitle,
+	WithTranslate
+};
 use PTML\Tag;
 
 /**
@@ -33,24 +35,24 @@ use PTML\Tag;
 class Details extends Element
 {
     use WithAccesskey,
-        WithAutocapitalize,
-        WithClass,
-        WithContenteditable,
-        WithContextmenu,
-        WithDir,
-        WithDraggable,
-        WithHidden,
-        WithId,
-        WithItemprop,
-        WithLang,
-        WithOpen,
-        WithRole,
-        WithSlot,
-        WithSpellcheck,
-        WithStyle,
-        WithTabindex,
-        WithTitle,
-        WithTranslate;
+		WithAutocapitalize,
+		WithClass,
+		WithContenteditable,
+		WithContextmenu,
+		WithDir,
+		WithDraggable,
+		WithHidden,
+		WithId,
+		WithItemprop,
+		WithLang,
+		WithOpen,
+		WithRole,
+		WithSlot,
+		WithSpellcheck,
+		WithStyle,
+		WithTabindex,
+		WithTitle,
+		WithTranslate;
 
     public function __construct(\Stringable|string $text = '')
     {

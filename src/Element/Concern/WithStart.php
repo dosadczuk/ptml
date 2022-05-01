@@ -10,7 +10,7 @@ trait WithStart
     /**
      * Defines the first number if other than 1.
      */
-    public function start(string $value, bool $append = false): static
+    public function withStart(string $value, bool $append = false): static
     {
         $this->with(Attr::Start, $value, $append);
 

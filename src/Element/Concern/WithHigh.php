@@ -10,7 +10,7 @@ trait WithHigh
     /**
      * Indicates the lower bound of the upper range.
      */
-    public function high(string $value, bool $append = false): static
+    public function withHigh(string $value, bool $append = false): static
     {
         $this->with(Attr::High, $value, $append);
 

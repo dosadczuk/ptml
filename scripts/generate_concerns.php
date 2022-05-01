@@ -17,9 +17,9 @@ use PTML\Attr;
 trait With%1$s
 {
     /**
-     * %3$s
+     * %2$s
      */
-    public function %2$s(string $value, bool $append = false): static
+    public function with%1$s(string $value, bool $append = false): static
     {
         $this->with(Attr::%1$s, $value, $append);
 
@@ -30,7 +30,7 @@ trait With%1$s
 
 foreach (Attr::cases() as $attr) {
     $filename = "With{$attr->name}.php";
-    $contents = sprintf($template, $attr->name, lcfirst($attr->name), getComment($attr));
+    $contents = sprintf($template, $attr->name, getComment($attr));
 
     saveToSrc($filename, $contents);
 }

@@ -11,7 +11,7 @@ trait WithTabindex
      * Overrides the browser's default tab order and follows the one specified
      * instead.
      */
-    public function tabindex(string $value, bool $append = false): static
+    public function withTabindex(string $value, bool $append = false): static
     {
         $this->with(Attr::Tabindex, $value, $append);
 

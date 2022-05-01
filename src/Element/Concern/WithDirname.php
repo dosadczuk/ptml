@@ -10,7 +10,7 @@ trait WithDirname
     /**
      * Specifies that the text direction will be submitted.
      */
-    public function dirname(string $value, bool $append = false): static
+    public function withDirname(string $value, bool $append = false): static
     {
         $this->with(Attr::Dirname, $value, $append);
 

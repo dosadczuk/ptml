@@ -10,7 +10,7 @@ trait WithContenteditable
     /**
      * Indicates whether the element's content is editable.
      */
-    public function contenteditable(string $value, bool $append = false): static
+    public function withContenteditable(string $value, bool $append = false): static
     {
         $this->with(Attr::Contenteditable, $value, $append);
 

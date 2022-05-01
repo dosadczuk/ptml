@@ -10,7 +10,7 @@ trait WithSrcdoc
     /**
      * Specifies the HTML content of the page to show in the <iframe>.
      */
-    public function srcdoc(string $value, bool $append = false): static
+    public function withSrcdoc(string $value, bool $append = false): static
     {
         $this->with(Attr::Srcdoc, $value, $append);
 

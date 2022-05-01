@@ -10,7 +10,7 @@ trait WithTitle
     /**
      * Text to be displayed in a tooltip when hovering over the element.
      */
-    public function title(string $value, bool $append = false): static
+    public function withTitle(string $value, bool $append = false): static
     {
         $this->with(Attr::Title, $value, $append);
 

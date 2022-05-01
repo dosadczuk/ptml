@@ -10,7 +10,7 @@ trait WithMax
     /**
      * Indicates the maximum value allowed.
      */
-    public function max(string $value, bool $append = false): static
+    public function withMax(string $value, bool $append = false): static
     {
         $this->with(Attr::Max, $value, $append);
 

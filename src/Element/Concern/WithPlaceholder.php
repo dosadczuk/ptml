@@ -10,7 +10,7 @@ trait WithPlaceholder
     /**
      * Provides a hint to the user of what can be entered in the field.
      */
-    public function placeholder(string $value, bool $append = false): static
+    public function withPlaceholder(string $value, bool $append = false): static
     {
         $this->with(Attr::Placeholder, $value, $append);
 

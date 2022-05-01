@@ -11,7 +11,7 @@ trait WithId
      * Often used with CSS to style a specific element. The value of this
      * attribute must be unique.
      */
-    public function id(string $value, bool $append = false): static
+    public function withId(string $value, bool $append = false): static
     {
         $this->with(Attr::Id, $value, $append);
 
