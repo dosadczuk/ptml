@@ -5,19 +5,19 @@ namespace PTML\Element\Concern;
 
 use PTML\Attr;
 
-trait WithClazz
+trait WithClass
 {
     /**
      * Often used with CSS to style elements with common properties.
      */
-    public function withClazz(string $value, bool $append = false): static
+    public function withClass(string $value, bool $append = false): static
     {
         $this->with(Attr::Clazz, $value, $append);
 
         return $this;
     }
     
-    public function withoutClazz(): static
+    public function withoutClass(): static
     {
         $this->without(Attr::Clazz);
         

@@ -7,7 +7,7 @@ use PTML\Element;
 use PTML\Element\Concern\{
     WithAccesskey,
 	WithAutocapitalize,
-	WithClazz,
+	WithClass,
 	WithContenteditable,
 	WithContextmenu,
 	WithDir,
@@ -36,7 +36,7 @@ class Optgroup extends Element
 {
     use WithAccesskey,
 		WithAutocapitalize,
-		WithClazz,
+		WithClass,
 		WithContenteditable,
 		WithContextmenu,
 		WithDir,
