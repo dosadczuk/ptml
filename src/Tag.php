@@ -493,7 +493,7 @@ enum Tag: string
      * presented using an italicized version of the current typeface, although
      * that behavior is browser-dependent.
      */
-    case Var = 'var';
+    case Variable = 'var';
 
     /**
      * The <wbr> HTML element represents a word break opportunity—a position
@@ -563,7 +563,7 @@ enum Tag: string
      * treated as an image, a nested browsing context, or a resource to be
      * handled by a plugin.
      */
-    case Object = 'object';
+    case Obj = 'object';
 
     /**
      * The <picture> HTML element contains zero or more source elements and one
