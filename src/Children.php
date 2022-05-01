@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace PTML;
 
 /**
- * @extends \ArrayIterator<string, Element>
+ * @extends \ArrayIterator<string, ElementInterface>
  */
 final class Children extends \ArrayIterator
 {
@@ -23,6 +23,8 @@ final class Children extends \ArrayIterator
 
     /**
      * Returns array of children.
+     *
+     * @return ElementInterface[]
      */
     public function values(): array
     {

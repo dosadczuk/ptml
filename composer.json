@@ -11,14 +11,14 @@
   ],
   "scripts": {
     "test": "pest",
-    "generate:attributes": "php  cli/generate_attributes.php",
-    "generate:elements": "php  cli/generate_elements.php"
+    "analyse": "phpstan analyse"
   },
   "require": {
     "php": "~8.1"
   },
   "require-dev": {
-    "pestphp/pest": "^1.21"
+    "pestphp/pest": "^1.21",
+    "phpstan/phpstan": "^1.6"
   },
   "autoload": {
     "psr-4": {

@@ -23,6 +23,8 @@ final class Attrs extends \ArrayObject
 
     /**
      * Returns array of attributes.
+     *
+     * @return array<string, string>
      */
     public function values(): array
     {

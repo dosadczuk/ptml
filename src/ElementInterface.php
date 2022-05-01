@@ -5,6 +5,8 @@ namespace PTML;
 
 /**
  * Abstraction of HTML element.
+ *
+ * @extends \RecursiveIterator<string, ElementInterface>
  */
 interface ElementInterface extends \RecursiveIterator, \Countable, \Stringable
 {

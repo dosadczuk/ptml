@@ -132,6 +132,9 @@ class Element implements ElementInterface
         );
     }
 
+    /**
+     * @return \RecursiveIterator<int, ElementInterface>|null
+     */
     public function getChildren(): ?\RecursiveIterator
     {
         return new \RecursiveArrayIterator($this->children());
