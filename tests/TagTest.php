@@ -5,7 +5,8 @@ namespace PTML\Test;
 
 use PTML\Tag;
 
-it('should check if tag is self closing', function () {
+it('should check self-closing tag', function () {
+    // given
     /** @var Tag[] $self_closing_tags */
     $self_closing_tags = [
         Tag::Area,
@@ -22,8 +23,18 @@ it('should check if tag is self closing', function () {
         Tag::Track,
         Tag::Wbr,
     ];
-
+    /** @var Tag[] $sample_not_closing_tags */
+    $sample_not_closing_tags = [
+        Tag::Table,
+        Tag::Thead,
+        Tag::Tbody,
+        Tag::Tfoot,
+    ];
+    // then
     foreach ($self_closing_tags as $tag) {
         expect($tag->isSelfClosing())->toBeTruthy();
+    }
+    foreach ($sample_not_closing_tags as $tag) {
+        expect($tag->isSelfClosing())->toBeFalsy();
     }
 });

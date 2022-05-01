@@ -8,13 +8,28 @@ use PTML\Attr;
 use PTML\Data;
 
 it('should get name of standard attribute', function () {
-    expect(Attr::Hidden->name())->toEqual('hidden');
+    // given
+    $attr = Attr::Hidden;
+    // when
+    $name = $attr->name();
+    // then
+    expect($name)->toEqual('hidden');
 });
 
 it('should get name of aria attribute', function () {
-    expect(Aria::Hidden->name())->toEqual('aria-hidden');
+    // given
+    $attr = Aria::Hidden;
+    // when
+    $name = $attr->name();
+    // then
+    expect($name)->toEqual('aria-hidden');
 });
 
 it('should get name of data attribute', function () {
-    expect((new Data('test'))->name())->toEqual('data-test');
+    // given
+    $attr = Data::new('hidden');
+    // when
+    $name = $attr->name();
+    // then
+    expect($name)->toEqual('data-hidden');
 });
