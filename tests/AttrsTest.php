@@ -52,6 +52,16 @@ it('should set AttrInterface attribute', function () {
     expect($attrs)->toHaveKey(Attr::Hidden->name());
 });
 
+it('should append attribute', function () {
+    // given
+    $attrs = new Attrs();
+    $attrs->set(Attr::Clazz, 'fa');
+    // when
+    $attrs->set(Attr::Clazz, 'fa-user', append: true);
+    // then
+    expect($attrs->get(Attr::Clazz))->toEqual('fa fa-user');
+});
+
 it('should get string attribute', function () {
     // given
     $attrs = new Attrs();

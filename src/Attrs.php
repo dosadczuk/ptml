@@ -34,10 +34,14 @@ final class Attrs extends \ArrayObject
     /**
      * Sets given attribute or replaces if attribute is added already.
      */
-    public function set(AttrInterface|string $name, string $value): void
+    public function set(AttrInterface|string $name, string $value, bool $append = false): void
     {
         if ($name instanceof AttrInterface) {
             $name = $name->name();
+        }
+
+        if ($append) {
+            $value = sprintf('%s %s', $this[$name], $value);
         }
 
         $this[$name] = $value;
