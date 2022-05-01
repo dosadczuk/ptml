@@ -1,0 +1,14 @@
+# Config
+/.gitattributes      export-ignore
+/.gitignore          export-ignore
+/.editorconfig       export-ignore
+
+# PHPStan
+/phpstan.neon       export-ignore
+
+# PHPUnit
+/tests              export-ignore
+/phpunit.xml        export-ignore
+
+# Examples
+/examples           export-ignore
