@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithCoords
 {
     /**
      * A set of values specifying the coordinates of the hot-spot region.
      */
-    public function coords(string $value): static
+    public function coords(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Coords, $value);
-        
+        $this->with(Attr::Coords, $value, $append);
+
         return $this;
     }
 } 

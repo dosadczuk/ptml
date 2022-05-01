@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithSpellcheck
 {
     /**
      * Indicates whether spell checking is allowed for the element.
      */
-    public function spellcheck(string $value): static
+    public function spellcheck(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Spellcheck, $value);
-        
+        $this->with(Attr::Spellcheck, $value, $append);
+
         return $this;
     }
 } 

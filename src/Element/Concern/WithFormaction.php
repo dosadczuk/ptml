@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithFormaction
 {
@@ -11,11 +11,10 @@ trait WithFormaction
      * Indicates the action of the element, overriding the action defined in
      * the <form>.
      */
-    public function formaction(string $value): static
+    public function formaction(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Formaction, $value);
-        
+        $this->with(Attr::Formaction, $value, $append);
+
         return $this;
     }
 } 

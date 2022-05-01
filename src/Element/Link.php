@@ -3,7 +3,36 @@ declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\{Element, Tag};
+use PTML\Element;
+use PTML\Element\Concern\{WithAccesskey,
+    WithAutocapitalize,
+    WithClass,
+    WithContenteditable,
+    WithContextmenu,
+    WithCrossorigin,
+    WithDir,
+    WithDraggable,
+    WithHidden,
+    WithHref,
+    WithHreflang,
+    WithId,
+    WithImportance,
+    WithIntegrity,
+    WithItemprop,
+    WithLang,
+    WithMedia,
+    WithReferrerpolicy,
+    WithRel,
+    WithRole,
+    WithSizes,
+    WithSlot,
+    WithSpellcheck,
+    WithStyle,
+    WithTabindex,
+    WithTitle,
+    WithTranslate,
+    WithType};
+use PTML\Tag;
 
 /**
  * The <link> HTML element specifies relationships between the current
@@ -14,6 +43,35 @@ use PTML\{Element, Tag};
  */
 class Link extends Element
 {
+    use WithAccesskey,
+        WithAutocapitalize,
+        WithClass,
+        WithContenteditable,
+        WithContextmenu,
+        WithCrossorigin,
+        WithDir,
+        WithDraggable,
+        WithHidden,
+        WithHref,
+        WithHreflang,
+        WithId,
+        WithImportance,
+        WithIntegrity,
+        WithItemprop,
+        WithLang,
+        WithMedia,
+        WithReferrerpolicy,
+        WithRel,
+        WithRole,
+        WithSizes,
+        WithSlot,
+        WithSpellcheck,
+        WithStyle,
+        WithTabindex,
+        WithTitle,
+        WithTranslate,
+        WithType;
+
     public function __construct()
     {
         parent::__construct(Tag::Link);

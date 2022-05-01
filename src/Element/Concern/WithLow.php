@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithLow
 {
     /**
      * Indicates the upper bound of the lower range.
      */
-    public function low(string $value): static
+    public function low(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Low, $value);
-        
+        $this->with(Attr::Low, $value, $append);
+
         return $this;
     }
 } 

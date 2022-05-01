@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithMin
 {
     /**
      * Indicates the minimum value allowed.
      */
-    public function min(string $value): static
+    public function min(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Min, $value);
-        
+        $this->with(Attr::Min, $value, $append);
+
         return $this;
     }
 } 

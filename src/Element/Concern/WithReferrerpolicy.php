@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithReferrerpolicy
 {
     /**
      * Specifies which referrer is sent when fetching the resource.
      */
-    public function referrerpolicy(string $value): static
+    public function referrerpolicy(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Referrerpolicy, $value);
-        
+        $this->with(Attr::Referrerpolicy, $value, $append);
+
         return $this;
     }
 } 

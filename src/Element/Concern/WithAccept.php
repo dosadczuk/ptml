@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithAccept
 {
     /**
      * List of types the server accepts, typically a file type.
      */
-    public function accept(string $value): static
+    public function accept(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Accept, $value);
-        
+        $this->with(Attr::Accept, $value, $append);
+
         return $this;
     }
 } 

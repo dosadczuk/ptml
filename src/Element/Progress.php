@@ -3,7 +3,29 @@ declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\{Element, Tag};
+use PTML\Element;
+use PTML\Element\Concern\{WithAccesskey,
+    WithAutocapitalize,
+    WithClass,
+    WithContenteditable,
+    WithContextmenu,
+    WithDir,
+    WithDraggable,
+    WithForm,
+    WithHidden,
+    WithId,
+    WithItemprop,
+    WithLang,
+    WithMax,
+    WithRole,
+    WithSlot,
+    WithSpellcheck,
+    WithStyle,
+    WithTabindex,
+    WithTitle,
+    WithTranslate,
+    WithValue};
+use PTML\Tag;
 
 /**
  * The <progress> HTML element displays an indicator showing the completion
@@ -11,6 +33,28 @@ use PTML\{Element, Tag};
  */
 class Progress extends Element
 {
+    use WithAccesskey,
+        WithAutocapitalize,
+        WithClass,
+        WithContenteditable,
+        WithContextmenu,
+        WithDir,
+        WithDraggable,
+        WithForm,
+        WithHidden,
+        WithId,
+        WithItemprop,
+        WithLang,
+        WithMax,
+        WithRole,
+        WithSlot,
+        WithSpellcheck,
+        WithStyle,
+        WithTabindex,
+        WithTitle,
+        WithTranslate,
+        WithValue;
+
     public function __construct(\Stringable|string $text = '')
     {
         parent::__construct(Tag::Progress, $text);

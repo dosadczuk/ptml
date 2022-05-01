@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithCite
 {
     /**
      * Contains a URI which points to the source of the quote or change.
      */
-    public function cite(string $value): static
+    public function cite(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Cite, $value);
-        
+        $this->with(Attr::Cite, $value, $append);
+
         return $this;
     }
 } 

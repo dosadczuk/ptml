@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithSrc
 {
     /**
      * The URL of the embeddable content.
      */
-    public function src(string $value): static
+    public function src(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Src, $value);
-        
+        $this->with(Attr::Src, $value, $append);
+
         return $this;
     }
 } 

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithCsp
 {
@@ -11,11 +11,10 @@ trait WithCsp
      * Specifies the Content Security Policy that an embedded document must
      * agree to enforce upon itself.
      */
-    public function csp(string $value): static
+    public function csp(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Csp, $value);
-        
+        $this->with(Attr::Csp, $value, $append);
+
         return $this;
     }
 } 

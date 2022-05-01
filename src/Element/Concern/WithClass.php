@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
-trait WithClazz
+trait WithClass
 {
     /**
      * Often used with CSS to style elements with common properties.
      */
-    public function clazz(string $value): static
+    public function class(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Clazz, $value);
-        
+        $this->with(Attr::Clazz, $value, $append);
+
         return $this;
     }
 } 

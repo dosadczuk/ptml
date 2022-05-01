@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithList
 {
     /**
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    public function list(string $value): static
+    public function list(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::List, $value);
-        
+        $this->with(Attr::List, $value, $append);
+
         return $this;
     }
 } 

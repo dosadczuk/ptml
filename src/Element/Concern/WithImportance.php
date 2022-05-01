@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithImportance
 {
     /**
      * Indicates the relative fetch priority for the resource.
      */
-    public function importance(string $value): static
+    public function importance(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Importance, $value);
-        
+        $this->with(Attr::Importance, $value, $append);
+
         return $this;
     }
 } 

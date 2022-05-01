@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithSlot
 {
     /**
      * Assigns a slot in a shadow DOM shadow tree to an element.
      */
-    public function slot(string $value): static
+    public function slot(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Slot, $value);
-        
+        $this->with(Attr::Slot, $value, $append);
+
         return $this;
     }
 } 

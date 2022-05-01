@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithFor
 {
     /**
      * Describes elements which belongs to this one.
      */
-    public function for(string $value): static
+    public function for(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::For, $value);
-        
+        $this->with(Attr::For, $value, $append);
+
         return $this;
     }
 } 

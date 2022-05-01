@@ -3,7 +3,30 @@ declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\{Element, Tag};
+use PTML\Element;
+use PTML\Element\Concern\{WithAccesskey,
+    WithAutocapitalize,
+    WithCharset,
+    WithClass,
+    WithContent,
+    WithContenteditable,
+    WithContextmenu,
+    WithDir,
+    WithDraggable,
+    WithHidden,
+    WithHttpEquiv,
+    WithId,
+    WithItemprop,
+    WithLang,
+    WithName,
+    WithRole,
+    WithSlot,
+    WithSpellcheck,
+    WithStyle,
+    WithTabindex,
+    WithTitle,
+    WithTranslate};
+use PTML\Tag;
 
 /**
  * The <meta> HTML element represents Metadata that cannot be represented
@@ -12,6 +35,29 @@ use PTML\{Element, Tag};
  */
 class Meta extends Element
 {
+    use WithAccesskey,
+        WithAutocapitalize,
+        WithCharset,
+        WithClass,
+        WithContent,
+        WithContenteditable,
+        WithContextmenu,
+        WithDir,
+        WithDraggable,
+        WithHidden,
+        WithHttpEquiv,
+        WithId,
+        WithItemprop,
+        WithLang,
+        WithName,
+        WithRole,
+        WithSlot,
+        WithSpellcheck,
+        WithStyle,
+        WithTabindex,
+        WithTitle,
+        WithTranslate;
+
     public function __construct()
     {
         parent::__construct(Tag::Meta);

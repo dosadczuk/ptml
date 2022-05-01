@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithRowspan
 {
     /**
      * Defines the number of rows a table cell should span over.
      */
-    public function rowspan(string $value): static
+    public function rowspan(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Rowspan, $value);
-        
+        $this->with(Attr::Rowspan, $value, $append);
+
         return $this;
     }
 } 

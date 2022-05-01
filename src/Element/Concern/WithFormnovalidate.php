@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithFormnovalidate
 {
@@ -13,11 +13,10 @@ trait WithFormnovalidate
      * submitted. If this attribute is specified, it overrides the novalidate
      * attribute of the button's form owner.
      */
-    public function formnovalidate(string $value): static
+    public function formnovalidate(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Formnovalidate, $value);
-        
+        $this->with(Attr::Formnovalidate, $value, $append);
+
         return $this;
     }
 } 

@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithMedia
 {
     /**
      * Specifies a hint of the media for which the linked resource was designed.
      */
-    public function media(string $value): static
+    public function media(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Media, $value);
-        
+        $this->with(Attr::Media, $value, $append);
+
         return $this;
     }
 } 

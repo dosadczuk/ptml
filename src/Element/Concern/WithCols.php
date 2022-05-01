@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithCols
 {
     /**
      * Defines the number of columns in a textarea.
      */
-    public function cols(string $value): static
+    public function cols(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Cols, $value);
-        
+        $this->with(Attr::Cols, $value, $append);
+
         return $this;
     }
 } 

@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithBuffered
 {
     /**
      * Contains the time range of already buffered media.
      */
-    public function buffered(string $value): static
+    public function buffered(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Buffered, $value);
-        
+        $this->with(Attr::Buffered, $value, $append);
+
         return $this;
     }
 } 

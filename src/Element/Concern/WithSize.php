@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithSize
 {
@@ -11,11 +11,10 @@ trait WithSize
      * Defines the width of the element (in pixels). If the element's type
      * attribute is text or password then it's the number of characters.
      */
-    public function size(string $value): static
+    public function size(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Size, $value);
-        
+        $this->with(Attr::Size, $value, $append);
+
         return $this;
     }
 } 

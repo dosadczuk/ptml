@@ -12,18 +12,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait With%1$s
 {
     /**
      * %3$s
      */
-    public function %2$s(string $value): static
+    public function %2$s(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::%1$s, $value);
-        
+        $this->with(Attr::%1$s, $value, $append);
+
         return $this;
     }
 } 

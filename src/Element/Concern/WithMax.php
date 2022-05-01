@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithMax
 {
     /**
      * Indicates the maximum value allowed.
      */
-    public function max(string $value): static
+    public function max(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Max, $value);
-        
+        $this->with(Attr::Max, $value, $append);
+
         return $this;
     }
 } 

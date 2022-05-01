@@ -3,7 +3,31 @@ declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\{Element, Tag};
+use PTML\Element;
+use PTML\Element\Concern\{WithAccesskey,
+    WithAutocapitalize,
+    WithClass,
+    WithContenteditable,
+    WithContextmenu,
+    WithDefault,
+    WithDir,
+    WithDraggable,
+    WithHidden,
+    WithId,
+    WithItemprop,
+    WithKind,
+    WithLabel,
+    WithLang,
+    WithRole,
+    WithSlot,
+    WithSpellcheck,
+    WithSrc,
+    WithSrclang,
+    WithStyle,
+    WithTabindex,
+    WithTitle,
+    WithTranslate};
+use PTML\Tag;
 
 /**
  * The <track> HTML element is used as a child of the media elements, audio
@@ -13,6 +37,30 @@ use PTML\{Element, Tag};
  */
 class Track extends Element
 {
+    use WithAccesskey,
+        WithAutocapitalize,
+        WithClass,
+        WithContenteditable,
+        WithContextmenu,
+        WithDefault,
+        WithDir,
+        WithDraggable,
+        WithHidden,
+        WithId,
+        WithItemprop,
+        WithKind,
+        WithLabel,
+        WithLang,
+        WithRole,
+        WithSlot,
+        WithSpellcheck,
+        WithSrc,
+        WithSrclang,
+        WithStyle,
+        WithTabindex,
+        WithTitle,
+        WithTranslate;
+
     public function __construct()
     {
         parent::__construct(Tag::Track);

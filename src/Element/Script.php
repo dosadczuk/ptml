@@ -3,7 +3,35 @@ declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\{Element, Tag};
+use PTML\Element;
+use PTML\Element\Concern\{WithAccesskey,
+    WithAsync,
+    WithAutocapitalize,
+    WithCharset,
+    WithClass,
+    WithContenteditable,
+    WithContextmenu,
+    WithCrossorigin,
+    WithDefer,
+    WithDir,
+    WithDraggable,
+    WithHidden,
+    WithId,
+    WithImportance,
+    WithIntegrity,
+    WithItemprop,
+    WithLang,
+    WithReferrerpolicy,
+    WithRole,
+    WithSlot,
+    WithSpellcheck,
+    WithSrc,
+    WithStyle,
+    WithTabindex,
+    WithTitle,
+    WithTranslate,
+    WithType};
+use PTML\Tag;
 
 /**
  * The <script> HTML element is used to embed executable code or data; this
@@ -13,6 +41,34 @@ use PTML\{Element, Tag};
  */
 class Script extends Element
 {
+    use WithAccesskey,
+        WithAsync,
+        WithAutocapitalize,
+        WithCharset,
+        WithClass,
+        WithContenteditable,
+        WithContextmenu,
+        WithCrossorigin,
+        WithDefer,
+        WithDir,
+        WithDraggable,
+        WithHidden,
+        WithId,
+        WithImportance,
+        WithIntegrity,
+        WithItemprop,
+        WithLang,
+        WithReferrerpolicy,
+        WithRole,
+        WithSlot,
+        WithSpellcheck,
+        WithSrc,
+        WithStyle,
+        WithTabindex,
+        WithTitle,
+        WithTranslate,
+        WithType;
+
     public function __construct(\Stringable|string $text = '')
     {
         parent::__construct(Tag::Script, $text);

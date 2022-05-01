@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithReversed
 {
@@ -11,11 +11,10 @@ trait WithReversed
      * Indicates whether the list should be displayed in a descending order
      * instead of a ascending.
      */
-    public function reversed(string $value): static
+    public function reversed(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Reversed, $value);
-        
+        $this->with(Attr::Reversed, $value, $append);
+
         return $this;
     }
 } 

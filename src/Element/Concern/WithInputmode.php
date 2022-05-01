@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithInputmode
 {
@@ -13,11 +13,10 @@ trait WithInputmode
      * with form controls (such as the value of textarea elements), or in
      * elements in an editing host (e.g., using contenteditable attribute).
      */
-    public function inputmode(string $value): static
+    public function inputmode(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Inputmode, $value);
-        
+        $this->with(Attr::Inputmode, $value, $append);
+
         return $this;
     }
 } 

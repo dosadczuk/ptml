@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithDecoding
 {
     /**
      * Indicates the preferred method to decode the image.
      */
-    public function decoding(string $value): static
+    public function decoding(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Decoding, $value);
-        
+        $this->with(Attr::Decoding, $value, $append);
+
         return $this;
     }
 } 

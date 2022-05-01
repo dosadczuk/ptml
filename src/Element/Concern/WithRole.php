@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithRole
 {
@@ -11,11 +11,10 @@ trait WithRole
      * Defines an explicit role for an element for use by assistive
      * technologies.
      */
-    public function role(string $value): static
+    public function role(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Role, $value);
-        
+        $this->with(Attr::Role, $value, $append);
+
         return $this;
     }
 } 

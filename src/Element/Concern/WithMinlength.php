@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithMinlength
 {
     /**
      * Defines the minimum number of characters allowed in the element.
      */
-    public function minlength(string $value): static
+    public function minlength(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Minlength, $value);
-        
+        $this->with(Attr::Minlength, $value, $append);
+
         return $this;
     }
 } 

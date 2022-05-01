@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithCrossorigin
 {
     /**
      * How the element handles cross-origin requests
      */
-    public function crossorigin(string $value): static
+    public function crossorigin(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Crossorigin, $value);
-        
+        $this->with(Attr::Crossorigin, $value, $append);
+
         return $this;
     }
 } 

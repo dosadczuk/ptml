@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithData
 {
     /**
      * Specifies the URL of the resource.
      */
-    public function data(string $value): static
+    public function data(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Data, $value);
-        
+        $this->with(Attr::Data, $value, $append);
+
         return $this;
     }
 } 

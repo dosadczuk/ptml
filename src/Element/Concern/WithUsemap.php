@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithUsemap
 {
     /**
      * Specifies an image as a client-side image map.
      */
-    public function usemap(string $value): static
+    public function usemap(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Usemap, $value);
-        
+        $this->with(Attr::Usemap, $value, $append);
+
         return $this;
     }
 } 

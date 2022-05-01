@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithHeaders
 {
     /**
      * IDs of the <th> elements which applies to this element.
      */
-    public function headers(string $value): static
+    public function headers(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Headers, $value);
-        
+        $this->with(Attr::Headers, $value, $append);
+
         return $this;
     }
 } 

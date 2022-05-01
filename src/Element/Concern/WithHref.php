@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithHref
 {
     /**
      * The URL of a linked resource.
      */
-    public function href(string $value): static
+    public function href(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Href, $value);
-        
+        $this->with(Attr::Href, $value, $append);
+
         return $this;
     }
 } 

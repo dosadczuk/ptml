@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithPattern
 {
@@ -11,11 +11,10 @@ trait WithPattern
      * Defines a regular expression which the element's value will be validated
      * against.
      */
-    public function pattern(string $value): static
+    public function pattern(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Pattern, $value);
-        
+        $this->with(Attr::Pattern, $value, $append);
+
         return $this;
     }
 } 

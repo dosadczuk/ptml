@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithIsmap
 {
     /**
      * Indicates that the image is part of a server-side image map.
      */
-    public function ismap(string $value): static
+    public function ismap(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Ismap, $value);
-        
+        $this->with(Attr::Ismap, $value, $append);
+
         return $this;
     }
 } 

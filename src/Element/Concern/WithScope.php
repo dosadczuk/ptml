@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithScope
 {
@@ -11,11 +11,10 @@ trait WithScope
      * Defines the cells that the header test (defined in the th element)
      * relates to.
      */
-    public function scope(string $value): static
+    public function scope(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Scope, $value);
-        
+        $this->with(Attr::Scope, $value, $append);
+
         return $this;
     }
 } 

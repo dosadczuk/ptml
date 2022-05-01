@@ -3,7 +3,42 @@ declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\{Element, Tag};
+use PTML\Element;
+use PTML\Element\Concern\{WithAccesskey,
+    WithAutocapitalize,
+    WithAutocomplete,
+    WithAutofocus,
+    WithClass,
+    WithCols,
+    WithContenteditable,
+    WithContextmenu,
+    WithDir,
+    WithDirname,
+    WithDisabled,
+    WithDraggable,
+    WithEnterkeyhint,
+    WithForm,
+    WithHidden,
+    WithId,
+    WithInputmode,
+    WithItemprop,
+    WithLang,
+    WithMaxlength,
+    WithMinlength,
+    WithName,
+    WithPlaceholder,
+    WithReadonly,
+    WithRequired,
+    WithRole,
+    WithRows,
+    WithSlot,
+    WithSpellcheck,
+    WithStyle,
+    WithTabindex,
+    WithTitle,
+    WithTranslate,
+    WithWrap};
+use PTML\Tag;
 
 /**
  * The <textarea> HTML element represents a multi-line plain-text editing
@@ -12,6 +47,41 @@ use PTML\{Element, Tag};
  */
 class Textarea extends Element
 {
+    use WithAccesskey,
+        WithAutocapitalize,
+        WithAutocomplete,
+        WithAutofocus,
+        WithClass,
+        WithCols,
+        WithContenteditable,
+        WithContextmenu,
+        WithDir,
+        WithDirname,
+        WithDisabled,
+        WithDraggable,
+        WithEnterkeyhint,
+        WithForm,
+        WithHidden,
+        WithId,
+        WithInputmode,
+        WithItemprop,
+        WithLang,
+        WithMaxlength,
+        WithMinlength,
+        WithName,
+        WithPlaceholder,
+        WithReadonly,
+        WithRequired,
+        WithRole,
+        WithRows,
+        WithSlot,
+        WithSpellcheck,
+        WithStyle,
+        WithTabindex,
+        WithTitle,
+        WithTranslate,
+        WithWrap;
+
     public function __construct(\Stringable|string $text = '')
     {
         parent::__construct(Tag::Textarea, $text);

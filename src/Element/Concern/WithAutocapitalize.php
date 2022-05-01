@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithAutocapitalize
 {
     /**
      * Sets whether input is automatically capitalized when entered by user
      */
-    public function autocapitalize(string $value): static
+    public function autocapitalize(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Autocapitalize, $value);
-        
+        $this->with(Attr::Autocapitalize, $value, $append);
+
         return $this;
     }
 } 

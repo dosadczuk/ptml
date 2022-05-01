@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithCharset
 {
     /**
      * Declares the character encoding of the page or script.
      */
-    public function charset(string $value): static
+    public function charset(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Charset, $value);
-        
+        $this->with(Attr::Charset, $value, $append);
+
         return $this;
     }
 } 

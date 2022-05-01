@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithRel
 {
     /**
      * Specifies the relationship of the target object to the link object.
      */
-    public function rel(string $value): static
+    public function rel(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Rel, $value);
-        
+        $this->with(Attr::Rel, $value, $append);
+
         return $this;
     }
 } 

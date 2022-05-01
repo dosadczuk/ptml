@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithPoster
 {
     /**
      * A URL indicating a poster frame to show until the user plays or seeks.
      */
-    public function poster(string $value): static
+    public function poster(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Poster, $value);
-        
+        $this->with(Attr::Poster, $value, $append);
+
         return $this;
     }
 } 

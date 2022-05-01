@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithDraggable
 {
     /**
      * Defines whether the element can be dragged.
      */
-    public function draggable(string $value): static
+    public function draggable(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Draggable, $value);
-        
+        $this->with(Attr::Draggable, $value, $append);
+
         return $this;
     }
 } 

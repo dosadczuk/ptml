@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithTranslate
 {
@@ -12,11 +12,10 @@ trait WithTranslate
      * node children are to be translated when the page is localized, or
      * whether to leave them unchanged.
      */
-    public function translate(string $value): static
+    public function translate(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Translate, $value);
-        
+        $this->with(Attr::Translate, $value, $append);
+
         return $this;
     }
 } 

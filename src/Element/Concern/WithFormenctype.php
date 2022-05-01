@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithFormenctype
 {
@@ -13,11 +13,10 @@ trait WithFormenctype
      * is specified, it overrides the enctype attribute of the button's form
      * owner.
      */
-    public function formenctype(string $value): static
+    public function formenctype(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Formenctype, $value);
-        
+        $this->with(Attr::Formenctype, $value, $append);
+
         return $this;
     }
 } 

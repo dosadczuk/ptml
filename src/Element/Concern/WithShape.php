@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithShape
 {
     /**
      * Specifies the shape of the area.
      */
-    public function shape(string $value): static
+    public function shape(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Shape, $value);
-        
+        $this->with(Attr::Shape, $value, $append);
+
         return $this;
     }
 } 

@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithSizes
 {
     /**
      * Specifies the size of the linked resource.
      */
-    public function sizes(string $value): static
+    public function sizes(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Sizes, $value);
-        
+        $this->with(Attr::Sizes, $value, $append);
+
         return $this;
     }
 } 

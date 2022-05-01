@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithTitle
 {
     /**
      * Text to be displayed in a tooltip when hovering over the element.
      */
-    public function title(string $value): static
+    public function title(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Title, $value);
-        
+        $this->with(Attr::Title, $value, $append);
+
         return $this;
     }
 } 

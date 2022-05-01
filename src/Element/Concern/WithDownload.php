@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithDownload
 {
     /**
      * Indicates that the hyperlink is to be used for downloading a resource.
      */
-    public function download(string $value): static
+    public function download(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Download, $value);
-        
+        $this->with(Attr::Download, $value, $append);
+
         return $this;
     }
 } 

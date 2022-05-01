@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithAllow
 {
     /**
      * Specifies a feature-policy for the iframe.
      */
-    public function allow(string $value): static
+    public function allow(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Allow, $value);
-        
+        $this->with(Attr::Allow, $value, $append);
+
         return $this;
     }
 } 

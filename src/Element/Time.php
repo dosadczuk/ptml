@@ -3,7 +3,27 @@ declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\{Element, Tag};
+use PTML\Element;
+use PTML\Element\Concern\{WithAccesskey,
+    WithAutocapitalize,
+    WithClass,
+    WithContenteditable,
+    WithContextmenu,
+    WithDatetime,
+    WithDir,
+    WithDraggable,
+    WithHidden,
+    WithId,
+    WithItemprop,
+    WithLang,
+    WithRole,
+    WithSlot,
+    WithSpellcheck,
+    WithStyle,
+    WithTabindex,
+    WithTitle,
+    WithTranslate};
+use PTML\Tag;
 
 /**
  * The <time> HTML element represents a specific period in time. It may
@@ -13,6 +33,26 @@ use PTML\{Element, Tag};
  */
 class Time extends Element
 {
+    use WithAccesskey,
+        WithAutocapitalize,
+        WithClass,
+        WithContenteditable,
+        WithContextmenu,
+        WithDatetime,
+        WithDir,
+        WithDraggable,
+        WithHidden,
+        WithId,
+        WithItemprop,
+        WithLang,
+        WithRole,
+        WithSlot,
+        WithSpellcheck,
+        WithStyle,
+        WithTabindex,
+        WithTitle,
+        WithTranslate;
+
     public function __construct(\Stringable|string $text = '')
     {
         parent::__construct(Tag::Time, $text);

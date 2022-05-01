@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithIntegrity
 {
@@ -11,11 +11,10 @@ trait WithIntegrity
      * Specifies a Subresource Integrity value that allows browsers to verify
      * what they fetch.
      */
-    public function integrity(string $value): static
+    public function integrity(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Integrity, $value);
-        
+        $this->with(Attr::Integrity, $value, $append);
+
         return $this;
     }
 } 

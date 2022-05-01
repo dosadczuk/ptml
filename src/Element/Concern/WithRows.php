@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithRows
 {
     /**
      * Defines the number of rows in a text area.
      */
-    public function rows(string $value): static
+    public function rows(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Rows, $value);
-        
+        $this->with(Attr::Rows, $value, $append);
+
         return $this;
     }
 } 

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithLoop
 {
@@ -11,11 +11,10 @@ trait WithLoop
      * Indicates whether the media should start playing from the start when
      * it's finished.
      */
-    public function loop(string $value): static
+    public function loop(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Loop, $value);
-        
+        $this->with(Attr::Loop, $value, $append);
+
         return $this;
     }
 } 

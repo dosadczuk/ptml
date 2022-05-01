@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithDefault
 {
@@ -11,11 +11,10 @@ trait WithDefault
      * Indicates that the track should be enabled unless the user's preferences
      * indicate something different.
      */
-    public function default(string $value): static
+    public function default(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Default, $value);
-        
+        $this->with(Attr::Default, $value, $append);
+
         return $this;
     }
 } 

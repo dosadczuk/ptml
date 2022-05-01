@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithSelected
 {
     /**
      * Defines a value which will be selected on page load.
      */
-    public function selected(string $value): static
+    public function selected(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Selected, $value);
-        
+        $this->with(Attr::Selected, $value, $append);
+
         return $this;
     }
 } 

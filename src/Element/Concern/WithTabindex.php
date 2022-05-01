@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithTabindex
 {
@@ -11,11 +11,10 @@ trait WithTabindex
      * Overrides the browser's default tab order and follows the one specified
      * instead.
      */
-    public function tabindex(string $value): static
+    public function tabindex(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Tabindex, $value);
-        
+        $this->with(Attr::Tabindex, $value, $append);
+
         return $this;
     }
 } 

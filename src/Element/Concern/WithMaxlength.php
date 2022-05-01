@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithMaxlength
 {
     /**
      * Defines the maximum number of characters allowed in the element.
      */
-    public function maxlength(string $value): static
+    public function maxlength(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Maxlength, $value);
-        
+        $this->with(Attr::Maxlength, $value, $append);
+
         return $this;
     }
 } 

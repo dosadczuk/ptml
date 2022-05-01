@@ -3,7 +3,27 @@ declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\{Element, Tag};
+use PTML\Element;
+use PTML\Element\Concern\{WithAccesskey,
+    WithAutocapitalize,
+    WithClass,
+    WithContenteditable,
+    WithContextmenu,
+    WithDir,
+    WithDraggable,
+    WithHidden,
+    WithId,
+    WithItemprop,
+    WithLang,
+    WithRole,
+    WithSlot,
+    WithSpellcheck,
+    WithStyle,
+    WithTabindex,
+    WithTitle,
+    WithTranslate,
+    WithValue};
+use PTML\Tag;
 
 /**
  * The <li> HTML element is used to represent an item in a list. It must be
@@ -15,6 +35,26 @@ use PTML\{Element, Tag};
  */
 class Li extends Element
 {
+    use WithAccesskey,
+        WithAutocapitalize,
+        WithClass,
+        WithContenteditable,
+        WithContextmenu,
+        WithDir,
+        WithDraggable,
+        WithHidden,
+        WithId,
+        WithItemprop,
+        WithLang,
+        WithRole,
+        WithSlot,
+        WithSpellcheck,
+        WithStyle,
+        WithTabindex,
+        WithTitle,
+        WithTranslate,
+        WithValue;
+
     public function __construct(\Stringable|string $text = '')
     {
         parent::__construct(Tag::Li, $text);

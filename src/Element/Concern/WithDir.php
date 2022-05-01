@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithDir
 {
@@ -11,11 +11,10 @@ trait WithDir
      * Defines the text direction. Allowed values are ltr (Left-To-Right) or
      * rtl (Right-To-Left)
      */
-    public function dir(string $value): static
+    public function dir(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Dir, $value);
-        
+        $this->with(Attr::Dir, $value, $append);
+
         return $this;
     }
 } 

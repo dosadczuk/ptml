@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithRequired
 {
     /**
      * Indicates whether this element is required to fill out or not.
      */
-    public function required(string $value): static
+    public function required(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Required, $value);
-        
+        $this->with(Attr::Required, $value, $append);
+
         return $this;
     }
 } 

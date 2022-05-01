@@ -3,7 +3,32 @@ declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\{Element, Tag};
+use PTML\Element;
+use PTML\Element\Concern\{WithAccesskey,
+    WithAutocapitalize,
+    WithClass,
+    WithContenteditable,
+    WithContextmenu,
+    WithData,
+    WithDir,
+    WithDraggable,
+    WithForm,
+    WithHidden,
+    WithId,
+    WithItemprop,
+    WithLang,
+    WithName,
+    WithRole,
+    WithSlot,
+    WithSpellcheck,
+    WithStyle,
+    WithTabindex,
+    WithTitle,
+    WithTranslate,
+    WithType,
+    WithUsemap,
+    WithWidth};
+use PTML\Tag;
 
 /**
  * The <object> HTML element represents an external resource, which can be
@@ -12,6 +37,31 @@ use PTML\{Element, Tag};
  */
 class Obj extends Element
 {
+    use WithAccesskey,
+        WithAutocapitalize,
+        WithClass,
+        WithContenteditable,
+        WithContextmenu,
+        WithData,
+        WithDir,
+        WithDraggable,
+        WithForm,
+        WithHidden,
+        WithId,
+        WithItemprop,
+        WithLang,
+        WithName,
+        WithRole,
+        WithSlot,
+        WithSpellcheck,
+        WithStyle,
+        WithTabindex,
+        WithTitle,
+        WithTranslate,
+        WithType,
+        WithUsemap,
+        WithWidth;
+
     public function __construct(\Stringable|string $text = '')
     {
         parent::__construct(Tag::Obj, $text);

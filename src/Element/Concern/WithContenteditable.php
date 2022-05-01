@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithContenteditable
 {
     /**
      * Indicates whether the element's content is editable.
      */
-    public function contenteditable(string $value): static
+    public function contenteditable(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Contenteditable, $value);
-        
+        $this->with(Attr::Contenteditable, $value, $append);
+
         return $this;
     }
 } 

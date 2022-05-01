@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithSrcset
 {
     /**
      * One or more responsive image candidates.
      */
-    public function srcset(string $value): static
+    public function srcset(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Srcset, $value);
-        
+        $this->with(Attr::Srcset, $value, $append);
+
         return $this;
     }
 } 

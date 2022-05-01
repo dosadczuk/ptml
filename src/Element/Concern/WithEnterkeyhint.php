@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithEnterkeyhint
 {
@@ -13,11 +13,10 @@ trait WithEnterkeyhint
      * controls (such as the value of textarea elements), or in elements in an
      * editing host (e.g., using contenteditable attribute).
      */
-    public function enterkeyhint(string $value): static
+    public function enterkeyhint(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Enterkeyhint, $value);
-        
+        $this->with(Attr::Enterkeyhint, $value, $append);
+
         return $this;
     }
 } 

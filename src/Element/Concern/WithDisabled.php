@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithDisabled
 {
     /**
      * Indicates whether the user can interact with the element.
      */
-    public function disabled(string $value): static
+    public function disabled(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Disabled, $value);
-        
+        $this->with(Attr::Disabled, $value, $append);
+
         return $this;
     }
 } 

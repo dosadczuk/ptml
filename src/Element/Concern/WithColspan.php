@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithColspan
 {
     /**
      * The colspan attribute defines the number of columns a cell should span.
      */
-    public function colspan(string $value): static
+    public function colspan(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Colspan, $value);
-        
+        $this->with(Attr::Colspan, $value, $append);
+
         return $this;
     }
 } 

@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithAutofocus
 {
     /**
      * The element should be automatically focused after the page loaded.
      */
-    public function autofocus(string $value): static
+    public function autofocus(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Autofocus, $value);
-        
+        $this->with(Attr::Autofocus, $value, $append);
+
         return $this;
     }
 } 

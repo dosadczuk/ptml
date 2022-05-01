@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithFormtarget
 {
@@ -14,11 +14,10 @@ trait WithFormtarget
      * submitting the form. If this attribute is specified, it overrides the
      * target attribute of the button's form owner.
      */
-    public function formtarget(string $value): static
+    public function formtarget(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Formtarget, $value);
-        
+        $this->with(Attr::Formtarget, $value, $append);
+
         return $this;
     }
 } 

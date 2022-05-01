@@ -3,7 +3,35 @@ declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\{Element, Tag};
+use PTML\Element;
+use PTML\Element\Concern\{WithAccesskey,
+    WithAutocapitalize,
+    WithClass,
+    WithContenteditable,
+    WithContextmenu,
+    WithDir,
+    WithDownload,
+    WithDraggable,
+    WithHidden,
+    WithHref,
+    WithHreflang,
+    WithId,
+    WithItemprop,
+    WithLang,
+    WithMedia,
+    WithPing,
+    WithReferrerpolicy,
+    WithRel,
+    WithRole,
+    WithShape,
+    WithSlot,
+    WithSpellcheck,
+    WithStyle,
+    WithTabindex,
+    WithTarget,
+    WithTitle,
+    WithTranslate};
+use PTML\Tag;
 
 /**
  * The <a> HTML element (or anchor element), with its href attribute,
@@ -12,6 +40,34 @@ use PTML\{Element, Tag};
  */
 class A extends Element
 {
+    use WithAccesskey,
+        WithAutocapitalize,
+        WithClass,
+        WithContenteditable,
+        WithContextmenu,
+        WithDir,
+        WithDownload,
+        WithDraggable,
+        WithHidden,
+        WithHref,
+        WithHreflang,
+        WithId,
+        WithItemprop,
+        WithLang,
+        WithMedia,
+        WithPing,
+        WithReferrerpolicy,
+        WithRel,
+        WithRole,
+        WithShape,
+        WithSlot,
+        WithSpellcheck,
+        WithStyle,
+        WithTabindex,
+        WithTarget,
+        WithTitle,
+        WithTranslate;
+
     public function __construct(\Stringable|string $text = '')
     {
         parent::__construct(Tag::A, $text);

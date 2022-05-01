@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithName
 {
@@ -11,11 +11,10 @@ trait WithName
      * Name of the element. For example used by the server to identify the
      * fields in form submits.
      */
-    public function name(string $value): static
+    public function name(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Name, $value);
-        
+        $this->with(Attr::Name, $value, $append);
+
         return $this;
     }
 } 

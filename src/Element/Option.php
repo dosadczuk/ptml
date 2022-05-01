@@ -3,7 +3,30 @@ declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\{Element, Tag};
+use PTML\Element;
+use PTML\Element\Concern\{WithAccesskey,
+    WithAutocapitalize,
+    WithClass,
+    WithContenteditable,
+    WithContextmenu,
+    WithDir,
+    WithDisabled,
+    WithDraggable,
+    WithHidden,
+    WithId,
+    WithItemprop,
+    WithLabel,
+    WithLang,
+    WithRole,
+    WithSelected,
+    WithSlot,
+    WithSpellcheck,
+    WithStyle,
+    WithTabindex,
+    WithTitle,
+    WithTranslate,
+    WithValue};
+use PTML\Tag;
 
 /**
  * The <option> HTML element is used to define an item contained in a
@@ -13,6 +36,29 @@ use PTML\{Element, Tag};
  */
 class Option extends Element
 {
+    use WithAccesskey,
+        WithAutocapitalize,
+        WithClass,
+        WithContenteditable,
+        WithContextmenu,
+        WithDir,
+        WithDisabled,
+        WithDraggable,
+        WithHidden,
+        WithId,
+        WithItemprop,
+        WithLabel,
+        WithLang,
+        WithRole,
+        WithSelected,
+        WithSlot,
+        WithSpellcheck,
+        WithStyle,
+        WithTabindex,
+        WithTitle,
+        WithTranslate,
+        WithValue;
+
     public function __construct(\Stringable|string $text = '')
     {
         parent::__construct(Tag::Option, $text);

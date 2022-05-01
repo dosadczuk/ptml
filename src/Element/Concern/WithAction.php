@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithAction
 {
@@ -11,11 +11,10 @@ trait WithAction
      * The URI of a program that processes the information submitted via the
      * form.
      */
-    public function action(string $value): static
+    public function action(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Action, $value);
-        
+        $this->with(Attr::Action, $value, $append);
+
         return $this;
     }
 } 

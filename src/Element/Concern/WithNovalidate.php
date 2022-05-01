@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithNovalidate
 {
@@ -11,11 +11,10 @@ trait WithNovalidate
      * This attribute indicates that the form shouldn't be validated when
      * submitted.
      */
-    public function novalidate(string $value): static
+    public function novalidate(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Novalidate, $value);
-        
+        $this->with(Attr::Novalidate, $value, $append);
+
         return $this;
     }
 } 

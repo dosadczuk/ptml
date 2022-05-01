@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithHreflang
 {
     /**
      * Specifies the language of the linked resource.
      */
-    public function hreflang(string $value): static
+    public function hreflang(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Hreflang, $value);
-        
+        $this->with(Attr::Hreflang, $value, $append);
+
         return $this;
     }
 } 

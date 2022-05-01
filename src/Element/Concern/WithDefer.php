@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithDefer
 {
@@ -11,11 +11,10 @@ trait WithDefer
      * Indicates that the script should be executed after the page has been
      * parsed.
      */
-    public function defer(string $value): static
+    public function defer(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Defer, $value);
-        
+        $this->with(Attr::Defer, $value, $append);
+
         return $this;
     }
 } 

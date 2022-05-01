@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithControls
 {
     /**
      * Indicates whether the browser should show playback controls to the user.
      */
-    public function controls(string $value): static
+    public function controls(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Controls, $value);
-        
+        $this->with(Attr::Controls, $value, $append);
+
         return $this;
     }
 } 

@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithSpan
 {
     /**
      * Specifies the number of columns to span.
      */
-    public function span(string $value): static
+    public function span(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Span, $value);
-        
+        $this->with(Attr::Span, $value, $append);
+
         return $this;
     }
 } 

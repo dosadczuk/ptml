@@ -3,18 +3,17 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithAcceptCharset
 {
     /**
      * List of supported charsets.
      */
-    public function acceptCharset(string $value): static
+    public function acceptCharset(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::AcceptCharset, $value);
-        
+        $this->with(Attr::AcceptCharset, $value, $append);
+
         return $this;
     }
 } 

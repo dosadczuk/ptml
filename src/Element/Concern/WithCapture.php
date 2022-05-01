@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithCapture
 {
@@ -11,11 +11,10 @@ trait WithCapture
      * From the Media Capture specification, specifies a new file can be
      * captured.
      */
-    public function capture(string $value): static
+    public function capture(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Capture, $value);
-        
+        $this->with(Attr::Capture, $value, $append);
+
         return $this;
     }
 } 

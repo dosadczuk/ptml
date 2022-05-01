@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithAutocomplete
 {
@@ -11,11 +11,10 @@ trait WithAutocomplete
      * Indicates whether controls in this form can by default have their values
      * automatically completed by the browser.
      */
-    public function autocomplete(string $value): static
+    public function autocomplete(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Autocomplete, $value);
-        
+        $this->with(Attr::Autocomplete, $value, $append);
+
         return $this;
     }
 } 

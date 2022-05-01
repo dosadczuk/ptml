@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PTML\Element\Concern;
 
-use PTML\{Attr, Element};
+use PTML\Attr;
 
 trait WithContextmenu
 {
@@ -11,11 +11,10 @@ trait WithContextmenu
      * Defines the ID of a <menu> element which will serve as the element's
      * context menu.
      */
-    public function contextmenu(string $value): static
+    public function contextmenu(string $value, bool $append = false): static
     {
-        /** @var Element $this */
-        $this->with(Attr::Contextmenu, $value);
-        
+        $this->with(Attr::Contextmenu, $value, $append);
+
         return $this;
     }
 } 
