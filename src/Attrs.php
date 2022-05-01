@@ -44,7 +44,7 @@ final class Attrs extends \ArrayObject
             $value = sprintf('%s %s', $this[$name], $value);
         }
 
-        $this[$name] = $value;
+        $this[$name] = trim($value);
     }
 
     /**
