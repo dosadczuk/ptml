@@ -13,25 +13,25 @@ final class Attrs extends \ArrayObject
         parent::__construct([], 0, \ArrayIterator::class);
     }
 
+    /**
+     * Check if attributes exist.
+     */
     public function empty(): bool
     {
         return $this->count() === 0;
     }
 
+    /**
+     * Returns array of attributes.
+     */
     public function values(): array
     {
         return $this->getArrayCopy();
     }
 
-    public function get(AttrInterface|string $name): ?string
-    {
-        if ($name instanceof AttrInterface) {
-            $name = $name->name();
-        }
-
-        return $this[$name] ?? null;
-    }
-
+    /**
+     * Sets given attribute or replaces if attribute is added already.
+     */
     public function set(AttrInterface|string $name, string $value): void
     {
         if ($name instanceof AttrInterface) {
@@ -41,6 +41,21 @@ final class Attrs extends \ArrayObject
         $this[$name] = $value;
     }
 
+    /**
+     * Returns attribute or NULL if not exists.
+     */
+    public function get(AttrInterface|string $name): ?string
+    {
+        if ($name instanceof AttrInterface) {
+            $name = $name->name();
+        }
+
+        return $this[$name] ?? null;
+    }
+
+    /**
+     * Checks if attribute exists.
+     */
     public function has(AttrInterface|string $name): bool
     {
         if ($name instanceof AttrInterface) {
@@ -50,6 +65,9 @@ final class Attrs extends \ArrayObject
         return isset($this[$name]);
     }
 
+    /**
+     * Removes given attribute.
+     */
     public function del(AttrInterface|string $name): void
     {
         if ($name instanceof AttrInterface) {
@@ -59,7 +77,10 @@ final class Attrs extends \ArrayObject
         unset($this[$name]);
     }
 
-    public function __toString(): string
+    /**
+     * Converts children to HTML.
+     */
+    public function html(): string
     {
         $output = [];
         foreach ($this as $name => $value) {
@@ -67,5 +88,10 @@ final class Attrs extends \ArrayObject
         }
 
         return implode(' ', $output);
+    }
+
+    public function __toString(): string
+    {
+        return $this->html();
     }
 }

@@ -18,6 +18,9 @@ final class ElementOutput
         return file_put_contents($file_path, $this->element->html()) !== false;
     }
 
+    /**
+     * Output element to standard output.
+     */
     public function toStdOut(): void
     {
         print $this->element;
