@@ -17,4 +17,11 @@ trait WithLoop
 
         return $this;
     }
+    
+    public function withoutLoop(): static
+    {
+        $this->without(Attr::Loop);
+        
+        return $this;
+    }
 } 

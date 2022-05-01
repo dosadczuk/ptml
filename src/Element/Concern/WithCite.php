@@ -16,4 +16,11 @@ trait WithCite
 
         return $this;
     }
+    
+    public function withoutCite(): static
+    {
+        $this->without(Attr::Cite);
+        
+        return $this;
+    }
 } 

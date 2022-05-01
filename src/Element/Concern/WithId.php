@@ -17,4 +17,11 @@ trait WithId
 
         return $this;
     }
+    
+    public function withoutId(): static
+    {
+        $this->without(Attr::Id);
+        
+        return $this;
+    }
 } 

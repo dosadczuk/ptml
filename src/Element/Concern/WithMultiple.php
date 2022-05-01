@@ -17,4 +17,11 @@ trait WithMultiple
 
         return $this;
     }
+    
+    public function withoutMultiple(): static
+    {
+        $this->without(Attr::Multiple);
+        
+        return $this;
+    }
 } 

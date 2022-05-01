@@ -16,4 +16,11 @@ trait WithCrossorigin
 
         return $this;
     }
+    
+    public function withoutCrossorigin(): static
+    {
+        $this->without(Attr::Crossorigin);
+        
+        return $this;
+    }
 } 

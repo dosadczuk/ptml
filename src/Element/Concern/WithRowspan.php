@@ -16,4 +16,11 @@ trait WithRowspan
 
         return $this;
     }
+    
+    public function withoutRowspan(): static
+    {
+        $this->without(Attr::Rowspan);
+        
+        return $this;
+    }
 } 

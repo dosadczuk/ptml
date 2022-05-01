@@ -18,4 +18,11 @@ trait WithTarget
 
         return $this;
     }
+    
+    public function withoutTarget(): static
+    {
+        $this->without(Attr::Target);
+        
+        return $this;
+    }
 } 

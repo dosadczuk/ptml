@@ -16,4 +16,11 @@ trait WithMin
 
         return $this;
     }
+    
+    public function withoutMin(): static
+    {
+        $this->without(Attr::Min);
+        
+        return $this;
+    }
 } 

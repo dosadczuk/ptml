@@ -7,7 +7,7 @@ use PTML\Element;
 use PTML\Element\Concern\{
     WithAccesskey,
 	WithAutocapitalize,
-	WithClass,
+	WithClazz,
 	WithContenteditable,
 	WithContextmenu,
 	WithDefault,
@@ -41,7 +41,7 @@ class Track extends Element
 {
     use WithAccesskey,
 		WithAutocapitalize,
-		WithClass,
+		WithClazz,
 		WithContenteditable,
 		WithContextmenu,
 		WithDefault,

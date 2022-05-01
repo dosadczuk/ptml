@@ -16,4 +16,11 @@ trait WithItemprop
 
         return $this;
     }
+    
+    public function withoutItemprop(): static
+    {
+        $this->without(Attr::Itemprop);
+        
+        return $this;
+    }
 } 

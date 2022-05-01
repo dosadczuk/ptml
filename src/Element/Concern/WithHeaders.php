@@ -16,4 +16,11 @@ trait WithHeaders
 
         return $this;
     }
+    
+    public function withoutHeaders(): static
+    {
+        $this->without(Attr::Headers);
+        
+        return $this;
+    }
 } 

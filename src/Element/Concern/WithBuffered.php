@@ -16,4 +16,11 @@ trait WithBuffered
 
         return $this;
     }
+    
+    public function withoutBuffered(): static
+    {
+        $this->without(Attr::Buffered);
+        
+        return $this;
+    }
 } 

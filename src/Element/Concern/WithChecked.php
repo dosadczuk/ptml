@@ -16,4 +16,11 @@ trait WithChecked
 
         return $this;
     }
+    
+    public function withoutChecked(): static
+    {
+        $this->without(Attr::Checked);
+        
+        return $this;
+    }
 } 

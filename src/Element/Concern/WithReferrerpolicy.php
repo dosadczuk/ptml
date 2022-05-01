@@ -16,4 +16,11 @@ trait WithReferrerpolicy
 
         return $this;
     }
+    
+    public function withoutReferrerpolicy(): static
+    {
+        $this->without(Attr::Referrerpolicy);
+        
+        return $this;
+    }
 } 

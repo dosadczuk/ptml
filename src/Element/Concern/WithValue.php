@@ -17,4 +17,11 @@ trait WithValue
 
         return $this;
     }
+    
+    public function withoutValue(): static
+    {
+        $this->without(Attr::Value);
+        
+        return $this;
+    }
 } 

@@ -25,6 +25,13 @@ trait With%1$s
 
         return $this;
     }
+    
+    public function without%1$s(): static
+    {
+        $this->without(Attr::%1$s);
+        
+        return $this;
+    }
 } 
 ');
 

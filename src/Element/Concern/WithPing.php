@@ -17,4 +17,11 @@ trait WithPing
 
         return $this;
     }
+    
+    public function withoutPing(): static
+    {
+        $this->without(Attr::Ping);
+        
+        return $this;
+    }
 } 

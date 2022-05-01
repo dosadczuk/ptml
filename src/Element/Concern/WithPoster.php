@@ -16,4 +16,11 @@ trait WithPoster
 
         return $this;
     }
+    
+    public function withoutPoster(): static
+    {
+        $this->without(Attr::Poster);
+        
+        return $this;
+    }
 } 

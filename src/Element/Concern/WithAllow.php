@@ -16,4 +16,11 @@ trait WithAllow
 
         return $this;
     }
+    
+    public function withoutAllow(): static
+    {
+        $this->without(Attr::Allow);
+        
+        return $this;
+    }
 } 

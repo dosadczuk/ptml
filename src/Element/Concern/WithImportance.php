@@ -16,4 +16,11 @@ trait WithImportance
 
         return $this;
     }
+    
+    public function withoutImportance(): static
+    {
+        $this->without(Attr::Importance);
+        
+        return $this;
+    }
 } 

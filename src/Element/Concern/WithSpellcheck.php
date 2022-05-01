@@ -16,4 +16,11 @@ trait WithSpellcheck
 
         return $this;
     }
+    
+    public function withoutSpellcheck(): static
+    {
+        $this->without(Attr::Spellcheck);
+        
+        return $this;
+    }
 } 

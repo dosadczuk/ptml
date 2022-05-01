@@ -16,4 +16,11 @@ trait WithStart
 
         return $this;
     }
+    
+    public function withoutStart(): static
+    {
+        $this->without(Attr::Start);
+        
+        return $this;
+    }
 } 

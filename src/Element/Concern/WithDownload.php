@@ -16,4 +16,11 @@ trait WithDownload
 
         return $this;
     }
+    
+    public function withoutDownload(): static
+    {
+        $this->without(Attr::Download);
+        
+        return $this;
+    }
 } 

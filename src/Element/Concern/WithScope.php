@@ -17,4 +17,11 @@ trait WithScope
 
         return $this;
     }
+    
+    public function withoutScope(): static
+    {
+        $this->without(Attr::Scope);
+        
+        return $this;
+    }
 } 

@@ -16,4 +16,11 @@ trait WithDatetime
 
         return $this;
     }
+    
+    public function withoutDatetime(): static
+    {
+        $this->without(Attr::Datetime);
+        
+        return $this;
+    }
 } 

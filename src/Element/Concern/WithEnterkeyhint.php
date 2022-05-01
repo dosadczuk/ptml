@@ -19,4 +19,11 @@ trait WithEnterkeyhint
 
         return $this;
     }
+    
+    public function withoutEnterkeyhint(): static
+    {
+        $this->without(Attr::Enterkeyhint);
+        
+        return $this;
+    }
 } 

@@ -16,4 +16,11 @@ trait WithDecoding
 
         return $this;
     }
+    
+    public function withoutDecoding(): static
+    {
+        $this->without(Attr::Decoding);
+        
+        return $this;
+    }
 } 

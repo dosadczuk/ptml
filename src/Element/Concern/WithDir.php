@@ -17,4 +17,11 @@ trait WithDir
 
         return $this;
     }
+    
+    public function withoutDir(): static
+    {
+        $this->without(Attr::Dir);
+        
+        return $this;
+    }
 } 

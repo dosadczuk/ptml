@@ -17,4 +17,11 @@ trait WithTabindex
 
         return $this;
     }
+    
+    public function withoutTabindex(): static
+    {
+        $this->without(Attr::Tabindex);
+        
+        return $this;
+    }
 } 

@@ -16,4 +16,11 @@ trait WithMedia
 
         return $this;
     }
+    
+    public function withoutMedia(): static
+    {
+        $this->without(Attr::Media);
+        
+        return $this;
+    }
 } 

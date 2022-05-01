@@ -17,4 +17,11 @@ trait WithPattern
 
         return $this;
     }
+    
+    public function withoutPattern(): static
+    {
+        $this->without(Attr::Pattern);
+        
+        return $this;
+    }
 } 

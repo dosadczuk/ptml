@@ -16,4 +16,11 @@ trait WithCoords
 
         return $this;
     }
+    
+    public function withoutCoords(): static
+    {
+        $this->without(Attr::Coords);
+        
+        return $this;
+    }
 } 

@@ -17,4 +17,11 @@ trait WithCapture
 
         return $this;
     }
+    
+    public function withoutCapture(): static
+    {
+        $this->without(Attr::Capture);
+        
+        return $this;
+    }
 } 

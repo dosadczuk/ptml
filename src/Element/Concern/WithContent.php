@@ -16,4 +16,11 @@ trait WithContent
 
         return $this;
     }
+    
+    public function withoutContent(): static
+    {
+        $this->without(Attr::Content);
+        
+        return $this;
+    }
 } 

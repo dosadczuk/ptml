@@ -16,4 +16,11 @@ trait WithHigh
 
         return $this;
     }
+    
+    public function withoutHigh(): static
+    {
+        $this->without(Attr::High);
+        
+        return $this;
+    }
 } 

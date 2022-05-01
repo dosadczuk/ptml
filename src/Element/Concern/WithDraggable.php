@@ -16,4 +16,11 @@ trait WithDraggable
 
         return $this;
     }
+    
+    public function withoutDraggable(): static
+    {
+        $this->without(Attr::Draggable);
+        
+        return $this;
+    }
 } 

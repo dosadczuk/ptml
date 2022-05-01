@@ -19,4 +19,11 @@ trait WithInputmode
 
         return $this;
     }
+    
+    public function withoutInputmode(): static
+    {
+        $this->without(Attr::Inputmode);
+        
+        return $this;
+    }
 } 

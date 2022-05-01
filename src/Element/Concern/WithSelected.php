@@ -16,4 +16,11 @@ trait WithSelected
 
         return $this;
     }
+    
+    public function withoutSelected(): static
+    {
+        $this->without(Attr::Selected);
+        
+        return $this;
+    }
 } 

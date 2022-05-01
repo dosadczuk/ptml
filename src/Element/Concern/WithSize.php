@@ -17,4 +17,11 @@ trait WithSize
 
         return $this;
     }
+    
+    public function withoutSize(): static
+    {
+        $this->without(Attr::Size);
+        
+        return $this;
+    }
 } 

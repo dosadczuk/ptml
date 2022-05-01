@@ -16,4 +16,11 @@ trait WithAutoplay
 
         return $this;
     }
+    
+    public function withoutAutoplay(): static
+    {
+        $this->without(Attr::Autoplay);
+        
+        return $this;
+    }
 } 

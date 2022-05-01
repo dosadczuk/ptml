@@ -16,4 +16,11 @@ trait WithColspan
 
         return $this;
     }
+    
+    public function withoutColspan(): static
+    {
+        $this->without(Attr::Colspan);
+        
+        return $this;
+    }
 } 

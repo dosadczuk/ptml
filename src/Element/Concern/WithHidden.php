@@ -16,4 +16,11 @@ trait WithHidden
 
         return $this;
     }
+    
+    public function withoutHidden(): static
+    {
+        $this->without(Attr::Hidden);
+        
+        return $this;
+    }
 } 

@@ -16,4 +16,11 @@ trait WithContenteditable
 
         return $this;
     }
+    
+    public function withoutContenteditable(): static
+    {
+        $this->without(Attr::Contenteditable);
+        
+        return $this;
+    }
 } 

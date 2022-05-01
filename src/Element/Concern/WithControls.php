@@ -16,4 +16,11 @@ trait WithControls
 
         return $this;
     }
+    
+    public function withoutControls(): static
+    {
+        $this->without(Attr::Controls);
+        
+        return $this;
+    }
 } 

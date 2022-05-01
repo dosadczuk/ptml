@@ -17,4 +17,11 @@ trait WithDefault
 
         return $this;
     }
+    
+    public function withoutDefault(): static
+    {
+        $this->without(Attr::Default);
+        
+        return $this;
+    }
 } 

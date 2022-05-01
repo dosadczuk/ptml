@@ -16,4 +16,11 @@ trait WithRows
 
         return $this;
     }
+    
+    public function withoutRows(): static
+    {
+        $this->without(Attr::Rows);
+        
+        return $this;
+    }
 } 

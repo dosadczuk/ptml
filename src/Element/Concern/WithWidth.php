@@ -16,4 +16,11 @@ trait WithWidth
 
         return $this;
     }
+    
+    public function withoutWidth(): static
+    {
+        $this->without(Attr::Width);
+        
+        return $this;
+    }
 } 

@@ -16,4 +16,11 @@ trait WithIsmap
 
         return $this;
     }
+    
+    public function withoutIsmap(): static
+    {
+        $this->without(Attr::Ismap);
+        
+        return $this;
+    }
 } 

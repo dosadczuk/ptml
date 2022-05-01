@@ -17,4 +17,11 @@ trait WithDefer
 
         return $this;
     }
+    
+    public function withoutDefer(): static
+    {
+        $this->without(Attr::Defer);
+        
+        return $this;
+    }
 } 

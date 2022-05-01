@@ -16,4 +16,11 @@ trait WithUsemap
 
         return $this;
     }
+    
+    public function withoutUsemap(): static
+    {
+        $this->without(Attr::Usemap);
+        
+        return $this;
+    }
 } 

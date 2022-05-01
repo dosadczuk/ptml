@@ -20,4 +20,11 @@ trait WithFormtarget
 
         return $this;
     }
+    
+    public function withoutFormtarget(): static
+    {
+        $this->without(Attr::Formtarget);
+        
+        return $this;
+    }
 } 

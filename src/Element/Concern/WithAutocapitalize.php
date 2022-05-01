@@ -16,4 +16,11 @@ trait WithAutocapitalize
 
         return $this;
     }
+    
+    public function withoutAutocapitalize(): static
+    {
+        $this->without(Attr::Autocapitalize);
+        
+        return $this;
+    }
 } 

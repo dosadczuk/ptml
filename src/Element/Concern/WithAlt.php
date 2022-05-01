@@ -16,4 +16,11 @@ trait WithAlt
 
         return $this;
     }
+    
+    public function withoutAlt(): static
+    {
+        $this->without(Attr::Alt);
+        
+        return $this;
+    }
 } 

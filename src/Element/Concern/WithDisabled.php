@@ -16,4 +16,11 @@ trait WithDisabled
 
         return $this;
     }
+    
+    public function withoutDisabled(): static
+    {
+        $this->without(Attr::Disabled);
+        
+        return $this;
+    }
 } 

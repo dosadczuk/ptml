@@ -16,4 +16,11 @@ trait WithAsync
 
         return $this;
     }
+    
+    public function withoutAsync(): static
+    {
+        $this->without(Attr::Async);
+        
+        return $this;
+    }
 } 

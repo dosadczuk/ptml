@@ -17,4 +17,11 @@ trait WithIntegrity
 
         return $this;
     }
+    
+    public function withoutIntegrity(): static
+    {
+        $this->without(Attr::Integrity);
+        
+        return $this;
+    }
 } 

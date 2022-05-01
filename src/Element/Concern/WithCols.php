@@ -16,4 +16,11 @@ trait WithCols
 
         return $this;
     }
+    
+    public function withoutCols(): static
+    {
+        $this->without(Attr::Cols);
+        
+        return $this;
+    }
 } 

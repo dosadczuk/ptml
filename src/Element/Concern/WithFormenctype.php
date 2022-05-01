@@ -19,4 +19,11 @@ trait WithFormenctype
 
         return $this;
     }
+    
+    public function withoutFormenctype(): static
+    {
+        $this->without(Attr::Formenctype);
+        
+        return $this;
+    }
 } 

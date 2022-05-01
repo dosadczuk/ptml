@@ -17,4 +17,11 @@ trait WithSrclang
 
         return $this;
     }
+    
+    public function withoutSrclang(): static
+    {
+        $this->without(Attr::Srclang);
+        
+        return $this;
+    }
 } 

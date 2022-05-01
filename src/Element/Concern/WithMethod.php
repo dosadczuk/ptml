@@ -17,4 +17,11 @@ trait WithMethod
 
         return $this;
     }
+    
+    public function withoutMethod(): static
+    {
+        $this->without(Attr::Method);
+        
+        return $this;
+    }
 } 

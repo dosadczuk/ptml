@@ -17,4 +17,11 @@ trait WithFormaction
 
         return $this;
     }
+    
+    public function withoutFormaction(): static
+    {
+        $this->without(Attr::Formaction);
+        
+        return $this;
+    }
 } 

@@ -16,4 +16,11 @@ trait WithMaxlength
 
         return $this;
     }
+    
+    public function withoutMaxlength(): static
+    {
+        $this->without(Attr::Maxlength);
+        
+        return $this;
+    }
 } 

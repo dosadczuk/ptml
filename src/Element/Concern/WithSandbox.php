@@ -17,4 +17,11 @@ trait WithSandbox
 
         return $this;
     }
+    
+    public function withoutSandbox(): static
+    {
+        $this->without(Attr::Sandbox);
+        
+        return $this;
+    }
 } 

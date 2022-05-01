@@ -16,4 +16,11 @@ trait WithFor
 
         return $this;
     }
+    
+    public function withoutFor(): static
+    {
+        $this->without(Attr::For);
+        
+        return $this;
+    }
 } 

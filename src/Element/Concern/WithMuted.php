@@ -16,4 +16,11 @@ trait WithMuted
 
         return $this;
     }
+    
+    public function withoutMuted(): static
+    {
+        $this->without(Attr::Muted);
+        
+        return $this;
+    }
 } 

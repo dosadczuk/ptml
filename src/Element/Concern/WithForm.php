@@ -16,4 +16,11 @@ trait WithForm
 
         return $this;
     }
+    
+    public function withoutForm(): static
+    {
+        $this->without(Attr::Form);
+        
+        return $this;
+    }
 } 

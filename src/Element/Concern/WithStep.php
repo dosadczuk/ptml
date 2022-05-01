@@ -16,4 +16,11 @@ trait WithStep
 
         return $this;
     }
+    
+    public function withoutStep(): static
+    {
+        $this->without(Attr::Step);
+        
+        return $this;
+    }
 } 

@@ -17,4 +17,11 @@ trait WithContextmenu
 
         return $this;
     }
+    
+    public function withoutContextmenu(): static
+    {
+        $this->without(Attr::Contextmenu);
+        
+        return $this;
+    }
 } 

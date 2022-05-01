@@ -18,4 +18,11 @@ trait WithTranslate
 
         return $this;
     }
+    
+    public function withoutTranslate(): static
+    {
+        $this->without(Attr::Translate);
+        
+        return $this;
+    }
 } 

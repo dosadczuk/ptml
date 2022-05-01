@@ -16,4 +16,11 @@ trait WithKind
 
         return $this;
     }
+    
+    public function withoutKind(): static
+    {
+        $this->without(Attr::Kind);
+        
+        return $this;
+    }
 } 

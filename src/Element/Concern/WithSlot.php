@@ -16,4 +16,11 @@ trait WithSlot
 
         return $this;
     }
+    
+    public function withoutSlot(): static
+    {
+        $this->without(Attr::Slot);
+        
+        return $this;
+    }
 } 

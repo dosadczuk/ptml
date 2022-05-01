@@ -16,4 +16,11 @@ trait WithHreflang
 
         return $this;
     }
+    
+    public function withoutHreflang(): static
+    {
+        $this->without(Attr::Hreflang);
+        
+        return $this;
+    }
 } 

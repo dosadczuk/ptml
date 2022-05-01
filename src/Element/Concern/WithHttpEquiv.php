@@ -16,4 +16,11 @@ trait WithHttpEquiv
 
         return $this;
     }
+    
+    public function withoutHttpEquiv(): static
+    {
+        $this->without(Attr::HttpEquiv);
+        
+        return $this;
+    }
 } 

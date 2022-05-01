@@ -16,4 +16,11 @@ trait WithHref
 
         return $this;
     }
+    
+    public function withoutHref(): static
+    {
+        $this->without(Attr::Href);
+        
+        return $this;
+    }
 } 

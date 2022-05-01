@@ -17,4 +17,11 @@ trait WithCsp
 
         return $this;
     }
+    
+    public function withoutCsp(): static
+    {
+        $this->without(Attr::Csp);
+        
+        return $this;
+    }
 } 

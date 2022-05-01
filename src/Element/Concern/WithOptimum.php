@@ -16,4 +16,11 @@ trait WithOptimum
 
         return $this;
     }
+    
+    public function withoutOptimum(): static
+    {
+        $this->without(Attr::Optimum);
+        
+        return $this;
+    }
 } 

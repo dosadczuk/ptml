@@ -16,4 +16,11 @@ trait WithAccept
 
         return $this;
     }
+    
+    public function withoutAccept(): static
+    {
+        $this->without(Attr::Accept);
+        
+        return $this;
+    }
 } 

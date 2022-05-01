@@ -16,4 +16,11 @@ trait WithLang
 
         return $this;
     }
+    
+    public function withoutLang(): static
+    {
+        $this->without(Attr::Lang);
+        
+        return $this;
+    }
 } 

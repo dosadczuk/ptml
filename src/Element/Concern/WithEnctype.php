@@ -16,4 +16,11 @@ trait WithEnctype
 
         return $this;
     }
+    
+    public function withoutEnctype(): static
+    {
+        $this->without(Attr::Enctype);
+        
+        return $this;
+    }
 } 

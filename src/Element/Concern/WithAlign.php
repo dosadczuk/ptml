@@ -16,4 +16,11 @@ trait WithAlign
 
         return $this;
     }
+    
+    public function withoutAlign(): static
+    {
+        $this->without(Attr::Align);
+        
+        return $this;
+    }
 } 

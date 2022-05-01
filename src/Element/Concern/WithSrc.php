@@ -16,4 +16,11 @@ trait WithSrc
 
         return $this;
     }
+    
+    public function withoutSrc(): static
+    {
+        $this->without(Attr::Src);
+        
+        return $this;
+    }
 } 

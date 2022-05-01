@@ -17,4 +17,11 @@ trait WithReversed
 
         return $this;
     }
+    
+    public function withoutReversed(): static
+    {
+        $this->without(Attr::Reversed);
+        
+        return $this;
+    }
 } 

@@ -18,4 +18,11 @@ trait WithOpen
 
         return $this;
     }
+    
+    public function withoutOpen(): static
+    {
+        $this->without(Attr::Open);
+        
+        return $this;
+    }
 } 

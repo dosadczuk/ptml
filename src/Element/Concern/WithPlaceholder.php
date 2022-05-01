@@ -16,4 +16,11 @@ trait WithPlaceholder
 
         return $this;
     }
+    
+    public function withoutPlaceholder(): static
+    {
+        $this->without(Attr::Placeholder);
+        
+        return $this;
+    }
 } 

@@ -17,4 +17,11 @@ trait WithPreload
 
         return $this;
     }
+    
+    public function withoutPreload(): static
+    {
+        $this->without(Attr::Preload);
+        
+        return $this;
+    }
 } 

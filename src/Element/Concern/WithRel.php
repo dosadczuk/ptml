@@ -16,4 +16,11 @@ trait WithRel
 
         return $this;
     }
+    
+    public function withoutRel(): static
+    {
+        $this->without(Attr::Rel);
+        
+        return $this;
+    }
 } 

@@ -16,4 +16,11 @@ trait WithSpan
 
         return $this;
     }
+    
+    public function withoutSpan(): static
+    {
+        $this->without(Attr::Span);
+        
+        return $this;
+    }
 } 

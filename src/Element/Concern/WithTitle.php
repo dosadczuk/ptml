@@ -16,4 +16,11 @@ trait WithTitle
 
         return $this;
     }
+    
+    public function withoutTitle(): static
+    {
+        $this->without(Attr::Title);
+        
+        return $this;
+    }
 } 

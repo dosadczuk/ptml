@@ -16,4 +16,11 @@ trait WithAcceptCharset
 
         return $this;
     }
+    
+    public function withoutAcceptCharset(): static
+    {
+        $this->without(Attr::AcceptCharset);
+        
+        return $this;
+    }
 } 

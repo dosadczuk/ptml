@@ -19,4 +19,11 @@ trait WithFormmethod
 
         return $this;
     }
+    
+    public function withoutFormmethod(): static
+    {
+        $this->without(Attr::Formmethod);
+        
+        return $this;
+    }
 } 

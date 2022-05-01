@@ -16,4 +16,11 @@ trait WithWrap
 
         return $this;
     }
+    
+    public function withoutWrap(): static
+    {
+        $this->without(Attr::Wrap);
+        
+        return $this;
+    }
 } 

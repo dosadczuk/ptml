@@ -16,4 +16,11 @@ trait WithLabel
 
         return $this;
     }
+    
+    public function withoutLabel(): static
+    {
+        $this->without(Attr::Label);
+        
+        return $this;
+    }
 } 

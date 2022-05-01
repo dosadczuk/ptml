@@ -16,4 +16,11 @@ trait WithAutofocus
 
         return $this;
     }
+    
+    public function withoutAutofocus(): static
+    {
+        $this->without(Attr::Autofocus);
+        
+        return $this;
+    }
 } 

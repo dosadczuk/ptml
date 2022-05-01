@@ -16,4 +16,11 @@ trait WithMax
 
         return $this;
     }
+    
+    public function withoutMax(): static
+    {
+        $this->without(Attr::Max);
+        
+        return $this;
+    }
 } 

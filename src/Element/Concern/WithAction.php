@@ -17,4 +17,11 @@ trait WithAction
 
         return $this;
     }
+    
+    public function withoutAction(): static
+    {
+        $this->without(Attr::Action);
+        
+        return $this;
+    }
 } 

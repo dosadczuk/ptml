@@ -16,4 +16,11 @@ trait WithAccesskey
 
         return $this;
     }
+    
+    public function withoutAccesskey(): static
+    {
+        $this->without(Attr::Accesskey);
+        
+        return $this;
+    }
 } 

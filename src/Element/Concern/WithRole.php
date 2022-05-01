@@ -17,4 +17,11 @@ trait WithRole
 
         return $this;
     }
+    
+    public function withoutRole(): static
+    {
+        $this->without(Attr::Role);
+        
+        return $this;
+    }
 } 

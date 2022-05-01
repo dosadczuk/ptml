@@ -17,4 +17,11 @@ trait WithAutocomplete
 
         return $this;
     }
+    
+    public function withoutAutocomplete(): static
+    {
+        $this->without(Attr::Autocomplete);
+        
+        return $this;
+    }
 } 
