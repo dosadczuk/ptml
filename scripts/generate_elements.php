@@ -47,7 +47,7 @@ class %1$s extends Element
 ');
 
 foreach (Tag::cases() as $tag) {
-    $filename = "Element/{$tag->name}.php";
+    $filename = "{$tag->name}.php";
     $contents = $tag->isSelfClosing()
         ? sprintf($ctor_empty_template, $tag->name, getComment($tag))
         : sprintf($ctor_param_templated, $tag->name, getComment($tag));
@@ -64,7 +64,7 @@ function getComment(Tag $tag): string
     return preg_replace("/\n/", "\n * ", $description);
 }
 
-function saveToSrc(string $filepath, string $contents): void
+function saveToSrc(string $filename, string $contents): void
 {
-    file_put_contents(__DIR__ . '/../src/' . $filepath, $contents,);
+    file_put_contents(__DIR__ . '/../src/Element/' . $filename, $contents,);
 }
