@@ -10,7 +10,7 @@ trait WithItemprop
     /**
      * Add properties to an item.
      */
-    public function withItemprop(string $value, bool $append = false): static
+    public function withItemprop(string $value, bool $append = true): static
     {
         $this->with(Attr::Itemprop, $value, $append);
 

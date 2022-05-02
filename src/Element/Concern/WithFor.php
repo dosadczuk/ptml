@@ -10,7 +10,7 @@ trait WithFor
     /**
      * Describes elements which belongs to this one.
      */
-    public function withFor(string $value, bool $append = false): static
+    public function withFor(string $value, bool $append = true): static
     {
         $this->with(Attr::For, $value, $append);
 

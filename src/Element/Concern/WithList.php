@@ -10,7 +10,7 @@ trait WithList
     /**
      * Identifies a list of pre-defined options to suggest to the user.
      */
-    public function withList(string $value, bool $append = false): static
+    public function withList(string $value, bool $append = true): static
     {
         $this->with(Attr::List, $value, $append);
 

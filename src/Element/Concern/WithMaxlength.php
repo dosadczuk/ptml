@@ -10,7 +10,7 @@ trait WithMaxlength
     /**
      * Defines the maximum number of characters allowed in the element.
      */
-    public function withMaxlength(string $value, bool $append = false): static
+    public function withMaxlength(string $value, bool $append = true): static
     {
         $this->with(Attr::Maxlength, $value, $append);
 

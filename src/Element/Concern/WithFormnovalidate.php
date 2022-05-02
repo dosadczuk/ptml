@@ -13,7 +13,7 @@ trait WithFormnovalidate
      * submitted. If this attribute is specified, it overrides the novalidate
      * attribute of the button's form owner.
      */
-    public function withFormnovalidate(string $value, bool $append = false): static
+    public function withFormnovalidate(string $value, bool $append = true): static
     {
         $this->with(Attr::Formnovalidate, $value, $append);
 

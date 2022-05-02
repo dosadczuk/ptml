@@ -10,7 +10,7 @@ trait WithAccept
     /**
      * List of types the server accepts, typically a file type.
      */
-    public function withAccept(string $value, bool $append = false): static
+    public function withAccept(string $value, bool $append = true): static
     {
         $this->with(Attr::Accept, $value, $append);
 

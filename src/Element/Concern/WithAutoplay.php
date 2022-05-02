@@ -10,7 +10,7 @@ trait WithAutoplay
     /**
      * The audio or video should play as soon as possible.
      */
-    public function withAutoplay(string $value, bool $append = false): static
+    public function withAutoplay(string $value, bool $append = true): static
     {
         $this->with(Attr::Autoplay, $value, $append);
 

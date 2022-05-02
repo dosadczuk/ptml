@@ -10,7 +10,7 @@ trait WithRel
     /**
      * Specifies the relationship of the target object to the link object.
      */
-    public function withRel(string $value, bool $append = false): static
+    public function withRel(string $value, bool $append = true): static
     {
         $this->with(Attr::Rel, $value, $append);
 

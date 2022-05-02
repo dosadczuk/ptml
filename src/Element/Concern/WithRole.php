@@ -11,7 +11,7 @@ trait WithRole
      * Defines an explicit role for an element for use by assistive
      * technologies.
      */
-    public function withRole(string $value, bool $append = false): static
+    public function withRole(string $value, bool $append = true): static
     {
         $this->with(Attr::Role, $value, $append);
 

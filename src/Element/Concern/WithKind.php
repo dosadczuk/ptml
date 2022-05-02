@@ -10,7 +10,7 @@ trait WithKind
     /**
      * Specifies the kind of text track.
      */
-    public function withKind(string $value, bool $append = false): static
+    public function withKind(string $value, bool $append = true): static
     {
         $this->with(Attr::Kind, $value, $append);
 

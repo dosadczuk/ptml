@@ -11,7 +11,7 @@ trait WithMethod
      * Defines which HTTP method to use when submitting the form. Can be GET
      * (default) or POST.
      */
-    public function withMethod(string $value, bool $append = false): static
+    public function withMethod(string $value, bool $append = true): static
     {
         $this->with(Attr::Method, $value, $append);
 

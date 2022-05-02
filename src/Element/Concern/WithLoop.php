@@ -11,7 +11,7 @@ trait WithLoop
      * Indicates whether the media should start playing from the start when
      * it's finished.
      */
-    public function withLoop(string $value, bool $append = false): static
+    public function withLoop(string $value, bool $append = true): static
     {
         $this->with(Attr::Loop, $value, $append);
 

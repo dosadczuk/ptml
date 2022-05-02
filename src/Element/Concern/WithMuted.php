@@ -10,7 +10,7 @@ trait WithMuted
     /**
      * Indicates whether the audio will be initially silenced on page load.
      */
-    public function withMuted(string $value, bool $append = false): static
+    public function withMuted(string $value, bool $append = true): static
     {
         $this->with(Attr::Muted, $value, $append);
 

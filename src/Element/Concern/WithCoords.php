@@ -10,7 +10,7 @@ trait WithCoords
     /**
      * A set of values specifying the coordinates of the hot-spot region.
      */
-    public function withCoords(string $value, bool $append = false): static
+    public function withCoords(string $value, bool $append = true): static
     {
         $this->with(Attr::Coords, $value, $append);
 

@@ -10,7 +10,7 @@ trait WithAsync
     /**
      * Executes the script asynchronously.
      */
-    public function withAsync(string $value, bool $append = false): static
+    public function withAsync(string $value, bool $append = true): static
     {
         $this->with(Attr::Async, $value, $append);
 

@@ -10,7 +10,7 @@ trait WithReferrerpolicy
     /**
      * Specifies which referrer is sent when fetching the resource.
      */
-    public function withReferrerpolicy(string $value, bool $append = false): static
+    public function withReferrerpolicy(string $value, bool $append = true): static
     {
         $this->with(Attr::Referrerpolicy, $value, $append);
 

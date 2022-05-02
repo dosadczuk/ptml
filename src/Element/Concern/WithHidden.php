@@ -10,7 +10,7 @@ trait WithHidden
     /**
      * Prevents rendering of given element, while keeping child elements, e.g.
      */
-    public function withHidden(string $value, bool $append = false): static
+    public function withHidden(string $value, bool $append = true): static
     {
         $this->with(Attr::Hidden, $value, $append);
 

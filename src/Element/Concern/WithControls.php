@@ -10,7 +10,7 @@ trait WithControls
     /**
      * Indicates whether the browser should show playback controls to the user.
      */
-    public function withControls(string $value, bool $append = false): static
+    public function withControls(string $value, bool $append = true): static
     {
         $this->with(Attr::Controls, $value, $append);
 

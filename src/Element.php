@@ -64,7 +64,7 @@ class Element implements ElementInterface
         return $this->_attrs->get($name);
     }
 
-    public function with(AttrInterface|string $name, string $value = '', bool $append = false): static
+    public function with(AttrInterface|string $name, string $value = '', bool $append = true): static
     {
         $this->_attrs->set($name, $value, $append);
 

@@ -10,7 +10,7 @@ trait WithAccesskey
     /**
      * Keyboard shortcut to activate or add focus to the element.
      */
-    public function withAccesskey(string $value, bool $append = false): static
+    public function withAccesskey(string $value, bool $append = true): static
     {
         $this->with(Attr::Accesskey, $value, $append);
 

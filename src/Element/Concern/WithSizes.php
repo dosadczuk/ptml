@@ -10,7 +10,7 @@ trait WithSizes
     /**
      * Specifies the size of the linked resource.
      */
-    public function withSizes(string $value, bool $append = false): static
+    public function withSizes(string $value, bool $append = true): static
     {
         $this->with(Attr::Sizes, $value, $append);
 

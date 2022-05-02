@@ -11,7 +11,7 @@ trait WithSandbox
      * Stops a document loaded in an iframe from using certain features (such
      * as submitting forms or opening new windows).
      */
-    public function withSandbox(string $value, bool $append = false): static
+    public function withSandbox(string $value, bool $append = true): static
     {
         $this->with(Attr::Sandbox, $value, $append);
 

@@ -10,7 +10,7 @@ trait WithRows
     /**
      * Defines the number of rows in a text area.
      */
-    public function withRows(string $value, bool $append = false): static
+    public function withRows(string $value, bool $append = true): static
     {
         $this->with(Attr::Rows, $value, $append);
 

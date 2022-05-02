@@ -10,7 +10,7 @@ trait WithDownload
     /**
      * Indicates that the hyperlink is to be used for downloading a resource.
      */
-    public function withDownload(string $value, bool $append = false): static
+    public function withDownload(string $value, bool $append = true): static
     {
         $this->with(Attr::Download, $value, $append);
 

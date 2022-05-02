@@ -10,7 +10,7 @@ trait WithClass
     /**
      * Often used with CSS to style elements with common properties.
      */
-    public function withClass(string $value, bool $append = false): static
+    public function withClass(string $value, bool $append = true): static
     {
         $this->with(Attr::Clazz, $value, $append);
 

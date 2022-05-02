@@ -12,7 +12,7 @@ trait WithTranslate
      * node children are to be translated when the page is localized, or
      * whether to leave them unchanged.
      */
-    public function withTranslate(string $value, bool $append = false): static
+    public function withTranslate(string $value, bool $append = true): static
     {
         $this->with(Attr::Translate, $value, $append);
 

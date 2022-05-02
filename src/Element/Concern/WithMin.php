@@ -10,7 +10,7 @@ trait WithMin
     /**
      * Indicates the minimum value allowed.
      */
-    public function withMin(string $value, bool $append = false): static
+    public function withMin(string $value, bool $append = true): static
     {
         $this->with(Attr::Min, $value, $append);
 

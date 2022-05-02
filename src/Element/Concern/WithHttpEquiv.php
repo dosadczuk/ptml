@@ -10,7 +10,7 @@ trait WithHttpEquiv
     /**
      * Defines a pragma directive.
      */
-    public function withHttpEquiv(string $value, bool $append = false): static
+    public function withHttpEquiv(string $value, bool $append = true): static
     {
         $this->with(Attr::HttpEquiv, $value, $append);
 

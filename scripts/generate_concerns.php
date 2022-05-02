@@ -19,7 +19,7 @@ trait With%1$s
     /**
      * %2$s
      */
-    public function with%1$s(string $value, bool $append = false): static
+    public function with%1$s(string $value, bool $append = true): static
     {
         $this->with(Attr::%1$s, $value, $append);
 

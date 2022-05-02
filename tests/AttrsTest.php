@@ -31,7 +31,7 @@ it('should return attribute values', function () {
 it('should set string attribute', function () {
     // given
     $attrs = new Attrs();
-    $attrs->set('test', 'test');
+    $attrs->set('test', 'test', append: false);
     // when
     $exists = $attrs->has('test');
     // then
@@ -43,7 +43,7 @@ it('should set string attribute', function () {
 it('should set AttrInterface attribute', function () {
     // given
     $attrs = new Attrs();
-    $attrs->set(Attr::Hidden, 'true');
+    $attrs->set(Attr::Hidden, 'true', append: false);
     // when
     $exists = $attrs->has(Attr::Hidden);
     // then
@@ -55,7 +55,7 @@ it('should set AttrInterface attribute', function () {
 it('should append attribute', function () {
     // given
     $attrs = new Attrs();
-    $attrs->set(Attr::Clazz, 'fa');
+    $attrs->set(Attr::Clazz, 'fa', append: false);
     // when
     $attrs->set(Attr::Clazz, 'fa-user', append: true);
     // then
@@ -65,7 +65,7 @@ it('should append attribute', function () {
 it('should get string attribute', function () {
     // given
     $attrs = new Attrs();
-    $attrs->set('test', 'test');
+    $attrs->set('test', 'test', append: false);
     // when
     $attr = $attrs->get('test');
     // then
@@ -75,7 +75,7 @@ it('should get string attribute', function () {
 it('should get AttrInterface attribute', function () {
     // given
     $attrs = new Attrs();
-    $attrs->set(Attr::Hidden, 'true');
+    $attrs->set(Attr::Hidden, 'true', append: false);
     // when
     $attr = $attrs->get(Attr::Hidden);
     // then
@@ -85,7 +85,7 @@ it('should get AttrInterface attribute', function () {
 it('should remove string attribute', function () {
     // given
     $attrs = new Attrs();
-    $attrs->set('test', 'test');
+    $attrs->set('test', 'test', append: false);
 
     assertTrue($attrs->has('test'));
     // when
@@ -98,7 +98,7 @@ it('should remove string attribute', function () {
 it('should remove AttrInterface attribute', function () {
     // given
     $attrs = new Attrs();
-    $attrs->set(Attr::Hidden, 'true');
+    $attrs->set(Attr::Hidden, 'true', append: false);
 
     assertTrue($attrs->has(Attr::Hidden));
     // when
@@ -111,8 +111,8 @@ it('should remove AttrInterface attribute', function () {
 it('should return HTML', function () {
     // given
     $attrs = new Attrs();
-    $attrs->set(Attr::Href, 'localhost');
-    $attrs->set(Aria::Hidden, 'true');
+    $attrs->set(Attr::Href, 'localhost', append: false);
+    $attrs->set(Aria::Hidden, 'true', append: false);
     // when
     $html = $attrs->html();
     // then

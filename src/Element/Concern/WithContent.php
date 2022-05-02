@@ -10,7 +10,7 @@ trait WithContent
     /**
      * A value associated with http-equiv or name depending on the context.
      */
-    public function withContent(string $value, bool $append = false): static
+    public function withContent(string $value, bool $append = true): static
     {
         $this->with(Attr::Content, $value, $append);
 

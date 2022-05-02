@@ -10,7 +10,7 @@ trait WithForm
     /**
      * Indicates the form that is the owner of the element.
      */
-    public function withForm(string $value, bool $append = false): static
+    public function withForm(string $value, bool $append = true): static
     {
         $this->with(Attr::Form, $value, $append);
 

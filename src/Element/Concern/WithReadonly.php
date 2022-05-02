@@ -10,7 +10,7 @@ trait WithReadonly
     /**
      * Indicates whether the element can be edited.
      */
-    public function withReadonly(string $value, bool $append = false): static
+    public function withReadonly(string $value, bool $append = true): static
     {
         $this->with(Attr::Readonly, $value, $append);
 

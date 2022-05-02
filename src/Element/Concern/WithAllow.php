@@ -10,7 +10,7 @@ trait WithAllow
     /**
      * Specifies a feature-policy for the iframe.
      */
-    public function withAllow(string $value, bool $append = false): static
+    public function withAllow(string $value, bool $append = true): static
     {
         $this->with(Attr::Allow, $value, $append);
 
