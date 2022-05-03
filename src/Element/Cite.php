@@ -6,7 +6,7 @@ namespace PTML\Element;
 use PTML\Element\Concern\{
     WithAccesskey,
 	WithAutocapitalize,
-	WithClazz,
+	WithClass,
 	WithContenteditable,
 	WithContextmenu,
 	WithDir,
@@ -36,7 +36,7 @@ class Cite extends ElementWithChildren
 {
     use WithAccesskey,
 		WithAutocapitalize,
-		WithClazz,
+		WithClass,
 		WithContenteditable,
 		WithContextmenu,
 		WithDir,

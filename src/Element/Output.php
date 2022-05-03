@@ -6,7 +6,7 @@ namespace PTML\Element;
 use PTML\Element\Concern\{
     WithAccesskey,
 	WithAutocapitalize,
-	WithClazz,
+	WithClass,
 	WithContenteditable,
 	WithContextmenu,
 	WithDir,
@@ -38,7 +38,7 @@ class Output extends ElementWithChildren
 {
     use WithAccesskey,
 		WithAutocapitalize,
-		WithClazz,
+		WithClass,
 		WithContenteditable,
 		WithContextmenu,
 		WithDir,

@@ -6,7 +6,7 @@ namespace PTML\Element;
 use PTML\Element\Concern\{
     WithAccesskey,
 	WithAutocapitalize,
-	WithClazz,
+	WithClass,
 	WithContenteditable,
 	WithContextmenu,
 	WithData,
@@ -41,7 +41,7 @@ class Obj extends ElementWithChildren
 {
     use WithAccesskey,
 		WithAutocapitalize,
-		WithClazz,
+		WithClass,
 		WithContenteditable,
 		WithContextmenu,
 		WithData,
