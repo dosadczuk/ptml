@@ -4,11 +4,11 @@ declare(strict_types=1);
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use phpDocumentor\Reflection\DocBlockFactory;
-use PTML\Old\Tag;
+use PTML\Tag;
 
 $tag_to_attrs = include 'tag_to_attrs.php';
 
-$ctor_empty_template = ltrim('
+$element_template = ltrim('
 <?php
 declare(strict_types=1);
 
@@ -34,22 +34,22 @@ class %1$s extends Element
 }
 ');
 
-$ctor_param_templated = ltrim('
+$element_with_children_template = ltrim('
 <?php
 declare(strict_types=1);
 
 namespace PTML\Element;
 
-use PTML\Element;
 use PTML\Element\Concern\{
     %3$s
 };
+use PTML\ElementWithChildren;
 use PTML\Tag;
 
 /**
  * %2$s
  */
-class %1$s extends Element
+class %1$s extends ElementWithChildren
 {
     use %4$s;
 
@@ -60,13 +60,35 @@ class %1$s extends Element
 }
 ');
 
+// TODO: rozdzielić na Element i ElementWithChildren
+
 foreach (Tag::cases() as $tag) {
     $filename = "{$tag->name}.php";
-    $contents = $tag->isSelfClosing()
-        ? sprintf($ctor_empty_template, $tag->name, getComment($tag), ...getTraits($tag))
-        : sprintf($ctor_param_templated, $tag->name, getComment($tag), ...getTraits($tag));
+    $contents = isSelfClosing($tag)
+        ? sprintf($element_template, $tag->name, getComment($tag), ...getTraits($tag))
+        : sprintf($element_with_children_template, $tag->name, getComment($tag), ...getTraits($tag));
 
     saveToSrc($filename, $contents);
+}
+
+function isSelfClosing(Tag $tag): bool
+{
+    return match ($tag) {
+        Tag::Area,
+        Tag::Base,
+        Tag::Br,
+        Tag::Col,
+        Tag::Embed,
+        Tag::Hr,
+        Tag::Img,
+        Tag::Input,
+        Tag::Link,
+        Tag::Meta,
+        Tag::Source,
+        Tag::Track,
+        Tag::Wbr => true,
+        default  => false
+    };
 }
 
 function getComment(Tag $tag): string

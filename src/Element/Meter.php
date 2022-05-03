@@ -1,0 +1,72 @@
+<?php
+declare(strict_types=1);
+
+namespace PTML\Element;
+
+use PTML\Element\Concern\{
+    WithAccesskey,
+	WithAutocapitalize,
+	WithClazz,
+	WithContenteditable,
+	WithContextmenu,
+	WithDir,
+	WithDraggable,
+	WithForm,
+	WithHidden,
+	WithHigh,
+	WithId,
+	WithItemprop,
+	WithLang,
+	WithLow,
+	WithMax,
+	WithMin,
+	WithOptimum,
+	WithRole,
+	WithSlot,
+	WithSpellcheck,
+	WithStyle,
+	WithTabindex,
+	WithTitle,
+	WithTranslate,
+	WithValue
+};
+use PTML\ElementWithChildren;
+use PTML\Tag;
+
+/**
+ * The <meter> HTML element represents either a scalar value within a known
+ * range or a fractional value.
+ */
+class Meter extends ElementWithChildren
+{
+    use WithAccesskey,
+		WithAutocapitalize,
+		WithClazz,
+		WithContenteditable,
+		WithContextmenu,
+		WithDir,
+		WithDraggable,
+		WithForm,
+		WithHidden,
+		WithHigh,
+		WithId,
+		WithItemprop,
+		WithLang,
+		WithLow,
+		WithMax,
+		WithMin,
+		WithOptimum,
+		WithRole,
+		WithSlot,
+		WithSpellcheck,
+		WithStyle,
+		WithTabindex,
+		WithTitle,
+		WithTranslate,
+		WithValue;
+
+    public function __construct(\Stringable|string $text = '')
+    {
+        parent::__construct(Tag::Meter, $text);
+    }
+}
