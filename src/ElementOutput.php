@@ -23,6 +23,6 @@ final class ElementOutput
      */
     public function toStdOut(): void
     {
-        print $this->element;
+        echo $this->element->html();
     }
 }

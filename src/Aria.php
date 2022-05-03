@@ -6,7 +6,7 @@ namespace PTML;
 /**
  * Abstraction of HTML `aria-*` attribute.
  */
-enum Aria: string implements AttrInterface
+enum Aria: string implements AttributeInterface
 {
     /**
      * @link https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-activedescendant
@@ -270,6 +270,6 @@ enum Aria: string implements AttrInterface
 
     public function name(): string
     {
-        return "aria-{$this->value}";
+        return "aria-$this->value";
     }
 }

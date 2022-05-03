@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 
-use PTML\Attr;
-use PTML\Tag;
+use PTML\Old\Attr;
+use PTML\Old\Tag;
 
 return function (Tag $tag): array {
     return match ($tag) {

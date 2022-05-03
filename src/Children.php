@@ -8,13 +8,16 @@ namespace PTML;
  */
 final class Children extends \ArrayIterator
 {
-    public function __construct()
+    /**
+     * @param array<string, ElementInterface> $values
+     */
+    public function __construct(array $values = [])
     {
-        parent::__construct([]);
+        parent::__construct($values);
     }
 
     /**
-     * Check if children exist.
+     * Checks if children exist.
      */
     public function empty(): bool
     {
@@ -33,11 +36,25 @@ final class Children extends \ArrayIterator
 
     /**
      * Adds given children or replaces if child is added already.
+     *
+     * @param ElementInterface[] $children
      */
-    public function add(ElementInterface ...$children): void
+    public function add(array $children): void
     {
         foreach ($children as $child) {
             $this[$child->uid()] = $child;
+        }
+    }
+
+    /**
+     * Removes given children.
+     *
+     * @param ElementInterface[] $children
+     */
+    public function rem(array $children): void
+    {
+        foreach ($children as $child) {
+            unset($this[$child->uid()]);
         }
     }
 
@@ -50,23 +67,15 @@ final class Children extends \ArrayIterator
     }
 
     /**
-     * Removes given children.
-     */
-    public function del(ElementInterface ...$children): void
-    {
-        foreach ($children as $child) {
-            unset($this[$child->uid()]);
-        }
-    }
-
-    /**
      * Converts children to HTML.
      */
     public function html(): string
     {
         $children = [];
-        foreach ($this as $element) {
-            $children[] = $element->html();
+
+        /** @var ElementInterface $child */
+        foreach ($this as $child) {
+            $children[] = $child->html();
         }
 
         return implode('', $children);

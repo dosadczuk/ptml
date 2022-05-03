@@ -5,10 +5,8 @@ namespace PTML;
 
 /**
  * Abstraction of HTML element.
- *
- * @extends \RecursiveIterator<string, ElementInterface>
  */
-interface ElementInterface extends \RecursiveIterator, \Countable, \Stringable
+interface ElementInterface extends \Stringable
 {
     /**
      * Returns unique identifier.
@@ -16,14 +14,24 @@ interface ElementInterface extends \RecursiveIterator, \Countable, \Stringable
     public function uid(): string;
 
     /**
+     * Checks if element has given uid.
+     */
+    public function is(string $uid): bool;
+
+    /**
      * Returns tag name.
      */
     public function tag(): string;
 
     /**
-     * Returns inner text.
+     * Checks if element is given tag.
      */
-    public function text(): string;
+    public function typeOf(Tag|string $tag): bool;
+
+    /**
+     * Returns attribute value or NULL if attribute not found.
+     */
+    public function attr(AttributeInterface|string $name): ?string;
 
     /**
      * Returns map of attributes.
@@ -33,46 +41,29 @@ interface ElementInterface extends \RecursiveIterator, \Countable, \Stringable
     public function attrs(): array;
 
     /**
-     * Returns attribute value or NULL if attribute not found.
+     * Adds attribute with given value.
      */
-    public function attr(AttrInterface|string $name): mixed;
-
-    /**
-     * Appends attribute with given value.
-     */
-    public function with(AttrInterface|string $name, string $value = ''): static;
-
-    /**
-     * Check if attribute exists.
-     */
-    public function exists(AttrInterface|string $name): bool;
+    public function with(AttributeInterface|string $attr, string $value, bool $append = true): ElementInterface;
 
     /**
      * Removes attribute.
      */
-    public function without(AttrInterface|string $name): static;
+    public function without(AttributeInterface|string $attr): ElementInterface;
 
     /**
-     * Returns children.
-     *
-     * @return ElementInterface[]
+     * Check if attribute exists.
      */
-    public function children(): array;
+    public function has(AttributeInterface|string $attr): bool;
 
     /**
-     * Appends children to element.
+     * Checks if element is given element.
      */
-    public function append(ElementInterface ...$children): static;
+    public function equalsTo(ElementInterface $value): bool;
 
     /**
-     * Removes children from element.
+     * Checks if element is not given element.
      */
-    public function remove(ElementInterface ...$children): static;
-
-    /**
-     * Checks if child exists.
-     */
-    public function contains(ElementInterface $child): bool;
+    public function differsFrom(ElementInterface $value): bool;
 
     /**
      * Returns element as raw HTML.

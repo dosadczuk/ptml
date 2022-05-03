@@ -818,24 +818,4 @@ enum Tag: string
      * subsequently during runtime using JavaScript.
      */
     case Template = 'template';
-
-    public function isSelfClosing(): bool
-    {
-        return match ($this) {
-            self::Area,
-            self::Base,
-            self::Br,
-            self::Col,
-            self::Embed,
-            self::Hr,
-            self::Img,
-            self::Input,
-            self::Link,
-            self::Meta,
-            self::Source,
-            self::Track,
-            self::Wbr => true,
-            default   => false
-        };
-    }
 }

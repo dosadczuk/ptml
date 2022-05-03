@@ -13,7 +13,7 @@ Source of HTML definitions for:
 ### Define very basic element
 
 ```php
-use PTML\{Element, Tag};
+use PTML\{Old\Element,Old\Tag};
 
 echo new Element(Tag::Img); // <img />
 echo new Element(Tag::Button); // <button></button>
@@ -23,7 +23,7 @@ echo new Element(Tag::Button, 'Sample text'); // <button>Sample text</button>
 ### Define element with attributes
 
 ```php
-use PTML\{Aria, Attr, Data, Element, Tag};
+use PTML\{Old\Aria,Old\Attr,Old\Data,Old\Element,Old\Tag};
 
 $element = new Element(Tag::Button, 'Sample text');
 $element->with(Attr::Type, 'submit');
@@ -51,7 +51,7 @@ echo $element;
 ### Define element with children
 
 ```php
-use PTML\{Attr, Element, Tag};
+use PTML\{Old\Attr,Old\Element,Old\Tag};
 
 // icon
 $i = new Element(Tag::I);
@@ -73,7 +73,7 @@ echo $a;
 ### Get element identifier
 
 ```php
-use PTML\{Element, Tag};
+use PTML\{Old\Element,Old\Tag};
 
 $element = new Element(Tag::I);
 echo $element->uid(); // '<unique identifier>'
@@ -82,7 +82,7 @@ echo $element->uid(); // '<unique identifier>'
 ### Get element tag
 
 ```php
-use PTML\{Element, Tag};
+use PTML\{Old\Element,Old\Tag};
 
 $element = new Element(Tag::I);
 echo $element->tag(); // 'i'
@@ -91,7 +91,7 @@ echo $element->tag(); // 'i'
 ### Get element text
 
 ```php
-use PTML\{Element, Tag};
+use PTML\{Old\Element,Old\Tag};
 
 $element = new Element(Tag::I, 'Sample text');
 echo $element->text(); // 'Sample text'
@@ -100,7 +100,7 @@ echo $element->text(); // 'Sample text'
 ### Add element attribute
 
 ```php
-use PTML\{Attr, Element, Tag};
+use PTML\{Old\Attr,Old\Element,Old\Tag};
 
 $element = new Element(Tag::Button);
 $element->with(Attr::Type, '<type>');
@@ -109,7 +109,7 @@ $element->with(Attr::Type, '<type>');
 ### Get element attributes
 
 ```php
-use PTML\{Attr, Element, Tag};
+use PTML\{Old\Attr,Old\Element,Old\Tag};
 
 $element = new Element(Tag::Button);
 $element->with(Attr::Type, '<type>');
@@ -121,7 +121,7 @@ echo $element->attrs(); // [ '<type>', '<name>' ]
 ### Check if element has an attribute
 
 ```php
-use PTML\{Attr, Element, Tag};
+use PTML\{Old\Attr,Old\Element,Old\Tag};
 
 $element = new Element(Tag::Button);
 $element->with(Attr::Type, '<type>');
@@ -133,7 +133,7 @@ echo $element->exists(Attr::Name); // false
 ### Remove element attribute
 
 ```php
-use PTML\{Attr, Element, Tag};
+use PTML\{Old\Attr,Old\Element,Old\Tag};
 
 $element = new Element(Tag::Button);
 $element->with(Attr::Type, '<type>');
@@ -145,7 +145,7 @@ $element->without(Attr::Type);
 ### Add element children
 
 ```php
-use PTML\{Attr, Element, Tag};
+use PTML\{Old\Attr,Old\Element,Old\Tag};
 
 $root = new Element(Tag::Button);
 $root->with(Attr::Type, '<type>');
@@ -157,7 +157,7 @@ $root->append(new Element(Tag::Img));
 ### Check if element have children
 
 ```php
-use PTML\{Attr, Element, Tag};
+use PTML\{Old\Attr,Old\Element,Old\Tag};
 
 $root = new Element(Tag::Button);
 $root->with(Attr::Type, '<type>');
@@ -174,7 +174,7 @@ echo $root->contains($child2); // false
 ### Remove element children
 
 ```php
-use PTML\{Attr, Element, Tag};
+use PTML\{Old\Attr,Old\Element,Old\Tag};
 
 $root = new Element(Tag::Button);
 $root->with(Attr::Type, '<type>');
@@ -189,7 +189,7 @@ $root->remove($child);
 ### Get element as HTML
 
 ```php
-use PTML\{Aria, Attr, Element, Tag};
+use PTML\{Old\Aria,Old\Attr,Old\Element,Old\Tag};
 
 $a = new Element(Tag::A, 'Sample link');
 $a->with(Attr::Href, 'localhost');

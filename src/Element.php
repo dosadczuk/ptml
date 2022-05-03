@@ -6,173 +6,108 @@ namespace PTML;
 class Element implements ElementInterface
 {
     /**
+     * Output element with given methods.
+     */
+    public readonly ElementOutput $output;
+
+    /**
      * Unique identifier.
      */
-    private string $_uid;
+    protected string $uid;
 
     /**
-     * HTML tag.
+     * Element tag.
      */
-    private Tag $_tag;
+    protected string $tag;
 
     /**
-     * Inner text.
+     * Set of element's attributes.
      */
-    private string $_text;
+    protected Attributes $attributes;
 
-    /**
-     * HTML attributes.
-     */
-    private Attrs $_attrs;
-
-    /**
-     * Element's children.
-     */
-    private Children $_children;
-
-    public function __construct(Tag $tag, \Stringable|string $text = '')
+    public function __construct(Tag|string $tag)
     {
-        $this->_uid = uniqid('element', more_entropy: true);
-        $this->_tag = $tag;
-        $this->_text = (string)$text;
-        $this->_attrs = new Attrs();
-        $this->_children = new Children();
+        if ($tag instanceof Tag) {
+            $tag = $tag->value;
+        }
+
+        $this->output = new ElementOutput($this);
+        $this->uid = uniqid('element-', more_entropy: false);
+        $this->tag = $tag;
+        $this->attributes = new Attributes();
     }
 
     public function uid(): string
     {
-        return $this->_uid;
+        return $this->uid;
+    }
+
+    public function is(string $uid): bool
+    {
+        return $this->uid === $uid;
     }
 
     public function tag(): string
     {
-        return $this->_tag->value;
+        return $this->tag;
     }
 
-    public function text(): string
+    public function typeOf(Tag|string $tag): bool
     {
-        return $this->_text;
+        if ($tag instanceof Tag) {
+            $tag = $tag->value;
+        }
+
+        return $this->tag === $tag;
+    }
+
+    public function attr(AttributeInterface|string $name): ?string
+    {
+        return $this->attributes->get($name);
     }
 
     public function attrs(): array
     {
-        return $this->_attrs->values();
+        return $this->attributes->values();
     }
 
-    public function attr(AttrInterface|string $name): ?string
+    public function with(AttributeInterface|string $attr, string $value, bool $append = true): static
     {
-        return $this->_attrs->get($name);
-    }
-
-    public function with(AttrInterface|string $name, string $value = '', bool $append = true): static
-    {
-        $this->_attrs->set($name, $value, $append);
+        $this->attributes->set($attr, $value, $append);
 
         return $this;
     }
 
-    public function exists(AttrInterface|string $name): bool
+    public function without(AttributeInterface|string $attr): static
     {
-        return $this->_attrs->has($name);
-    }
-
-    public function without(AttrInterface|string $name): static
-    {
-        $this->_attrs->del($name);
+        $this->attributes->rem($attr);
 
         return $this;
     }
 
-    /**
-     * @return ElementInterface[]
-     */
-    public function children(): array
+    public function has(AttributeInterface|string $attr): bool
     {
-        return $this->_children->values();
+        return $this->attributes->has($attr);
     }
 
-    public function append(ElementInterface ...$children): static
+    public function equalsTo(ElementInterface $value): bool
     {
-        $this->_children->add(...$children);
-
-        return $this;
+        return $this->uid() === $value->uid();
     }
 
-    public function remove(ElementInterface ...$children): static
+    public function differsFrom(ElementInterface $value): bool
     {
-        $this->_children->del(...$children);
-
-        return $this;
-    }
-
-    public function contains(ElementInterface $child): bool
-    {
-        return $this->_children->has($child);
+        return $this->uid() !== $value->uid();
     }
 
     public function html(): string
     {
-        if ($this->_tag->isSelfClosing()) {
-            return sprintf(
-                '<%s%s%s />',
-                $this->tag(),
-                $this->_attrs->empty() ? '' : ' ',
-                $this->_attrs
-            );
-        }
-
         return sprintf(
-            '<%s%s%s>%s%s</%s>',
-            $this->tag(),
-            $this->_attrs->empty() ? '' : ' ',
-            $this->_attrs,
-            $this->text(),
-            $this->_children,
-            $this->tag()
+            '<%s%s%s />',
+            $this->tag,
+            $this->attributes->empty() ? '' : ' ',
+            $this->attributes
         );
-    }
-
-    /**
-     * @return \RecursiveIterator<int, ElementInterface>|null
-     */
-    public function getChildren(): ?\RecursiveIterator
-    {
-        return new \RecursiveArrayIterator($this->children());
-    }
-
-    public function hasChildren(): bool
-    {
-        return !$this->_children->empty();
-    }
-
-    public function current(): ?ElementInterface
-    {
-        return $this->_children->current();
-    }
-
-    public function next(): void
-    {
-        $this->_children->next();
-    }
-
-    public function key(): string
-    {
-        return $this->_children->key();
-    }
-
-    public function valid(): bool
-    {
-        return $this->_children->valid();
-    }
-
-    public function rewind(): void
-    {
-        $this->_children->rewind();
-    }
-
-    public function count(): int
-    {
-        return $this->_children->count();
     }
 
     public function __toString(): string

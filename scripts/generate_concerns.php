@@ -4,7 +4,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use phpDocumentor\Reflection\DocBlockFactory;
-use PTML\Attr;
+use PTML\Old\Attr;
 
 $template = ltrim('
 <?php

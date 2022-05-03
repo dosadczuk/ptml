@@ -6,7 +6,7 @@ namespace PTML;
 /**
  * Abstraction of HTML standard attribute.
  */
-enum Attr: string implements AttrInterface
+enum Attr: string implements AttributeInterface
 {
     /**
      * List of types the server accepts, typically a file type.

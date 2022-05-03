@@ -6,10 +6,10 @@ namespace PTML;
 /**
  * Abstraction of HTML `data-*` attribute.
  */
-final class Data implements AttrInterface
+final class Data implements AttributeInterface
 {
     public function __construct(
-        private string $name,
+        private string $name
     ) {
     }
 
@@ -23,6 +23,6 @@ final class Data implements AttrInterface
 
     public function name(): string
     {
-        return strtolower("data-{$this->name}");
+        return "data-$this->name";
     }
 }
