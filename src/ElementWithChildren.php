@@ -101,7 +101,7 @@ class ElementWithChildren extends Element implements ElementWithChildrenInterfac
         return $this->children->empty() === false;
     }
 
-    public function __toString(): string
+    public function html(): string
     {
         return sprintf(
             '<%s%s%s>%s%s</%s>',
