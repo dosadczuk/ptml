@@ -34,54 +34,54 @@ final class Attrs extends \ArrayObject
     /**
      * Sets given attribute or replaces if attribute is added already.
      */
-    public function set(AttrInterface|string $name, string $value, bool $append): void
+    public function set(AttrInterface|string $attr, string $value, bool $append): void
     {
-        if ($name instanceof AttrInterface) {
-            $name = $name->name();
+        if ($attr instanceof AttrInterface) {
+            $attr = $attr->name();
         }
 
         // append only if attr exists, otherwise it's a new attr
-        if ($append && $this->has($name)) {
-            $value = sprintf('%s %s', $this[$name], $value);
+        if ($append && $this->has($attr)) {
+            $value = sprintf('%s %s', $this[$attr], $value);
         }
 
-        $this[$name] = trim($value);
+        $this[$attr] = trim($value);
     }
 
     /**
      * Returns attribute or NULL if not exists.
      */
-    public function get(AttrInterface|string $name): ?string
+    public function get(AttrInterface|string $attr): ?string
     {
-        if ($name instanceof AttrInterface) {
-            $name = $name->name();
+        if ($attr instanceof AttrInterface) {
+            $attr = $attr->name();
         }
 
-        return $this[$name] ?? null;
+        return $this[$attr] ?? null;
     }
 
     /**
      * Checks if attribute exists.
      */
-    public function has(AttrInterface|string $name): bool
+    public function has(AttrInterface|string $attr): bool
     {
-        if ($name instanceof AttrInterface) {
-            $name = $name->name();
+        if ($attr instanceof AttrInterface) {
+            $attr = $attr->name();
         }
 
-        return isset($this[$name]);
+        return isset($this[$attr]);
     }
 
     /**
      * Removes given attribute.
      */
-    public function del(AttrInterface|string $name): void
+    public function del(AttrInterface|string $attr): void
     {
-        if ($name instanceof AttrInterface) {
-            $name = $name->name();
+        if ($attr instanceof AttrInterface) {
+            $attr = $attr->name();
         }
 
-        unset($this[$name]);
+        unset($this[$attr]);
     }
 
     /**
