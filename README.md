@@ -1,207 +1,161 @@
 # PTML
 
-Build HTML elements using PHP classes. Library provides predefined values for: `Aria`, `Attr` and `Tag`.
+Build HTML elements using PHP classes. Use predefined HTML elements or create your own. Each element can have attributes
+and some of them can have children. Using multiple elements create unique components or even templates.
 
-Source of HTML definitions for:
+Library provides predefined values for `Tag`, `Attr` and `Aria`:
 
-1. [Tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-2. [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)
-3. [ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes)
+1. https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+2. https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
+3. https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes
 
-## Define element
+## How to use predefined elements?
 
-### Define very basic element
-
-```php
-use PTML\{Old\Element,Old\Tag};
-
-echo new Element(Tag::Img); // <img />
-echo new Element(Tag::Button); // <button></button>
-echo new Element(Tag::Button, 'Sample text'); // <button>Sample text</button> 
-```
-
-### Define element with attributes
+Library provides predefined HTML elements, e.g. div, span, etc. Each of them can be use by its own, e.g.:
 
 ```php
-use PTML\{Old\Aria,Old\Attr,Old\Data,Old\Element,Old\Tag};
+use PTML\Element\Div;
 
-$element = new Element(Tag::Button, 'Sample text');
-$element->with(Attr::Type, 'submit');
-echo $element;
-// <button type="submit">
-//     Sample text
-// </button>
-
-$element = new Element(Tag::Img);
-$element->with(Attr::Src, '/images/sample.gif');
-$element->with(Attr::Alt, 'sample image');
-$element->with(Aria::Hidden, 'true');
-echo $element;
-// <img src="/images/sample.gif" alt="sample image" aria-hidden="true" />
-
-$element = new Element(Tag::Button, 'Sample text');
-$element->with(Attr::Type, 'submit');
-$element->with(Data::new('test'), 'test');
-echo $element;
-// <button type="submit" data-test="test">
-//     Sample text
-// </button>
+echo new Div('Sample text inside of the div');
 ```
 
-### Define element with children
+```shell
+$: <div>Sample text inside of the div</div>
+```
+
+Every single element can have attributes. Library provides predefined names for standard HTML attributes and ARIAs as
+well. Let's modify `div` from the previous example and add attributes:
 
 ```php
-use PTML\{Old\Attr,Old\Element,Old\Tag};
+use HTML\Element\Div;
+use PTML\{Aria, Attr, Data};
 
-// icon
-$i = new Element(Tag::I);
-$i->with(Attr::Clazz, 'fa fa-user');
+$div = new Div('Sample text inside of the div');
+$div->with(Attr::Id, 'myDiv');                  // standard attribute
+$div->with(Aria::Label, 'sample div');          // aria-* attribute
+$div->with(Data::new('my-value'), 'test')       // data-* attribute
 
-// link
-$a = new Element(Tag::A);
-$a->with(Attr::Href, "localhost:8080");
-$a->append($i);
-
-echo $a;
-// <a href="localhost:8080">
-//     <i class="fa fa-user"></i>
-// </a>
+echo $div;
 ```
 
-## Element methods
+```shell
+$: <div id="myDiv" aria-label="sample div" data-my-value="test">Sample text inside of the div</div>
+```
 
-### Get element identifier
+Now, let's say you have a custom attribute:
 
 ```php
-use PTML\{Old\Element,Old\Tag};
+use HTML\Element\Div;
 
-$element = new Element(Tag::I);
-echo $element->uid(); // '<unique identifier>'
+$div = new Div('Sample text inside of the div');
+$div->with('my-attribute', 'value');            // custom attribute
+
+echo $div;
 ```
 
-### Get element tag
+```shell
+$: <div my-attribute="value">Sample text inside of the div</div>
+```
+
+Let's try to create something bigger. You probably know that colorful button with text and icon on the right-hand side.
+To create it, we are going to use one button element (outer) and icon element (inner).
 
 ```php
-use PTML\{Old\Element,Old\Tag};
+use PTML\{Aria, Attr};
+use PTML\Element\{Button, I};
 
-$element = new Element(Tag::I);
-echo $element->tag(); // 'i'
+$ico = new I();
+$ico->with(Attr::Clazz, 'fa-solid fa-bolt');
+$ico->with(Aria::Hidden, 'true');
+
+$btn = new Button('Click me!');
+$btn->append($ico);
+
+echo $btn;
 ```
 
-### Get element text
+```shell
+$: <button>Click me!<i class="fa-solid fa-bolt" aria-hidden="true"></i></button>
+```
+
+## How to define elements?
+
+We know how to use predefine component, but how to define custom elements? Let's try to create icon from the example
+above:
 
 ```php
-use PTML\{Old\Element,Old\Tag};
+use PTML\{Aria, Attr};
+use PTML\Element\I;
 
-$element = new Element(Tag::I, 'Sample text');
-echo $element->text(); // 'Sample text'
+class BoltIcon extends I {
+
+    public function __construct() {
+        parent::__construct();
+        
+        $this->with(Attr::Clazz, 'fa-solid fa-bolt');
+        $this->with(Aria::Hidden, 'true');    
+    }
+}
+
+echo new BoltIcon();
 ```
 
-### Add element attribute
+```shell
+$: <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+```
+
+There are two types of elements: **with** and **without** children. We can say that **with** children extends **without**.
+Library provides interfaces for both of them: `ElementWithChildrenInterface` and `ElementInterface`, and base classes: `ElementWithChildren`
+and `Element`. Every _element_ related function is using _interface_, base classes are just to simplify things while creating custom elements.
+You can extend base class or implement interface by your own.
+
+Let's try recreating the same icon but using base class:
 
 ```php
-use PTML\{Old\Attr,Old\Element,Old\Tag};
+use PTML\{Aria, Attr, ElementWithChildren, Tag};
 
-$element = new Element(Tag::Button);
-$element->with(Attr::Type, '<type>');
+// <i> is not self-closing tag, so we use "with children"
+class BoltIcon extends ElementWithChildren {
+    
+    public function __construct() {
+        parent::__construct(Tag::I); // define that it's <i> using enum
+        
+        $this->with(Attr::Clazz, 'fa-solid fa-bolt');
+        $this->with(Aria::Hidden, 'true');
+    }
+}
+
+echo new BoltIcon();
 ```
 
-### Get element attributes
+```shell
+$: <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+```
+
+Result it exactly the same, as expected!
+
+## How to define components?
+
+Now we will try to recreate button (from the example above) but using new class:
 
 ```php
-use PTML\{Old\Attr,Old\Element,Old\Tag};
+use PTML\Element\Button;
 
-$element = new Element(Tag::Button);
-$element->with(Attr::Type, '<type>');
-$element->with(Attr::Name, '<name>');
+class Btn extends Button {
 
-echo $element->attrs(); // [ '<type>', '<name>' ]
+    public function __construct() {
+        parent::__construct('Click me!');
+     
+        // BoltIcon is from the example above
+        $this->append(new BoltIcon());   
+    }
+}
+
+echo new Btn();
 ```
 
-### Check if element has an attribute
-
-```php
-use PTML\{Old\Attr,Old\Element,Old\Tag};
-
-$element = new Element(Tag::Button);
-$element->with(Attr::Type, '<type>');
-
-echo $element->exists(Attr::Type); // true
-echo $element->exists(Attr::Name); // false
+```shell
+$: <button>Click me!<i class="fa-solid fa-bolt" aria-hidden="true"></i></button>
 ```
 
-### Remove element attribute
-
-```php
-use PTML\{Old\Attr,Old\Element,Old\Tag};
-
-$element = new Element(Tag::Button);
-$element->with(Attr::Type, '<type>');
-
-// remove attribute
-$element->without(Attr::Type);
-```
-
-### Add element children
-
-```php
-use PTML\{Old\Attr,Old\Element,Old\Tag};
-
-$root = new Element(Tag::Button);
-$root->with(Attr::Type, '<type>');
-
-// append children
-$root->append(new Element(Tag::Img));
-```
-
-### Check if element have children
-
-```php
-use PTML\{Old\Attr,Old\Element,Old\Tag};
-
-$root = new Element(Tag::Button);
-$root->with(Attr::Type, '<type>');
-
-$child1 = new Element(Tag::Img);
-$child2 = new Element(Tag::Img);
-
-$root->append($child1);
-
-echo $root->contains($child1); // true
-echo $root->contains($child2); // false
-```
-
-### Remove element children
-
-```php
-use PTML\{Old\Attr,Old\Element,Old\Tag};
-
-$root = new Element(Tag::Button);
-$root->with(Attr::Type, '<type>');
-
-$child = new Element(Tag::Img);
-$root->append($child);
-
-// remove child
-$root->remove($child);
-```
-
-### Get element as HTML
-
-```php
-use PTML\{Old\Aria,Old\Attr,Old\Element,Old\Tag};
-
-$a = new Element(Tag::A, 'Sample link');
-$a->with(Attr::Href, 'localhost');
-
-$i = new Element(Tag::I);
-$i->with(Attr::Clazz, 'fa fa-user');
-$i->with(Aria::Hidden, 'true');
-
-$a->append($i);
-
-echo $a->html();
-// <a href="localhost">
-//     <i class="fa fa-user" aria-hidden="true"></i>
-// </a>
-```
+As you can see, method is exactly the same but with different "blocks".
