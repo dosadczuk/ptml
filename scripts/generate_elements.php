@@ -106,11 +106,11 @@ function getTraits(Tag $tag): array
 
     $traits = [];
     foreach ($tag_to_attrs($tag) as $attr) {
-        $traits[] = "\tWith{$attr->name}";
+        $traits[] = "    With{$attr->name}";
     }
 
     $imports = trim(implode(",\n", $traits));
-    $uses = trim(implode(",\n\t", $traits));
+    $uses = trim(implode(",\n    ", $traits));
 
     return [$imports, $uses];
 }

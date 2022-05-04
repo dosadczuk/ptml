@@ -5,23 +5,23 @@ namespace PTML\Element;
 
 use PTML\Element\Concern\{
     WithAccesskey,
-	WithAutocapitalize,
-	WithClass,
-	WithContenteditable,
-	WithContextmenu,
-	WithDir,
-	WithDraggable,
-	WithHidden,
-	WithId,
-	WithItemprop,
-	WithLang,
-	WithRole,
-	WithSlot,
-	WithSpellcheck,
-	WithStyle,
-	WithTabindex,
-	WithTitle,
-	WithTranslate
+    WithAutocapitalize,
+    WithClass,
+    WithContenteditable,
+    WithContextmenu,
+    WithDir,
+    WithDraggable,
+    WithHidden,
+    WithId,
+    WithItemprop,
+    WithLang,
+    WithRole,
+    WithSlot,
+    WithSpellcheck,
+    WithStyle,
+    WithTabindex,
+    WithTitle,
+    WithTranslate
 };
 use PTML\ElementWithChildren;
 use PTML\Tag;
@@ -34,23 +34,23 @@ use PTML\Tag;
 class Picture extends ElementWithChildren
 {
     use WithAccesskey,
-		WithAutocapitalize,
-		WithClass,
-		WithContenteditable,
-		WithContextmenu,
-		WithDir,
-		WithDraggable,
-		WithHidden,
-		WithId,
-		WithItemprop,
-		WithLang,
-		WithRole,
-		WithSlot,
-		WithSpellcheck,
-		WithStyle,
-		WithTabindex,
-		WithTitle,
-		WithTranslate;
+        WithAutocapitalize,
+        WithClass,
+        WithContenteditable,
+        WithContextmenu,
+        WithDir,
+        WithDraggable,
+        WithHidden,
+        WithId,
+        WithItemprop,
+        WithLang,
+        WithRole,
+        WithSlot,
+        WithSpellcheck,
+        WithStyle,
+        WithTabindex,
+        WithTitle,
+        WithTranslate;
 
     public function __construct(\Stringable|string $text = '')
     {
