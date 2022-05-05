@@ -49,7 +49,7 @@ it('should find element by attr', function () {
     // given
     $search = new ElementSearch($this->element);
     // when
-    $child3 = $search->findByAttr(Attr::Id);
+    $child3 = $search->findByAttr(Attr::Id, 'test');
     // then
     expect($child3)->not->toBeNull();
     expect($child3)->toBe($this->child3);

@@ -43,11 +43,11 @@ final class ElementSearch
     /**
      * Finds first match of element with given attribute.
      */
-    public function findByAttr(AttributeInterface|string $attr): ?ElementInterface
+    public function findByAttr(AttributeInterface|string $name, string $value): ?ElementInterface
     {
         /** @var ElementInterface $child */
         foreach ($this->element->getChildren() as $child) {
-            if ($child->has($attr)) {
+            if ($child->attr($name) === $value) {
                 return $child;
             }
         }
