@@ -10,9 +10,9 @@ trait WithLang
     /**
      * Defines the language used in the element.
      */
-    public function withLang(string $value, bool $append = true): static
+    public function withLang(string $value): static
     {
-        $this->with(Attr::Lang, $value, $append);
+        $this->with(Attr::Lang, $value);
 
         return $this;
     }

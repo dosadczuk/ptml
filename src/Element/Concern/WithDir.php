@@ -11,9 +11,9 @@ trait WithDir
      * Defines the text direction. Allowed values are ltr (Left-To-Right) or
      * rtl (Right-To-Left)
      */
-    public function withDir(string $value, bool $append = true): static
+    public function withDir(string $value): static
     {
-        $this->with(Attr::Dir, $value, $append);
+        $this->with(Attr::Dir, $value);
 
         return $this;
     }

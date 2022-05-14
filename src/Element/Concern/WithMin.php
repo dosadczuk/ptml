@@ -10,9 +10,9 @@ trait WithMin
     /**
      * Indicates the minimum value allowed.
      */
-    public function withMin(string $value, bool $append = true): static
+    public function withMin(string|int|float|\DateTimeInterface $value): static
     {
-        $this->with(Attr::Min, $value, $append);
+        $this->with(Attr::Min, $value);
 
         return $this;
     }

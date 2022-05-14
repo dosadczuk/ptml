@@ -11,9 +11,9 @@ trait WithAction
      * The URI of a program that processes the information submitted via the
      * form.
      */
-    public function withAction(string $value, bool $append = true): static
+    public function withAction(string $value): static
     {
-        $this->with(Attr::Action, $value, $append);
+        $this->with(Attr::Action, $value);
 
         return $this;
     }

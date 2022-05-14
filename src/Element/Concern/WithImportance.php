@@ -10,9 +10,9 @@ trait WithImportance
     /**
      * Indicates the relative fetch priority for the resource.
      */
-    public function withImportance(string $value, bool $append = true): static
+    public function withImportance(string $value): static
     {
-        $this->with(Attr::Importance, $value, $append);
+        $this->with(Attr::Importance, $value);
 
         return $this;
     }

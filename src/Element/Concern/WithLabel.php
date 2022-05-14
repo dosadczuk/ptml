@@ -10,9 +10,9 @@ trait WithLabel
     /**
      * Specifies a user-readable title of the element.
      */
-    public function withLabel(string $value, bool $append = true): static
+    public function withLabel(string $value): static
     {
-        $this->with(Attr::Label, $value, $append);
+        $this->with(Attr::Label, $value);
 
         return $this;
     }

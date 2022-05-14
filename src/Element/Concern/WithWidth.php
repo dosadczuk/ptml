@@ -10,9 +10,9 @@ trait WithWidth
     /**
      * For the elements listed here, this establishes the element's width.
      */
-    public function withWidth(string $value, bool $append = true): static
+    public function withWidth(string|int|float $value): static
     {
-        $this->with(Attr::Width, $value, $append);
+        $this->with(Attr::Width, $value);
 
         return $this;
     }

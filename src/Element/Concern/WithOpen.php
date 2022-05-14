@@ -12,9 +12,9 @@ trait WithOpen
      * <details> element) or whether the dialog is active and can be interacted
      * with (in the case of a <dialog> element).
      */
-    public function withOpen(string $value, bool $append = true): static
+    public function withOpen(string|bool $value): static
     {
-        $this->with(Attr::Open, $value, $append);
+        $this->with(Attr::Open, $value);
 
         return $this;
     }

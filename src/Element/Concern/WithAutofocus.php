@@ -10,9 +10,9 @@ trait WithAutofocus
     /**
      * The element should be automatically focused after the page loaded.
      */
-    public function withAutofocus(string $value, bool $append = true): static
+    public function withAutofocus(string|bool $value): static
     {
-        $this->with(Attr::Autofocus, $value, $append);
+        $this->with(Attr::Autofocus, $value);
 
         return $this;
     }

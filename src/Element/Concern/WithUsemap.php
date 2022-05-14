@@ -10,9 +10,9 @@ trait WithUsemap
     /**
      * Specifies an image as a client-side image map.
      */
-    public function withUsemap(string $value, bool $append = true): static
+    public function withUsemap(string $value): static
     {
-        $this->with(Attr::Usemap, $value, $append);
+        $this->with(Attr::Usemap, $value);
 
         return $this;
     }

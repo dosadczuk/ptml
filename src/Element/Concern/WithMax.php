@@ -10,9 +10,9 @@ trait WithMax
     /**
      * Indicates the maximum value allowed.
      */
-    public function withMax(string $value, bool $append = true): static
+    public function withMax(string|int|float|\DateTimeInterface $value): static
     {
-        $this->with(Attr::Max, $value, $append);
+        $this->with(Attr::Max, $value);
 
         return $this;
     }

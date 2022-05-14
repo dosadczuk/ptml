@@ -12,9 +12,9 @@ trait WithTarget
      * element) or where to display the response received (in the case of a
      * <form> element)
      */
-    public function withTarget(string $value, bool $append = true): static
+    public function withTarget(string $value): static
     {
-        $this->with(Attr::Target, $value, $append);
+        $this->with(Attr::Target, $value);
 
         return $this;
     }

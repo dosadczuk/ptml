@@ -10,9 +10,9 @@ trait WithDisabled
     /**
      * Indicates whether the user can interact with the element.
      */
-    public function withDisabled(string $value, bool $append = true): static
+    public function withDisabled(string|bool $value): static
     {
-        $this->with(Attr::Disabled, $value, $append);
+        $this->with(Attr::Disabled, $value);
 
         return $this;
     }

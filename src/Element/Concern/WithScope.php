@@ -11,9 +11,9 @@ trait WithScope
      * Defines the cells that the header test (defined in the th element)
      * relates to.
      */
-    public function withScope(string $value, bool $append = true): static
+    public function withScope(string $value): static
     {
-        $this->with(Attr::Scope, $value, $append);
+        $this->with(Attr::Scope, $value);
 
         return $this;
     }

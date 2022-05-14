@@ -10,9 +10,9 @@ trait WithCrossorigin
     /**
      * How the element handles cross-origin requests
      */
-    public function withCrossorigin(string $value, bool $append = true): static
+    public function withCrossorigin(string $value): static
     {
-        $this->with(Attr::Crossorigin, $value, $append);
+        $this->with(Attr::Crossorigin, $value);
 
         return $this;
     }

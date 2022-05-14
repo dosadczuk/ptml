@@ -10,9 +10,9 @@ trait WithAlt
     /**
      * Alternative text in case an image can't be displayed.
      */
-    public function withAlt(string $value, bool $append = true): static
+    public function withAlt(string $value): static
     {
-        $this->with(Attr::Alt, $value, $append);
+        $this->with(Attr::Alt, $value);
 
         return $this;
     }

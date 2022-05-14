@@ -10,9 +10,9 @@ trait WithIsmap
     /**
      * Indicates that the image is part of a server-side image map.
      */
-    public function withIsmap(string $value, bool $append = true): static
+    public function withIsmap(string|bool $value): static
     {
-        $this->with(Attr::Ismap, $value, $append);
+        $this->with(Attr::Ismap, $value);
 
         return $this;
     }

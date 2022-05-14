@@ -10,9 +10,9 @@ trait WithSpan
     /**
      * Specifies the number of columns to span.
      */
-    public function withSpan(string $value, bool $append = true): static
+    public function withSpan(string|int $value): static
     {
-        $this->with(Attr::Span, $value, $append);
+        $this->with(Attr::Span, $value);
 
         return $this;
     }

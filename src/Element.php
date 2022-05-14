@@ -71,9 +71,9 @@ class Element implements ElementInterface
         return $this->attributes->values();
     }
 
-    public function with(AttributeInterface|string $attr, string $value, bool $append = true): static
+    public function with(AttributeInterface|string $attr, mixed $value): static
     {
-        $this->attributes->set($attr, $value, $append);
+        $this->attributes->set($attr, $value);
 
         return $this;
     }

@@ -10,9 +10,9 @@ trait WithShape
     /**
      * Specifies the shape of the area.
      */
-    public function withShape(string $value, bool $append = true): static
+    public function withShape(string $value): static
     {
-        $this->with(Attr::Shape, $value, $append);
+        $this->with(Attr::Shape, $value);
 
         return $this;
     }

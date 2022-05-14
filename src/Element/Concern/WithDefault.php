@@ -11,9 +11,9 @@ trait WithDefault
      * Indicates that the track should be enabled unless the user's preferences
      * indicate something different.
      */
-    public function withDefault(string $value, bool $append = true): static
+    public function withDefault(string|bool $value): static
     {
-        $this->with(Attr::Default, $value, $append);
+        $this->with(Attr::Default, $value);
 
         return $this;
     }

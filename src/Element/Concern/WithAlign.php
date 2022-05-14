@@ -10,9 +10,9 @@ trait WithAlign
     /**
      * Specifies the horizontal alignment of the element.
      */
-    public function withAlign(string $value, bool $append = true): static
+    public function withAlign(string $value): static
     {
-        $this->with(Attr::Align, $value, $append);
+        $this->with(Attr::Align, $value);
 
         return $this;
     }

@@ -10,9 +10,9 @@ trait WithStep
     /**
      * Specifies the legal number intervals for an input field.
      */
-    public function withStep(string $value, bool $append = true): static
+    public function withStep(string|int|float $value): static
     {
-        $this->with(Attr::Step, $value, $append);
+        $this->with(Attr::Step, $value);
 
         return $this;
     }

@@ -10,9 +10,9 @@ trait WithHeaders
     /**
      * IDs of the <th> elements which applies to this element.
      */
-    public function withHeaders(string $value, bool $append = true): static
+    public function withHeaders(string $value): static
     {
-        $this->with(Attr::Headers, $value, $append);
+        $this->with(Attr::Headers, $value);
 
         return $this;
     }

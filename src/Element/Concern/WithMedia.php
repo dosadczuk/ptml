@@ -10,9 +10,9 @@ trait WithMedia
     /**
      * Specifies a hint of the media for which the linked resource was designed.
      */
-    public function withMedia(string $value, bool $append = true): static
+    public function withMedia(string $value): static
     {
-        $this->with(Attr::Media, $value, $append);
+        $this->with(Attr::Media, $value);
 
         return $this;
     }

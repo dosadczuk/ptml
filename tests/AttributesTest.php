@@ -56,29 +56,59 @@ it('should get value by name', function () {
     expect($value)->toEqual('1');
 });
 
-it('should set value', function () {
+it('should set string value', function () {
     // given
     $attrs = new Attributes();
     // when
-    $attrs->set(Attr::Data, '1', append: false);
+    $attrs->set(Attr::Data, '1');
     // then
     expect($attrs->get(Attr::Data))->toEqual('1');
 });
 
-it('should set value (append)', function () {
+it('should set boolean value', function () {
     // given
     $attrs = new Attributes();
-    $attrs->set(Attr::Clazz, 'fa', append: false);
     // when
-    $attrs->set(Attr::Clazz, 'fa-user', append: true);
+    $attrs->set(Attr::Required, true);
     // then
-    expect($attrs->get(Attr::Clazz))->toEqual('fa fa-user');
+    expect($attrs->get(Attr::Required))->toEqual('');
+});
+
+it('should set number value', function () {
+    // given
+    $attrs = new Attributes();
+    // when
+    $attrs->set(Attr::Min, 1);
+    $attrs->set(Attr::Max, 2.5);
+    // then
+    expect($attrs->get(Attr::Min))->toEqual('1');
+    expect($attrs->get(Attr::Max))->toEqual('2.5');
+});
+
+it('should set array value', function () {
+    // given
+    $attrs = new Attributes();
+    // when
+    $attrs->set(Attr::Accept, ['image/jpg', 'image/png']);
+    $attrs->set(Attr::Style, ['color' => 'red', 'font-size' => '12px']);
+    // then
+    expect($attrs->get(Attr::Accept))->toEqual('image/jpg,image/png');
+    expect($attrs->get(Attr::Style))->toEqual('color:red;font-size:12px');
+});
+
+it('should set object value', function () {
+    // given
+    $attrs = new Attributes();
+    // when
+    $attrs->set(Attr::Min, \DateTimeImmutable::createFromFormat('Y-m-d', '2022-01-01')->setTime(0, 0));
+    // then
+    expect($attrs->get(Attr::Min))->toEqual('2022-01-01T00:00:00');
 });
 
 it('should remove value', function () {
     // given
     $attrs = new Attributes();
-    $attrs->set(Attr::Clazz, 'fa', append: false);
+    $attrs->set(Attr::Clazz, 'fa');
 
     assertTrue($attrs->has(Attr::Clazz));
     // when
@@ -90,8 +120,8 @@ it('should remove value', function () {
 it('should create html for values', function () {
     // given
     $attrs = new Attributes();
-    $attrs->set(Attr::Id, 'a', append: false);
-    $attrs->set(Attr::Clazz, 'b', append: false);
+    $attrs->set(Attr::Id, 'a');
+    $attrs->set(Attr::Clazz, 'b');
     // when
     $html = $attrs->html();
     // then

@@ -10,9 +10,9 @@ trait WithRequired
     /**
      * Indicates whether this element is required to fill out or not.
      */
-    public function withRequired(string $value, bool $append = true): static
+    public function withRequired(string|bool $value): static
     {
-        $this->with(Attr::Required, $value, $append);
+        $this->with(Attr::Required, $value);
 
         return $this;
     }

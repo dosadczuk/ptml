@@ -6,6 +6,8 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use phpDocumentor\Reflection\DocBlockFactory;
 use PTML\Attr;
 
+$attr_to_type = include 'attr_to_type.php';
+
 $template = ltrim('
 <?php
 declare(strict_types=1);
@@ -19,9 +21,9 @@ trait With%1$s
     /**
      * %2$s
      */
-    public function with%1$s(string $value, bool $append = true): static
+    public function with%1$s(%3$s $value): static
     {
-        $this->with(Attr::%1$s, $value, $append);
+        $this->with(Attr::%1$s, $value);
 
         return $this;
     }
@@ -37,7 +39,7 @@ trait With%1$s
 
 foreach (Attr::cases() as $attr) {
     $filename = "With{$attr->name}.php";
-    $contents = sprintf($template, $attr->name, getComment($attr));
+    $contents = sprintf($template, $attr->name, getComment($attr), $attr_to_type($attr));
 
     saveToSrc($filename, $contents);
 }

@@ -10,9 +10,9 @@ trait WithSrcset
     /**
      * One or more responsive image candidates.
      */
-    public function withSrcset(string $value, bool $append = true): static
+    public function withSrcset(string $value): static
     {
-        $this->with(Attr::Srcset, $value, $append);
+        $this->with(Attr::Srcset, $value);
 
         return $this;
     }

@@ -11,9 +11,9 @@ trait WithMultiple
      * Indicates whether multiple values can be entered in an input of the type
      * email or file.
      */
-    public function withMultiple(string $value, bool $append = true): static
+    public function withMultiple(string|bool $value): static
     {
-        $this->with(Attr::Multiple, $value, $append);
+        $this->with(Attr::Multiple, $value);
 
         return $this;
     }

@@ -10,9 +10,9 @@ trait WithType
     /**
      * Defines the type of the element.
      */
-    public function withType(string $value, bool $append = true): static
+    public function withType(string $value): static
     {
-        $this->with(Attr::Type, $value, $append);
+        $this->with(Attr::Type, $value);
 
         return $this;
     }

@@ -10,9 +10,9 @@ trait WithMinlength
     /**
      * Defines the minimum number of characters allowed in the element.
      */
-    public function withMinlength(string $value, bool $append = true): static
+    public function withMinlength(string|int $value): static
     {
-        $this->with(Attr::Minlength, $value, $append);
+        $this->with(Attr::Minlength, $value);
 
         return $this;
     }

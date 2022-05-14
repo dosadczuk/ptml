@@ -43,7 +43,7 @@ interface ElementInterface extends \Stringable
     /**
      * Adds attribute with given value.
      */
-    public function with(AttributeInterface|string $attr, string $value, bool $append = true): ElementInterface;
+    public function with(AttributeInterface|string $attr, mixed $value): ElementInterface;
 
     /**
      * Removes attribute.

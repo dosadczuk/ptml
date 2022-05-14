@@ -10,9 +10,9 @@ trait WithCharset
     /**
      * Declares the character encoding of the page or script.
      */
-    public function withCharset(string $value, bool $append = true): static
+    public function withCharset(string $value): static
     {
-        $this->with(Attr::Charset, $value, $append);
+        $this->with(Attr::Charset, $value);
 
         return $this;
     }

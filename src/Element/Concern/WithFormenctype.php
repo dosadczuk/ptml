@@ -13,9 +13,9 @@ trait WithFormenctype
      * is specified, it overrides the enctype attribute of the button's form
      * owner.
      */
-    public function withFormenctype(string $value, bool $append = true): static
+    public function withFormenctype(string $value): static
     {
-        $this->with(Attr::Formenctype, $value, $append);
+        $this->with(Attr::Formenctype, $value);
 
         return $this;
     }

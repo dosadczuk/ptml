@@ -11,9 +11,9 @@ trait WithDefer
      * Indicates that the script should be executed after the page has been
      * parsed.
      */
-    public function withDefer(string $value, bool $append = true): static
+    public function withDefer(string|bool $value): static
     {
-        $this->with(Attr::Defer, $value, $append);
+        $this->with(Attr::Defer, $value);
 
         return $this;
     }

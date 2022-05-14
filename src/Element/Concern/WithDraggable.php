@@ -10,9 +10,9 @@ trait WithDraggable
     /**
      * Defines whether the element can be dragged.
      */
-    public function withDraggable(string $value, bool $append = true): static
+    public function withDraggable(string $value): static
     {
-        $this->with(Attr::Draggable, $value, $append);
+        $this->with(Attr::Draggable, $value);
 
         return $this;
     }

@@ -11,9 +11,9 @@ trait WithCapture
      * From the Media Capture specification, specifies a new file can be
      * captured.
      */
-    public function withCapture(string $value, bool $append = true): static
+    public function withCapture(string $value): static
     {
-        $this->with(Attr::Capture, $value, $append);
+        $this->with(Attr::Capture, $value);
 
         return $this;
     }

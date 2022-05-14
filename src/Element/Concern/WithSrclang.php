@@ -11,9 +11,9 @@ trait WithSrclang
      * Specifies the language of the track text data (required if
      * kind="subtitles").
      */
-    public function withSrclang(string $value, bool $append = true): static
+    public function withSrclang(string $value): static
     {
-        $this->with(Attr::Srclang, $value, $append);
+        $this->with(Attr::Srclang, $value);
 
         return $this;
     }

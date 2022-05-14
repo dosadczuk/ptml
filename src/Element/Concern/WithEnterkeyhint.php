@@ -13,9 +13,9 @@ trait WithEnterkeyhint
      * controls (such as the value of textarea elements), or in elements in an
      * editing host (e.g., using contenteditable attribute).
      */
-    public function withEnterkeyhint(string $value, bool $append = true): static
+    public function withEnterkeyhint(string $value): static
     {
-        $this->with(Attr::Enterkeyhint, $value, $append);
+        $this->with(Attr::Enterkeyhint, $value);
 
         return $this;
     }

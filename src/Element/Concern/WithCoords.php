@@ -10,9 +10,9 @@ trait WithCoords
     /**
      * A set of values specifying the coordinates of the hot-spot region.
      */
-    public function withCoords(string $value, bool $append = true): static
+    public function withCoords(string|array $value): static
     {
-        $this->with(Attr::Coords, $value, $append);
+        $this->with(Attr::Coords, $value);
 
         return $this;
     }

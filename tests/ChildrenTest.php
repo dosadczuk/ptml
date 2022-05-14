@@ -85,5 +85,5 @@ it('should create html for values', function () {
     // when
     $html = $children->html();
     // then
-    expect($html)->toEqual('<img /><img />');
+    expect($html)->toEqual(/** @lang text */ '<img /><img />');
 });

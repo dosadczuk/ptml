@@ -10,9 +10,9 @@ trait WithSrc
     /**
      * The URL of the embeddable content.
      */
-    public function withSrc(string $value, bool $append = true): static
+    public function withSrc(string $value): static
     {
-        $this->with(Attr::Src, $value, $append);
+        $this->with(Attr::Src, $value);
 
         return $this;
     }

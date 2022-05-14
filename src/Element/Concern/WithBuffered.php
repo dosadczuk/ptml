@@ -10,9 +10,9 @@ trait WithBuffered
     /**
      * Contains the time range of already buffered media.
      */
-    public function withBuffered(string $value, bool $append = true): static
+    public function withBuffered(string $value): static
     {
-        $this->with(Attr::Buffered, $value, $append);
+        $this->with(Attr::Buffered, $value);
 
         return $this;
     }

@@ -10,9 +10,9 @@ trait WithRowspan
     /**
      * Defines the number of rows a table cell should span over.
      */
-    public function withRowspan(string $value, bool $append = true): static
+    public function withRowspan(string|int $value): static
     {
-        $this->with(Attr::Rowspan, $value, $append);
+        $this->with(Attr::Rowspan, $value);
 
         return $this;
     }

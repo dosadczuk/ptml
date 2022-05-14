@@ -10,9 +10,9 @@ trait WithStart
     /**
      * Defines the first number if other than 1.
      */
-    public function withStart(string $value, bool $append = true): static
+    public function withStart(string|int $value): static
     {
-        $this->with(Attr::Start, $value, $append);
+        $this->with(Attr::Start, $value);
 
         return $this;
     }

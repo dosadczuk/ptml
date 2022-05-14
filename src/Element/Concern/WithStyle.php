@@ -10,9 +10,9 @@ trait WithStyle
     /**
      * Defines CSS styles which will override styles previously set.
      */
-    public function withStyle(string $value, bool $append = true): static
+    public function withStyle(string|array $value): static
     {
-        $this->with(Attr::Style, $value, $append);
+        $this->with(Attr::Style, $value);
 
         return $this;
     }

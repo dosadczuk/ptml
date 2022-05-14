@@ -10,9 +10,9 @@ trait WithColspan
     /**
      * The colspan attribute defines the number of columns a cell should span.
      */
-    public function withColspan(string $value, bool $append = true): static
+    public function withColspan(string|int $value): static
     {
-        $this->with(Attr::Colspan, $value, $append);
+        $this->with(Attr::Colspan, $value);
 
         return $this;
     }

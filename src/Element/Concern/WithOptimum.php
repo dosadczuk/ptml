@@ -10,9 +10,9 @@ trait WithOptimum
     /**
      * Indicates the optimal numeric value.
      */
-    public function withOptimum(string $value, bool $append = true): static
+    public function withOptimum(string|int|float $value): static
     {
-        $this->with(Attr::Optimum, $value, $append);
+        $this->with(Attr::Optimum, $value);
 
         return $this;
     }

@@ -10,9 +10,9 @@ trait WithWrap
     /**
      * Indicates whether the text should be wrapped.
      */
-    public function withWrap(string $value, bool $append = true): static
+    public function withWrap(string|bool $value): static
     {
-        $this->with(Attr::Wrap, $value, $append);
+        $this->with(Attr::Wrap, $value);
 
         return $this;
     }

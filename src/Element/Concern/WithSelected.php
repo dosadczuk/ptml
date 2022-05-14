@@ -10,9 +10,9 @@ trait WithSelected
     /**
      * Defines a value which will be selected on page load.
      */
-    public function withSelected(string $value, bool $append = true): static
+    public function withSelected(string|bool $value): static
     {
-        $this->with(Attr::Selected, $value, $append);
+        $this->with(Attr::Selected, $value);
 
         return $this;
     }

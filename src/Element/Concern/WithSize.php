@@ -11,9 +11,9 @@ trait WithSize
      * Defines the width of the element (in pixels). If the element's type
      * attribute is text or password then it's the number of characters.
      */
-    public function withSize(string $value, bool $append = true): static
+    public function withSize(string|int|float $value): static
     {
-        $this->with(Attr::Size, $value, $append);
+        $this->with(Attr::Size, $value);
 
         return $this;
     }

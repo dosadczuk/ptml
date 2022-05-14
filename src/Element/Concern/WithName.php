@@ -11,9 +11,9 @@ trait WithName
      * Name of the element. For example used by the server to identify the
      * fields in form submits.
      */
-    public function withName(string $value, bool $append = true): static
+    public function withName(string $value): static
     {
-        $this->with(Attr::Name, $value, $append);
+        $this->with(Attr::Name, $value);
 
         return $this;
     }

@@ -10,9 +10,9 @@ trait WithEnctype
     /**
      * Defines the content type of the form data when the method is POST.
      */
-    public function withEnctype(string $value, bool $append = true): static
+    public function withEnctype(string $value): static
     {
-        $this->with(Attr::Enctype, $value, $append);
+        $this->with(Attr::Enctype, $value);
 
         return $this;
     }

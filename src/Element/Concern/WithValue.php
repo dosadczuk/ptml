@@ -11,9 +11,9 @@ trait WithValue
      * Defines a default value which will be displayed in the element on page
      * load.
      */
-    public function withValue(string $value, bool $append = true): static
+    public function withValue(string $value): static
     {
-        $this->with(Attr::Value, $value, $append);
+        $this->with(Attr::Value, $value);
 
         return $this;
     }

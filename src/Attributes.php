@@ -49,18 +49,13 @@ final class Attributes extends \ArrayObject
     /**
      * Sets attribute or replaces if attribute is added already.
      */
-    public function set(AttributeInterface|string $attr, string $value, bool $append): void
+    public function set(AttributeInterface|string $attr, mixed $value): void
     {
         if ($attr instanceof AttributeInterface) {
             $attr = $attr->name();
         }
 
-        // append only if attr exists, otherwise it's a new attr
-        if ($append && $this->has($attr)) {
-            $value = sprintf('%s %s', $this[$attr], $value);
-        }
-
-        $this[$attr] = $value;
+        $this[$attr] = AttributeConverter::convert($value);
     }
 
     /**
