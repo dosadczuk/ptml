@@ -18,12 +18,16 @@
     },
     "require-dev": {
         "pestphp/pest": "^1.21",
-        "phpstan/phpstan": "^1.6"
+        "phpstan/phpstan": "^1.6",
+        "haydenpierce/class-finder": "^0.4.3"
     },
     "autoload": {
         "psr-4": {
             "PTML\\": "src/"
-        }
+        },
+        "files": [
+            "src/Element/functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

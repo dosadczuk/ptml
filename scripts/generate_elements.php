@@ -60,8 +60,6 @@ class %1$s extends ElementWithChildren
 }
 ');
 
-// TODO: rozdzielić na Element i ElementWithChildren
-
 foreach (Tag::cases() as $tag) {
     $filename = "{$tag->name}.php";
     $contents = isSelfClosing($tag)
@@ -117,5 +115,5 @@ function getTraits(Tag $tag): array
 
 function saveToSrc(string $filename, string $contents): void
 {
-    file_put_contents(__DIR__ . '/../src/Element/' . $filename, $contents,);
+    file_put_contents(__DIR__ . '/../src/Element/' . $filename, $contents);
 }
