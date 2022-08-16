@@ -8,12 +8,16 @@ namespace PTML;
  */
 final class Attributes extends \ArrayObject
 {
+    private AttributesConverter $converter;
+
     /**
      * @param array<string, string> $values
      */
     public function __construct(array $values = [])
     {
         parent::__construct($values);
+
+        $this->converter = new AttributesConverter();
     }
 
     /**
@@ -55,7 +59,7 @@ final class Attributes extends \ArrayObject
             $attr = $attr->name();
         }
 
-        $this[$attr] = AttributeConverter::convert($value);
+        $this[$attr] = $this->converter->convert($value);
     }
 
     /**

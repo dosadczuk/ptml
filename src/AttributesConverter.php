@@ -3,39 +3,39 @@ declare(strict_types=1);
 
 namespace PTML;
 
-final class AttributeConverter
+final class AttributesConverter
 {
     /**
      * Convert `mixed` attribute value to proper HTML attribute value.
      */
-    public static function convert(mixed $value): string
+    public function convert(mixed $value): string
     {
         return match (gettype($value)) {
-            'boolean'           => self::convertBoolean($value),
-            'integer', 'double' => self::convertNumber($value),
-            'string'            => self::convertString($value),
-            'array'             => self::convertArray($value),
-            'object'            => self::convertObject($value),
+            'boolean'           => $this->convertBoolean($value),
+            'integer', 'double' => $this->convertNumber($value),
+            'string'            => $this->convertString($value),
+            'array'             => $this->convertArray($value),
+            'object'            => $this->convertObject($value),
             default             => throw new \RuntimeException('Invalid attribute value')
         };
     }
 
-    private static function convertBoolean(bool $value): string
+    private function convertBoolean(bool $value): string
     {
         return '';
     }
 
-    private static function convertNumber(int|float $value): string
+    private function convertNumber(int|float $value): string
     {
         return (string)$value;
     }
 
-    private static function convertString(string $value): string
+    private function convertString(string $value): string
     {
         return $value;
     }
 
-    private static function convertArray(array $values): string
+    private function convertArray(array $values): string
     {
         if (!array_is_list($values)) {
             // convert `map` to `string`
@@ -51,7 +51,7 @@ final class AttributeConverter
         return implode(',', $values);
     }
 
-    private static function convertObject(object $value): string
+    private function convertObject(object $value): string
     {
         if ($value instanceof \DateTimeInterface) {
             return $value->format('Y-m-d\TH:i:s');
