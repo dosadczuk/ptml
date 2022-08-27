@@ -54,9 +54,9 @@ it('should add value', function () {
     // when
     $children->add([$element1, $element2]);
     // then
-    expect($children)->toHaveCount(2);
-    expect($children->has($element1))->toBeTruthy();
-    expect($children->has($element2))->toBeTruthy();
+    expect($children)->toHaveCount(2)
+        ->and($children->has($element1))->toBeTruthy()
+        ->and($children->has($element2))->toBeTruthy();
 });
 
 it('should remove value', function () {
@@ -70,9 +70,9 @@ it('should remove value', function () {
     // when
     $children->rem([$element1]);
     // then
-    expect($children)->toHaveCount(1);
-    expect($children->has($element1))->toBeFalsy();
-    expect($children->has($element2))->toBeTruthy();
+    expect($children)->toHaveCount(1)
+        ->and($children->has($element1))->toBeFalsy()
+        ->and($children->has($element2))->toBeTruthy();
 });
 
 it('should create html for values', function () {

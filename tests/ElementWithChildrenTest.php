@@ -14,20 +14,20 @@ it('should create', function () {
     // given
     $element = new ElementWithChildren(Tag::I);
     // then
-    expect($element->uid())->not->toBeNull();
-    expect($element->tag())->toEqual('i');
-    expect($element->typeOf('i'))->toBeTruthy();
-    expect($element->attrs())->toBeEmpty();
-    expect($element->text())->toEqual('');
-    expect($element->children())->toBeEmpty();
+    expect($element->uid())->not->toBeNull()
+        ->and($element->tag())->toEqual('i')
+        ->and($element->typeOf('i'))->toBeTruthy()
+        ->and($element->attrs())->toBeEmpty()
+        ->and($element->text())->toEqual('')
+        ->and($element->children())->toBeEmpty();
 });
 
 it('should create with tag (string)', function () {
     // given
     $element = new ElementWithChildren('i');
     // then
-    expect($element->tag())->toEqual('i');
-    expect($element->typeOf('i'))->toBeTruthy();
+    expect($element->tag())->toEqual('i')
+        ->and($element->typeOf('i'))->toBeTruthy();
 });
 
 it('should create with text', function () {
@@ -43,8 +43,8 @@ it('should set attribute', function () {
     // when
     $element->with(Attr::Id, 'sample');
     // then
-    expect($element->has(Attr::Id))->toBeTruthy();
-    expect($element->attrs())->toHaveCount(1);
+    expect($element->has(Attr::Id))->toBeTruthy()
+        ->and($element->attrs())->toHaveCount(1);
 });
 
 it('should get attribute', function () {
@@ -67,8 +67,8 @@ it('should remove attribute', function () {
     // when
     $element->without(Attr::Id);
     // then
-    expect($element->has(Attr::Id))->toBeFalsy();
-    expect($element->attrs())->toHaveCount(0);
+    expect($element->has(Attr::Id))->toBeFalsy()
+        ->and($element->attrs())->toHaveCount(0);
 });
 
 it('should append children', function () {
@@ -80,10 +80,10 @@ it('should append children', function () {
     // when
     $element->append($child1, $child2);
     // then
-    expect($element)->toHaveCount(2);
-    expect($element->contains($child1))->toBeTruthy();
-    expect($element->contains($child2))->toBeTruthy();
-    expect($element->contains($child3))->toBeFalsy();
+    expect($element)->toHaveCount(2)
+        ->and($element->contains($child1))->toBeTruthy()
+        ->and($element->contains($child2))->toBeTruthy()
+        ->and($element->contains($child3))->toBeFalsy();
 });
 
 it('should remove children', function () {
@@ -97,9 +97,9 @@ it('should remove children', function () {
     // when
     $element->remove($child1);
     // then
-    expect($element)->toHaveCount(1);
-    expect($element->contains($child1))->toBeFalsy();
-    expect($element->contains($child2))->toBeTruthy();
+    expect($element)->toHaveCount(1)
+        ->and($element->contains($child1))->toBeFalsy()
+        ->and($element->contains($child2))->toBeTruthy();
 });
 
 it('should compare two elements', function () {
@@ -107,10 +107,10 @@ it('should compare two elements', function () {
     $element1 = new ElementWithChildren(Tag::A);
     $element2 = new ElementWithChildren(Tag::A);
     // then
-    expect($element1->equalsTo($element1))->toBeTruthy();
-    expect($element1->equalsTo($element2))->toBeFalsy();
-    expect($element1->differsFrom($element1))->toBeFalsy();
-    expect($element1->differsFrom($element2))->toBeTruthy();
+    expect($element1->equalsTo($element1))->toBeTruthy()
+        ->and($element1->equalsTo($element2))->toBeFalsy()
+        ->and($element1->differsFrom($element1))->toBeFalsy()
+        ->and($element1->differsFrom($element2))->toBeTruthy();
 });
 
 it('should create html', function () {

@@ -6,6 +6,16 @@ namespace PTML;
 class ElementWithChildren extends Element implements ElementWithChildrenInterface
 {
     /**
+     * Query `one` element from children.
+     */
+    public readonly QueryElementOne $query_one;
+
+    /**
+     * Query `all` elements from children.
+     */
+    public readonly QueryElementAll $query_all;
+
+    /**
      * Inner text.
      */
     protected string $text;
@@ -21,6 +31,8 @@ class ElementWithChildren extends Element implements ElementWithChildrenInterfac
 
         $this->text = (string)$text;
         $this->children = new Children();
+        $this->query_one = new QueryElementOne($this);
+        $this->query_all = new QueryElementAll($this);
     }
 
     public function text(): string

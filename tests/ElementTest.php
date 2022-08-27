@@ -13,18 +13,18 @@ it('should create', function () {
     // given
     $element = new Element(Tag::I);
     // then
-    expect($element->uid())->not->toBeNull();
-    expect($element->tag())->toEqual('i');
-    expect($element->typeOf('i'))->toBeTruthy();
-    expect($element->attrs())->toBeEmpty();
+    expect($element->uid())->not->toBeNull()
+        ->and($element->tag())->toEqual('i')
+        ->and($element->typeOf('i'))->toBeTruthy()
+        ->and($element->attrs())->toBeEmpty();
 });
 
 it('should create with tag (string)', function () {
     // given
     $element = new Element('i');
     // then
-    expect($element->tag())->toEqual('i');
-    expect($element->typeOf('i'))->toBeTruthy();
+    expect($element->tag())->toEqual('i')
+        ->and($element->typeOf('i'))->toBeTruthy();
 });
 
 it('should set attribute', function () {
@@ -33,8 +33,8 @@ it('should set attribute', function () {
     // when
     $element->with(Attr::Id, 'sample');
     // then
-    expect($element->has(Attr::Id))->toBeTruthy();
-    expect($element->attrs())->toHaveCount(1);
+    expect($element->has(Attr::Id))->toBeTruthy()
+        ->and($element->attrs())->toHaveCount(1);
 });
 
 it('should get attribute', function () {
@@ -57,8 +57,8 @@ it('should remove attribute', function () {
     // when
     $element->without(Attr::Id);
     // then
-    expect($element->has(Attr::Id))->toBeFalsy();
-    expect($element->attrs())->toHaveCount(0);
+    expect($element->has(Attr::Id))->toBeFalsy()
+        ->and($element->attrs())->toHaveCount(0);
 });
 
 it('should compare two elements', function () {
@@ -66,10 +66,10 @@ it('should compare two elements', function () {
     $element1 = new Element(Tag::A);
     $element2 = new Element(Tag::A);
     // then
-    expect($element1->equalsTo($element1))->toBeTruthy();
-    expect($element1->equalsTo($element2))->toBeFalsy();
-    expect($element1->differsFrom($element1))->toBeFalsy();
-    expect($element1->differsFrom($element2))->toBeTruthy();
+    expect($element1->equalsTo($element1))->toBeTruthy()
+        ->and($element1->equalsTo($element2))->toBeFalsy()
+        ->and($element1->differsFrom($element1))->toBeFalsy()
+        ->and($element1->differsFrom($element2))->toBeTruthy();
 });
 
 it('should create html', function () {

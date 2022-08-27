@@ -32,8 +32,8 @@ it('should check if empty', function () {
     $is_empty = $attrs1->empty();
     $is_not_empty = $attrs2->empty();
     // then
-    expect($is_empty)->toBeTruthy();
-    expect($is_not_empty)->toBeFalsy();
+    expect($is_empty)->toBeTruthy()
+        ->and($is_not_empty)->toBeFalsy();
 });
 
 it('should return values', function () {
@@ -81,19 +81,25 @@ it('should set number value', function () {
     $attrs->set(Attr::Min, 1);
     $attrs->set(Attr::Max, 2.5);
     // then
-    expect($attrs->get(Attr::Min))->toEqual('1');
-    expect($attrs->get(Attr::Max))->toEqual('2.5');
+    expect($attrs->get(Attr::Min))->toEqual('1')
+        ->and($attrs->get(Attr::Max))->toEqual('2.5');
 });
 
 it('should set array value', function () {
     // given
     $attrs = new Attributes();
     // when
-    $attrs->set(Attr::Accept, ['image/jpg', 'image/png']);
-    $attrs->set(Attr::Style, ['color' => 'red', 'font-size' => '12px']);
+    $attrs->set(Attr::Accept, [
+        'image/jpg',
+        'image/png',
+    ]);
+    $attrs->set(Attr::Style, [
+        'color'     => 'red',
+        'font-size' => '12px',
+    ]);
     // then
-    expect($attrs->get(Attr::Accept))->toEqual('image/jpg,image/png');
-    expect($attrs->get(Attr::Style))->toEqual('color:red;font-size:12px');
+    expect($attrs->get(Attr::Accept))->toEqual('image/jpg,image/png')
+        ->and($attrs->get(Attr::Style))->toEqual('color:red;font-size:12px');
 });
 
 it('should set object value', function () {
