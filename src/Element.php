@@ -6,11 +6,6 @@ namespace PTML;
 class Element implements ElementInterface
 {
     /**
-     * Output element with given methods.
-     */
-    public readonly ElementOutput $output;
-
-    /**
      * Unique identifier.
      */
     protected string $uid;
@@ -31,7 +26,6 @@ class Element implements ElementInterface
             $tag = $tag->value;
         }
 
-        $this->output = new ElementOutput($this);
         $this->uid = uniqid('element-', more_entropy: false);
         $this->tag = $tag;
         $this->attributes = new Attributes();

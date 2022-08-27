@@ -6,11 +6,6 @@ namespace PTML;
 class ElementWithChildren extends Element implements ElementWithChildrenInterface
 {
     /**
-     * Finds child with given methods.
-     */
-    public readonly ElementSearch $search;
-
-    /**
      * Inner text.
      */
     protected string $text;
@@ -24,7 +19,6 @@ class ElementWithChildren extends Element implements ElementWithChildrenInterfac
     {
         parent::__construct($tag);
 
-        $this->search = new ElementSearch($this);
         $this->text = (string)$text;
         $this->children = new Children();
     }
