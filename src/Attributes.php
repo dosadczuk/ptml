@@ -35,7 +35,7 @@ final class Attributes extends \ArrayObject
      */
     public function values(): array
     {
-        return $this->getArrayCopy();
+        return (array)$this;
     }
 
     /**
@@ -63,18 +63,6 @@ final class Attributes extends \ArrayObject
     }
 
     /**
-     * Removes given attribute.
-     */
-    public function rem(AttributeInterface|string $attr): void
-    {
-        if ($attr instanceof AttributeInterface) {
-            $attr = $attr->name();
-        }
-
-        unset($this[$attr]);
-    }
-
-    /**
      * Checks if attribute exists.
      */
     public function has(AttributeInterface|string $attr): bool
@@ -84,6 +72,18 @@ final class Attributes extends \ArrayObject
         }
 
         return isset($this[$attr]);
+    }
+
+    /**
+     * Removes given attribute.
+     */
+    public function delete(AttributeInterface|string $attr): void
+    {
+        if ($attr instanceof AttributeInterface) {
+            $attr = $attr->name();
+        }
+
+        unset($this[$attr]);
     }
 
     /**

@@ -112,7 +112,7 @@ it('should remove value', function () {
 
     assertTrue($attrs->has(Attr::Clazz));
     // when
-    $attrs->rem(Attr::Clazz);
+    $attrs->delete(Attr::Clazz);
     // then
     expect($attrs->has(Attr::Clazz))->toBeFalsy();
 });

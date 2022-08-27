@@ -80,7 +80,7 @@ class Element implements ElementInterface
 
     public function without(AttributeInterface|string $attr): static
     {
-        $this->attributes->rem($attr);
+        $this->attributes->delete($attr);
 
         return $this;
     }
