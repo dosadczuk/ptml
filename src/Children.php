@@ -5,6 +5,7 @@ namespace PTML;
 
 /**
  * @extends \ArrayIterator<string, ElementInterface>
+ * @internal
  */
 final class Children extends \ArrayIterator
 {

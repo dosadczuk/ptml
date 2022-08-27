@@ -5,6 +5,7 @@ namespace PTML;
 
 /**
  * @extends \ArrayObject<string, string>
+ * @internal
  */
 final class Attributes extends \ArrayObject
 {
